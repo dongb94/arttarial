@@ -1,4 +1,5 @@
 # arttarial
 
-netlify
-bootstrap
+netlify,
+bootstrap,
+react
