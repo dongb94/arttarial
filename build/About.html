@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0035)index.html -->
+<!-- saved from url=(0041)about -->
 <html lang="en">
 
 <head>
@@ -8,8 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1" id="DesktopViewport">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
+  
   <link rel="icon" sizes="192x192" href="./image/animal-g8814a9e3d_1920.png">
   <link rel="shortcut icon" href="./image/animal-g8814a9e3d_1920.png" type="image/x-icon">
   <link rel="apple-touch-icon" href="./image/animal-g8814a9e3d_1920.png" type="image/x-icon">
@@ -23,10 +22,7 @@
   <script src="./js/focus-within-polyfill.js" nomodule=""></script>
   <script src="./js/polyfill.min.js" nomodule=""></script>
 
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+
 
   <!-- Performance API Polyfills -->
   <script>
@@ -62,7 +58,8 @@
       window.thunderboltVersion = "1.10130.0"
     })();
   </script>
-  
+
+
   <!-- registry runtime -->
   <script>
     window.componentsRegistry = {};
@@ -90,7 +87,28 @@
     window.commonConfig = viewerModel.commonConfig
   </script>
 
+  <script
+    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/externals-registry.inline.af27e1e5.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[58], { 47510: function () { "use strict"; const { lodash: e, react: o, reactDOM: a } = window.externalsRegistry = { lodash: {}, react: {}, reactDOM: {} }; e.loaded = new Promise((o => { e.onload = o })), window.reactDOMReference = window.ReactDOM = { loading: !0 }, a.loaded = new Promise((e => { a.onload = () => { Object.assign(window.reactDOMReference, window.ReactDOM, window.preactCompat, { loading: !1 }), e() } })), window.reactReference = window.React = { loading: !0 }, o.loaded = new Promise((e => { o.onload = () => { Object.assign(window.reactReference, window.React, window.preactCompat, { loading: !1 }), e() } })), window.reactAndReactDOMLoaded = Promise.all([o.loaded, a.loaded]) } }, function (e) { "use strict"; var o; o = 47510, e(e.s = o) }]);
+//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/externals-registry.inline.af27e1e5.bundle.min.js.map</script>
+
+  <!-- bi -->
+  <script
+    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/bi.inline.9eb8c444.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[2892], { 81570: function (n, I, N) { "use strict"; var t, A; N.d(I, { sT: function () { return t }, $7: function () { return A }, i7: function () { return E } }), function (n) { n[n.START = 1] = "START", n[n.VISIBLE = 2] = "VISIBLE", n[n.PAGE_FINISH = 33] = "PAGE_FINISH", n[n.FIRST_CDN_RESPONSE = 4] = "FIRST_CDN_RESPONSE", n[n.TBD = -1] = "TBD", n[n.PAGE_NAVIGATION = 101] = "PAGE_NAVIGATION", n[n.PAGE_NAVIGATION_DONE = 103] = "PAGE_NAVIGATION_DONE" }(t || (t = {})), function (n) { n[n.NAVIGATION = 1] = "NAVIGATION", n[n.DYNAMIC_REDIRECT = 2] = "DYNAMIC_REDIRECT", n[n.INNER_ROUTE = 3] = "INNER_ROUTE", n[n.NAVIGATION_ERROR = 4] = "NAVIGATION_ERROR", n[n.CANCELED = 5] = "CANCELED" }(A || (A = {})); const E = { 1: "page-navigation", 2: "page-navigation-redirect", 3: "page-navigation-inner-route", 4: "navigation-error", 5: "navigation-canceled" } } }, function (n) { "use strict"; n.O(0, [142], (function () { return I = 87931, n(n.s = I); var I })); n.O() }]);
+//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/bi.inline.9eb8c444.bundle.min.js.map</script>
+
   <!-- preloading pre-scripts -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   <!-- renderIndicator -->
@@ -98,10 +116,45 @@
 
   <!-- Business Manager -->
 
+
+  <!-- initial scripts -->
+  <script
+    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/createPlatformWorker.inline.dd320646.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[5457], { 47770: function (e, r, t) { "use strict"; t.r(r), t.d(r, { platformWorkerPromise: function () { return c } }); const { siteAssets: { clientTopology: o }, siteFeatures: s, siteFeaturesConfigs: { platform: a } } = window.viewerModel, p = Worker && s.includes("platform"), c = p ? (async () => { const e = "platform_create-worker started"; performance.mark(e); const r = a.clientWorkerUrl, t = r.startsWith("http://localhost:4200/") || r.startsWith("https://bo.wix.com/suricate/") || document.baseURI !== location.href ? (e => { const r = new Blob([`importScripts('${e}');`], { type: "application/javascript" }); return URL.createObjectURL(r) })(a.clientWorkerUrl) : r.replace(o.fileRepoUrl, "/_partials"), s = new Worker(t), p = Object.keys(a.appsScripts.urls).filter((e => { var r; return !(null === (r = a.bootstrapData.appsSpecData[e]) || void 0 === r ? void 0 : r.isModuleFederated) })).reduce(((e, r) => (e[r] = a.appsScripts.urls[r], e)), {}); s.postMessage({ type: "platformScriptsToPreload", appScriptsUrls: p }); const c = "platform_create-worker ended"; return performance.mark(c), performance.measure("Create Platform Web Worker", e, c), s })() : Promise.resolve() } }, function (e) { "use strict"; var r; r = 47770, e(e.s = r) }]);
+//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/createPlatformWorker.inline.dd320646.bundle.min.js.map</script>
+  <script
+    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/windowMessageRegister.inline.8c9e8df6.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[9439], { 64277: function () { "use strict"; !function (n) { const e = new Set, t = [], a = n => { const t = []; e.forEach((e => { n.canHandleEvent(e) && t.push(e) })), t.forEach((t => { e.delete(t), n.handleEvent(t) })) }; n.addEventListener("message", (n => { const s = { source: n.source, data: n.data, origin: n.origin }, d = t.find((n => n.canHandleEvent(s))); d ? (a(d), d.handleEvent(s)) : e.add(s) })), n._addWindowMessageHandler = n => { t.push(n), a(n) } }(window) } }, function (n) { "use strict"; var e; e = 64277, n(n.s = e) }]);
+//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/windowMessageRegister.inline.8c9e8df6.bundle.min.js.map</script>
   <script src="./js/bootstrap-features.f118cb86.bundle.min.js" async=""></script>
-  
+  <script
+    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/tslib.inline.ef0662b7.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[8050], {
+        31191: function (t, n, r) {
+          "use strict"; r.d(n, { ZT: function () { return o }, pi: function () { return c }, _T: function () { return u }, mG: function () { return i }, Jh: function () { return l }, XA: function () { return a }, CR: function () { return f }, fl: function () { return p }, ev: function () { return y } });
+          /*! *****************************************************************************
+          Copyright (c) Microsoft Corporation.
+          
+          Permission to use, copy, modify, and/or distribute this software for any
+          purpose with or without fee is hereby granted.
+          
+          THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+          REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+          AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+          INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+          LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+          OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+          PERFORMANCE OF THIS SOFTWARE.
+          ***************************************************************************** */
+          var e = function (t, n) { return e = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (t, n) { t.__proto__ = n } || function (t, n) { for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (t[r] = n[r]) }, e(t, n) }; function o(t, n) { if ("function" != typeof n && null !== n) throw new TypeError("Class extends value " + String(n) + " is not a constructor or null"); function r() { this.constructor = t } e(t, n), t.prototype = null === n ? Object.create(n) : (r.prototype = n.prototype, new r) } var c = function () { return c = Object.assign || function (t) { for (var n, r = 1, e = arguments.length; r < e; r++)for (var o in n = arguments[r]) Object.prototype.hasOwnProperty.call(n, o) && (t[o] = n[o]); return t }, c.apply(this, arguments) }; function u(t, n) { var r = {}; for (var e in t) Object.prototype.hasOwnProperty.call(t, e) && n.indexOf(e) < 0 && (r[e] = t[e]); if (null != t && "function" == typeof Object.getOwnPropertySymbols) { var o = 0; for (e = Object.getOwnPropertySymbols(t); o < e.length; o++)n.indexOf(e[o]) < 0 && Object.prototype.propertyIsEnumerable.call(t, e[o]) && (r[e[o]] = t[e[o]]) } return r } function i(t, n, r, e) { return new (r || (r = Promise))((function (o, c) { function u(t) { try { l(e.next(t)) } catch (t) { c(t) } } function i(t) { try { l(e.throw(t)) } catch (t) { c(t) } } function l(t) { var n; t.done ? o(t.value) : (n = t.value, n instanceof r ? n : new r((function (t) { t(n) }))).then(u, i) } l((e = e.apply(t, n || [])).next()) })) } function l(t, n) { var r, e, o, c, u = { label: 0, sent: function () { if (1 & o[0]) throw o[1]; return o[1] }, trys: [], ops: [] }; return c = { next: i(0), throw: i(1), return: i(2) }, "function" == typeof Symbol && (c[Symbol.iterator] = function () { return this }), c; function i(c) { return function (i) { return function (c) { if (r) throw new TypeError("Generator is already executing."); for (; u;)try { if (r = 1, e && (o = 2 & c[0] ? e.return : c[0] ? e.throw || ((o = e.return) && o.call(e), 0) : e.next) && !(o = o.call(e, c[1])).done) return o; switch (e = 0, o && (c = [2 & c[0], o.value]), c[0]) { case 0: case 1: o = c; break; case 4: return u.label++, { value: c[1], done: !1 }; case 5: u.label++, e = c[1], c = [0]; continue; case 7: c = u.ops.pop(), u.trys.pop(); continue; default: if (!(o = u.trys, (o = o.length > 0 && o[o.length - 1]) || 6 !== c[0] && 2 !== c[0])) { u = 0; continue } if (3 === c[0] && (!o || c[1] > o[0] && c[1] < o[3])) { u.label = c[1]; break } if (6 === c[0] && u.label < o[1]) { u.label = o[1], o = c; break } if (o && u.label < o[2]) { u.label = o[2], u.ops.push(c); break } o[2] && u.ops.pop(), u.trys.pop(); continue }c = n.call(t, u) } catch (t) { c = [6, t], e = 0 } finally { r = o = 0 } if (5 & c[0]) throw c[1]; return { value: c[0] ? c[1] : void 0, done: !0 } }([c, i]) } } } Object.create; function a(t) { var n = "function" == typeof Symbol && Symbol.iterator, r = n && t[n], e = 0; if (r) return r.call(t); if (t && "number" == typeof t.length) return { next: function () { return t && e >= t.length && (t = void 0), { value: t && t[e++], done: !t } } }; throw new TypeError(n ? "Object is not iterable." : "Symbol.iterator is not defined.") } function f(t, n) { var r = "function" == typeof Symbol && t[Symbol.iterator]; if (!r) return t; var e, o, c = r.call(t), u = []; try { for (; (void 0 === n || n-- > 0) && !(e = c.next()).done;)u.push(e.value) } catch (t) { o = { error: t } } finally { try { e && !e.done && (r = c.return) && r.call(c) } finally { if (o) throw o.error } } return u } function p() { for (var t = [], n = 0; n < arguments.length; n++)t = t.concat(f(arguments[n])); return t } function y(t, n, r) { if (r || 2 === arguments.length) for (var e, o = 0, c = n.length; o < c; o++)!e && o in n || (e || (e = Array.prototype.slice.call(n, 0, o)), e[o] = n[o]); return t.concat(e || Array.prototype.slice.call(n)) } Object.create
+        }
+      }]);
+//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/tslib.inline.ef0662b7.bundle.min.js.map</script>
   <script src="./js/main.fda34a52.bundle.min.js" async=""></script>
- 
+  <script
+    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/openPerformanceTool.inline.70ca4a87.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[2759, 5457], { 10580: function (e, r, t) { "use strict"; var o = t(47770); const { fleetConfig: a } = window.viewerModel, s = (e, r) => { window.addEventListener("message", (t => { "opened" === t.data && e.postMessage({ type: "performanceData", data: JSON.parse(JSON.stringify(r)) }, "*") })) }; ("Canary" === a.type || window.location.search.includes("performanceTool=true")) && (window.openPerformanceTool = async () => { const e = await o.platformWorkerPromise, r = window.open("https://apps.wix.com/tb-performance-tool", "_blank"), t = window.performance.getEntries(); e ? (e.addEventListener("message", (e => { var o; if ("workerPerformanceData" === (null === (o = e.data) || void 0 === o ? void 0 : o.type)) { const o = e.data.data.performanceEntries, a = e.data.data.workerStartTime - window.performance.timeOrigin; o.forEach((e => { e.startTime = e.startTime + a, e.worker = "WORKER" })), t.push(...o), s(r, t) } })), e.postMessage({ type: "PerformanceTool" })) : s(r, t) }) }, 47770: function (e, r, t) { "use strict"; t.r(r), t.d(r, { platformWorkerPromise: function () { return i } }); const { siteAssets: { clientTopology: o }, siteFeatures: a, siteFeaturesConfigs: { platform: s } } = window.viewerModel, n = Worker && a.includes("platform"), i = n ? (async () => { const e = "platform_create-worker started"; performance.mark(e); const r = s.clientWorkerUrl, t = r.startsWith("http://localhost:4200/") || r.startsWith("https://bo.wix.com/suricate/") || document.baseURI !== location.href ? (e => { const r = new Blob([`importScripts('${e}');`], { type: "application/javascript" }); return URL.createObjectURL(r) })(s.clientWorkerUrl) : r.replace(o.fileRepoUrl, "/_partials"), a = new Worker(t), n = Object.keys(s.appsScripts.urls).filter((e => { var r; return !(null === (r = s.bootstrapData.appsSpecData[e]) || void 0 === r ? void 0 : r.isModuleFederated) })).reduce(((e, r) => (e[r] = s.appsScripts.urls[r], e)), {}); a.postMessage({ type: "platformScriptsToPreload", appScriptsUrls: n }); const i = "platform_create-worker ended"; return performance.mark(i), performance.measure("Create Platform Web Worker", e, i), a })() : Promise.resolve() } }, function (e) { "use strict"; var r; r = 10580, e(e.s = r) }]);
+//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/openPerformanceTool.inline.70ca4a87.bundle.min.js.map</script>
+
+  <!-- lodash script -->
+
+
   <script async="" onload="externalsRegistry.lodash.onload()" src="./js/lodash.min.js"></script>
 
 
@@ -109,7 +162,12 @@
 
   <!-- react -->
 
-  <script crossorigin="" src="./js/react.production.min.js" onload="externalsRegistry.react.onload()" defer=""></script>
+  <script crossorigin="" src="./js/react.production.min.js"
+    onload="externalsRegistry.react.onload()" defer=""></script>
+
+
+
+
 
 
   <!-- Initial CSS -->
@@ -544,18 +602,18 @@
 
   <!--pageHtmlEmbeds.head start-->
   <script type="wix/htmlEmbeds" id="pageHtmlEmbeds.head start"></script>
+
   <script type="wix/htmlEmbeds" id="pageHtmlEmbeds.head end"></script>
   <!--pageHtmlEmbeds.head end-->
 
 
-  <link rel="stylesheet" type="text/css" href="./index_files/ooi.abdee6a1.chunk.min.css" crossorigin="anonymous">
+  <!-- initCustomElements -->
+  <meta name="wix-dynamic-custom-elements" content="DropDownMenu">
+  <link rel="stylesheet" type="text/css" href="./About _ 아트테리어_files/ooi.abdee6a1.chunk.min.css"
+    crossorigin="anonymous">
 
 
   <script async="" id="wix-perf-measure" src="./js/wix-perf-measure.bundle.min.js"></script>
-
-
-
-
 
 
   <!-- react-dom -->
@@ -2063,6 +2121,8 @@
       src: url(./font/국립박물관문화재단클래식M.ttf) format("eot"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/60be5c39-863e-40cb-9434-6ebafb62ab2b.woff) format("woff"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/4c6503c9-859b-4d3b-a1d5-2d42e1222415.ttf) format("truetype"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/36c182c6-ef98-4021-9b0d-d63122c2bbf5.svg#36c182c6-ef98-4021-9b0d-d63122c2bbf5) format("svg")
     }
 
+    
+
     @font-face {
       font-display: swap;
       font-family: wixFreemiumFontW02-65Medi;
@@ -2070,6 +2130,8 @@
       src: url(./font/국립박물관문화재단클래식L.ttf);
       src: url(./font/국립박물관문화재단클래식L.ttf) format("eot"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/5b4a262e-3342-44e2-8ad7-719998a68134.woff) format("woff"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/4a3ef5d8-cfd9-4b96-bd67-90215512f1e5.ttf) format("truetype"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/58ab5075-53ea-46e6-9783-cbb335665f88.svg#58ab5075-53ea-46e6-9783-cbb335665f88) format("svg")
     }
+
+    
 
     @font-face {
       font-display: swap;
@@ -2130,7 +2192,7 @@
     }
 
     .KxUm9 .BNB_2>._1oNmL ._3lBpL {
-      font-family: East Sea Dokdo, 국립박물관문화재단클래식M, wixFreemiumFontW02-65Medi, wixFreemiumFontW10-65Medi, Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-family: 국립박물관문화재단클래식M, wixFreemiumFontW02-65Medi, wixFreemiumFontW10-65Medi, Helvetica Neue, Helvetica, Arial, メイリオ, meiryo, ヒラギノ角ゴ pro w3, hiragino kaku gothic pro, sans-serif;
       font-size: 14px;
       color: #20303c;
       line-height: 24px;
@@ -2327,14 +2389,15 @@
       background-color: var(--container-corvid-background-color, rgba(var(--bg, var(--color_11)), var(--alpha-bg, 1)))
     }
   </style>
-  <title>Home | 아트테리어</title>
-  <link rel="canonical" href="index.html">
-  <meta property="og:title" content="Home | 아트테리어">
-  <meta property="og:url" content="index.html">
+  <title>About | 아트테리어</title>
+  <link rel="canonical" href="about">
+  <meta property="og:title" content="About | 아트테리어">
+  <meta property="og:url" content="about">
   <meta property="og:site_name" content="아트테리어">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Home | 아트테리어">
+  <meta name="twitter:title" content="About | 아트테리어">
+
   <script type="application/json"
     id="registry-components-manifests">{"libraries":[{"version":"2.0","host":"thunderbolt","namespace":"wixui","baseURL":"https://static.parastorage.com/services/editor-elements/dist/","model":["68af14f7.bundle.min.js","75def18b.min.css"],"assets":[["stylable-metadata","editor-elements-library.31b2c2346d326a24e7260526c42349f68b99be4f.metadata.json"]],"components":{"Container_RectangleArea":["36708828.bundle.min.js","02b07b80.min.css",[0,1,6,7]],"FreemiumBannerDesktop":["d3a0e49d.bundle.min.js","5b26625f.min.css",[0,1]],"GoogleMap":["8f151841.bundle.min.js","f52e40aa.min.css",[0,1]],"SkipToContentButton":["fa0eb679.bundle.min.js","99a6a99f.min.css"]},"batches":{"bootstrap":{"url":["75890492.bundle.min.js",[0,1,6,7]],"components":["Anchor","LinkBar_Classic","BackgroundGroup","PageGroup","PagesContainer","WRichText","MasterPage"],"parts":[],"url_v2":["5641211f.chunk.min.css","c6850b31.chunk.min.js",[0,1]]},"bootstrap-classic":{"url":["ac54697d.bundle.min.js",[0,1]],"components":["Column","FooterContainer_DefaultScreen","Group","HeaderContainer_DefaultScreen","PageBackground","SiteButton_BasicButton","StripColumnsContainer","WPhoto_NoSkinPhoto","ContainerWrapper","Page_TransparentPageSkin"],"parts":[],"url_v2":["f2a418a3.chunk.min.css","733fba01.chunk.min.js"]},"bootstrap-responsive":{"url":["6e34a602.bundle.min.js",[0,1,2,3]],"components":["DropDownMenu_TextOnlyMenuButtonSkin"],"parts":[],"url_v2":["a66c1914.chunk.min.css","5b1e7e12.chunk.min.js",[0,1]]}},"shared":["rb_wixui.thunderbolt~bootstrap-classic.f2a418a3.chunk.min.css","rb_wixui.thunderbolt~bootstrap-classic.733fba01.chunk.min.js","rb_wixui.thunderbolt~bootstrap-responsive.a66c1914.chunk.min.css","rb_wixui.thunderbolt~bootstrap-responsive.5b1e7e12.chunk.min.js","-","-","rb_wixui.thunderbolt~bootstrap.5641211f.chunk.min.css","rb_wixui.thunderbolt~bootstrap.c6850b31.chunk.min.js","-","-","-"],"statics":{},"parts":{}},{"version":"2.0","host":"thunderbolt","namespace":"dsgnsys","baseURL":"https://static.parastorage.com/services/editor-elements/dist/","model":["baa86446.bundle.min.js","13bd2a61.min.css"],"assets":[["stylable-metadata","editor-elements-design-systems.bcbafe732523870c28e03456def0285b7554b6e9.metadata.json"]],"components":{},"shared":[],"batches":{},"statics":{},"parts":{}}]}</script>
   <script>
@@ -2349,9 +2412,11 @@
   <script src="./js/rb_wixui.thunderbolt_bootstrap-responsive.5b1e7e12.chunk.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt[FreemiumBannerDesktop].d3a0e49d.bundle.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt[GoogleMap].8f151841.bundle.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt[Container_RectangleArea].36708828.bundle.min.js"></script>
+  <script
+    src="./js/rb_wixui.thunderbolt[Container_RectangleArea].36708828.bundle.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt_bootstrap-classic.733fba01.chunk.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./index_files/rb_wixui.thunderbolt[HtmlComponent].37bd0eeb.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="./About _ 아트테리어_files/rb_wixui.thunderbolt[HtmlComponent].37bd0eeb.min.css">
   <script src="./js/rb_wixui.thunderbolt[HtmlComponent].b368fe32.bundle.min.js"></script>
 </head>
 
@@ -2376,8 +2441,34 @@
   <!--pageHtmlEmbeds.bodyStart end-->
 
 
+
+
+  <script id="wix-first-paint">
+    if (window.ResizeObserver &&
+      (!window.PerformanceObserver || !PerformanceObserver.supportedEntryTypes || PerformanceObserver.supportedEntryTypes.indexOf('paint') === -1)) {
+      new ResizeObserver(function (entries, observer) {
+        entries.some(function (entry) {
+          var contentRect = entry.contentRect;
+          if (contentRect.width > 0 && contentRect.height > 0) {
+            requestAnimationFrame(function (now) {
+              window.wixFirstPaint = now;
+              dispatchEvent(new CustomEvent('wixFirstPaint'));
+            });
+            observer.disconnect();
+            return true;
+          }
+        });
+      }).observe(document.body);
+    }
+  </script>
+
   <pages-css id="pages-css">
     <style id="css_masterPage">
+      body
+      {
+        background-color: #000;
+      }
+      
       :root {
         --color_0: 255, 255, 255;
         --color_27: 247, 247, 247;
@@ -2418,7 +2509,7 @@
         --font_1: normal normal normal 14px/1.79em raleway, sans-serif;
         --font_2: normal normal normal 28px/1.375em 국립박물관문화재단클래식M,  serif;
         --font_3: normal normal normal 88px/1.2em 국립박물관문화재단클래식M,  serif;
-        --font_4: normal normal normal 72px/1.25em East Sea Dokdo,  serif;
+        --font_4: normal normal normal 72px/1.25em 국립박물관문화재단클래식M,  serif;
         --font_5: normal normal normal 50px/1.34em 국립박물관문화재단클래식M,  serif;
         --font_6: normal normal normal 40px/1.35em 국립박물관문화재단클래식M,  serif;
         --font_7: normal normal normal 20px/1.67em raleway, sans-serif;
@@ -2999,17 +3090,6 @@
         margin-bottom: 0px
       }
 
-      #comp-l3mbwr7f {
-        --min-height: 32px;
-        height: auto;
-        position: relative;
-      }
-
-      #comp-l3mbwucd {
-        height: auto;
-        position: relative;
-      }
-      
       #comp-l3l3i5kd {
         --item-size: 20px;
         --item-margin: 0 10px 0 0;
@@ -3182,7 +3262,7 @@
         display: grid;
         height: auto;
         width: 100%;
-        min-height: 820px;
+        min-height: 880px;
         grid-template-rows: 1fr;
         grid-template-columns: 100%
       }
@@ -3198,51 +3278,9 @@
 
       [data-mesh-id=comp-l3l5xgmminlineContent-gridContainer]>[id="comp-l3l5xgmn1"] {
         position: relative;
-        margin: 255px 0px 10px calc((100% - 980px) * 0.5);
+        margin: 260px 0px 10px calc((100% - 980px) * 0.5);
         left: 20px;
         grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5minlineContent] {
-        height: auto;
-        width: 100%
-      }
-
-      [data-mesh-id=comp-l3mbru5minlineContent-gridContainer] {
-        position: static;
-        display: grid;
-        height: auto;
-        width: 100%;
-        min-height: auto;
-        grid-template-rows: repeat(2, min-content) 1fr;
-        grid-template-columns: 100%
-      }
-
-      [data-mesh-id=comp-l3mbru5minlineContent-gridContainer]>[id="comp-l3mbru5n"] {
-        position: relative;
-        margin: 0px 0px 0 calc((100% - 980px) * 0.5);
-        left: 0px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5minlineContent-gridContainer]>[id="comp-l3mbru5o2"] {
-        position: relative;
-        margin: 0px 0px 0 calc((100% - 980px) * 0.5);
-        left: 0px;
-        grid-area: 2 / 1 / 3 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5minlineContent-gridContainer]>[id="comp-l3mbru5p4"] {
-        position: relative;
-        margin: 0px 0px 0px calc((100% - 980px) * 0.5);
-        left: 0px;
-        grid-area: 3 / 1 / 4 / 2;
         justify-self: start;
         align-self: start
       }
@@ -3257,7 +3295,7 @@
         display: grid;
         height: auto;
         width: 100%;
-        min-height: 559px;
+        min-height: 989px;
         grid-template-rows: min-content 1fr;
         grid-template-columns: 100%
       }
@@ -3306,7 +3344,7 @@
 
       [data-mesh-id=comp-l3l5wwe12inlineContent-gridContainer]>[id="comp-l3l5wwe2"] {
         position: relative;
-        margin: 0px 0px 14px 0;
+        margin: 0px 0px 63px 0;
         left: 60px;
         grid-area: 2 / 1 / 3 / 2;
         justify-self: start;
@@ -3330,7 +3368,7 @@
 
       [data-mesh-id=comp-l3l5xgmn1inlineContent-gridContainer]>[id="comp-l3l5xgmn2"] {
         position: relative;
-        margin: 50px 0px 27px 0;
+        margin: 50px 0px 28px 0;
         left: 60px;
         grid-area: 1 / 1 / 2 / 2;
         justify-self: start;
@@ -3339,7 +3377,7 @@
 
       [data-mesh-id=comp-l3l5xgmn1inlineContent-gridContainer]>[id="comp-l3l5xgmn3"] {
         position: relative;
-        margin: 0px 0px 12px 0;
+        margin: 0px 0px 61px 0;
         left: 60px;
         grid-area: 2 / 1 / 3 / 2;
         justify-self: start;
@@ -3375,153 +3413,6 @@
         margin: 0px 0px 10px calc((100% - 980px) * 0.5);
         left: 443px;
         grid-area: 2 / 1 / 3 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5n1inlineContent] {
-        height: auto;
-        width: 100%;
-        position: static;
-        min-height: 600px
-      }
-
-      [data-mesh-id=comp-l3mbru5n2inlineContent] {
-        height: auto;
-        width: 100%
-      }
-
-      [data-mesh-id=comp-l3mbru5n2inlineContent-gridContainer] {
-        position: static;
-        display: grid;
-        height: auto;
-        width: 100%;
-        min-height: 600px;
-        grid-template-rows: repeat(2, min-content) 1fr;
-        grid-template-columns: 100%
-      }
-
-      [data-mesh-id=comp-l3mbru5n2inlineContent-gridContainer]>[id="comp-l3mbru5n3"] {
-        position: relative;
-        margin: 160px 0px 44px calc((100% - 490px) * 0.5);
-        left: 15px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5n2inlineContent-gridContainer]>[id="comp-l3mbru5o"] {
-        position: relative;
-        margin: 0px 0px 31px calc((100% - 490px) * 0.5);
-        left: 15px;
-        grid-area: 2 / 1 / 3 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5n2inlineContent-gridContainer]>[id="comp-l3mbru5o1"] {
-        position: relative;
-        margin: 0px 0px 10px calc((100% - 490px) * 0.5);
-        left: 15px;
-        grid-area: 3 / 1 / 4 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5o3inlineContent] {
-        height: auto;
-        width: 100%
-      }
-
-      [data-mesh-id=comp-l3mbru5o3inlineContent-gridContainer] {
-        position: static;
-        display: grid;
-        height: auto;
-        width: 100%;
-        min-height: 600px;
-        grid-template-rows: repeat(2, min-content) 1fr;
-        grid-template-columns: 100%
-      }
-
-      [data-mesh-id=comp-l3mbru5o3inlineContent-gridContainer]>[id="comp-l3mbru5p"] {
-        position: relative;
-        margin: 148px 0px 44px calc((100% - 490px) * 0.5);
-        left: 15px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5o3inlineContent-gridContainer]>[id="comp-l3mbru5p1"] {
-        position: relative;
-        margin: 0px 0px 31px calc((100% - 490px) * 0.5);
-        left: 15px;
-        grid-area: 2 / 1 / 3 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5o3inlineContent-gridContainer]>[id="comp-l3mbru5p2"] {
-        position: relative;
-        margin: 0px 0px 10px calc((100% - 490px) * 0.5);
-        left: 15px;
-        grid-area: 3 / 1 / 4 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5p3inlineContent] {
-        height: auto;
-        width: 100%;
-        position: static;
-        min-height: 600px
-      }
-
-      [data-mesh-id=comp-l3mbru5p5inlineContent] {
-        height: auto;
-        width: 100%;
-        position: static;
-        min-height: 600px
-      }
-
-      [data-mesh-id=comp-l3mbru5qinlineContent] {
-        height: auto;
-        width: 100%
-      }
-
-      [data-mesh-id=comp-l3mbru5qinlineContent-gridContainer] {
-        position: static;
-        display: grid;
-        height: auto;
-        width: 100%;
-        min-height: 600px;
-        grid-template-rows: repeat(2, min-content) 1fr;
-        grid-template-columns: 100%
-      }
-
-      [data-mesh-id=comp-l3mbru5qinlineContent-gridContainer]>[id="comp-l3mbru5q1"] {
-        position: relative;
-        margin: 160px 0px 44px calc((100% - 490px) * 0.5);
-        left: 15px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5qinlineContent-gridContainer]>[id="comp-l3mbru5q2"] {
-        position: relative;
-        margin: 0px 0px 31px calc((100% - 490px) * 0.5);
-        left: 15px;
-        grid-area: 2 / 1 / 3 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=comp-l3mbru5qinlineContent-gridContainer]>[id="comp-l3mbru5q3"] {
-        position: relative;
-        margin: 0px 0px 10px calc((100% - 490px) * 0.5);
-        left: 15px;
-        grid-area: 3 / 1 / 4 / 2;
         justify-self: start;
         align-self: start
       }
@@ -3619,7 +3510,7 @@
         height: auto;
         width: 100%;
         min-height: 500px;
-        grid-template-rows: repeat(4, min-content) 1fr;
+        grid-template-rows: repeat(3, min-content) 1fr;
         grid-template-columns: 100%;
         padding-bottom: 0px;
         box-sizing: border-box
@@ -3679,29 +3570,11 @@
         align-self: start
       }
 
-      [data-mesh-id=Containerc1dmpinlineContent-gridContainer]>[id="comp-l3mbru5j"] {
-        position: relative;
-        margin: 0px 0px 0 calc((100% - 980px) * 0.5);
-        left: 0px;
-        grid-area: 4 / 1 / 5 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=Containerc1dmpinlineContent-gridContainer]>[id="adi_page1001_1_140"] {
-        position: relative;
-        margin: 0px 0 10px 0;
-        left: 0;
-        grid-area: 4 / 1 / 5 / 2;
-        justify-self: stretch;
-        align-self: start
-      }
-
       [data-mesh-id=Containerc1dmpinlineContent-gridContainer]>[id="comp-l3l3itd13"] {
         position: relative;
         margin: 0px 0px 0 calc((100% - 980px) * 0.5);
         left: 0px;
-        grid-area: 5 / 1 / 6 / 2;
+        grid-area: 4 / 1 / 5 / 2;
         justify-self: start;
         align-self: start
       }
@@ -3710,7 +3583,7 @@
         position: relative;
         margin: 0px 0 10px 0;
         left: 0;
-        grid-area: 5 / 1 / 6 / 2;
+        grid-area: 4 / 1 / 5 / 2;
         justify-self: stretch;
         align-self: start
       }
@@ -3739,14 +3612,6 @@
         height: 21px
       }
 
-      #adi_page1001_1_140 {
-        left: 0;
-        margin-left: 0;
-        width: 100%;
-        min-width: initial;
-        height: 21px
-      }
-
       #adi_page1001_1_102 {
         left: 0;
         margin-left: 0;
@@ -3762,7 +3627,7 @@
 
       #comp-l3l5xgmn {
         width: 560px;
-        height: 580px
+        height: 640px
       }
 
       #comp-l3l5wwe13 {
@@ -3777,7 +3642,7 @@
 
       #comp-l3l5xgmn2 {
         width: 340px;
-        height: 54px
+        height: 108px
       }
 
       #comp-l3l5xgmn3 {
@@ -3793,51 +3658,6 @@
       #comp-l3l5yfkj4 {
         width: 94px;
         height: 45px
-      }
-
-      #comp-l3mbru5n3 {
-        width: 460px;
-        height: 31px
-      }
-
-      #comp-l3mbru5o {
-        width: 460px;
-        height: 32px
-      }
-
-      #comp-l3mbru5o1 {
-        width: 460px;
-        height: 141px
-      }
-
-      #comp-l3mbru5p {
-        width: 460px;
-        height: 31px
-      }
-
-      #comp-l3mbru5p1 {
-        width: 460px;
-        height: 32px
-      }
-
-      #comp-l3mbru5p2 {
-        width: 460px;
-        height: 169px
-      }
-
-      #comp-l3mbru5q1 {
-        width: 460px;
-        height: 31px
-      }
-
-      #comp-l3mbru5q2 {
-        width: 460px;
-        height: 32px
-      }
-
-      #comp-l3mbru5q3 {
-        width: 460px;
-        height: 141px
       }
 
       #comp-l3l3itd21 {
@@ -3896,18 +3716,11 @@
         min-width: 980px
       }
 
-      #comp-l3mbru5j {
-        left: 0;
-        margin-left: 0;
-        width: 100%;
-        min-width: 980px
-      }
-
       #comp-l3l3itd13 {
         left: 0;
         margin-left: 0;
         width: 100%;
-        min-width: 500px
+        min-width: 980px
       }
 
       #comp-l3l5yfkj {
@@ -3919,10 +3732,6 @@
       }
 
       #comp-l3l5xgmm {
-        width: 980px
-      }
-
-      #comp-l3mbru5m {
         width: 980px
       }
 
@@ -3945,27 +3754,6 @@
         width: 460px
       }
 
-      #comp-l3mbru5n {
-        left: 0;
-        margin-left: 0;
-        width: 100%;
-        min-width: 980px
-      }
-
-      #comp-l3mbru5o2 {
-        left: 0;
-        margin-left: 0;
-        width: 100%;
-        min-width: 980px
-      }
-
-      #comp-l3mbru5p4 {
-        left: 0;
-        margin-left: 0;
-        width: 100%;
-        min-width: 980px
-      }
-
       #comp-l3l3itd15 {
         margin-left: auto;
         margin-right: auto;
@@ -3982,30 +3770,6 @@
 
       #comp-l3l5yfkj2 {
         width: 980px
-      }
-
-      #comp-l3mbru5n1 {
-        width: 490px
-      }
-
-      #comp-l3mbru5n2 {
-        width: 490px
-      }
-
-      #comp-l3mbru5o3 {
-        width: 490px
-      }
-
-      #comp-l3mbru5p3 {
-        width: 490px
-      }
-
-      #comp-l3mbru5p5 {
-        width: 490px
-      }
-
-      #comp-l3mbru5q {
-        width: 490px
       }
 
       #comp-l3l3itd2 {
@@ -4038,7 +3802,7 @@
         --contentPaddingRight: 0px;
         --contentPaddingTop: 0px;
         --contentPaddingBottom: 0px;
-        --height: 580px;
+        --height: 640px;
         --width: 560px
       }
 
@@ -4093,42 +3857,6 @@
         --label-text-align: center
       }
 
-      #comp-l3mbru5n3 {
-        height: auto
-      }
-
-      #comp-l3mbru5o {
-        height: auto
-      }
-
-      #comp-l3mbru5o1 {
-        height: auto
-      }
-
-      #comp-l3mbru5p {
-        height: auto
-      }
-
-      #comp-l3mbru5p1 {
-        height: auto
-      }
-
-      #comp-l3mbru5p2 {
-        height: auto
-      }
-
-      #comp-l3mbru5q1 {
-        height: auto
-      }
-
-      #comp-l3mbru5q2 {
-        height: auto
-      }
-
-      #comp-l3mbru5q3 {
-        height: auto
-      }
-
       #comp-l3l3itd21 {
         height: auto
       }
@@ -4180,22 +3908,12 @@
         --lastChildMarginBottom: -1px
       }
 
-      #comp-l3mbru5j {
-        --bg-overlay-color: transparent;
-        --bg-gradient: none;
-        --padding: 0px;
-        --margin: 0px;
-        min-width: 980px;
-        --firstChildMarginTop: -1px;
-        --lastChildMarginBottom: -1px
-      }
-
       #comp-l3l3itd13 {
         --bg-overlay-color: transparent;
         --bg-gradient: none;
         --padding: 0px;
         --margin: 0px;
-        min-width: 500px;
+        min-width: 980px;
         --firstChildMarginTop: -1px;
         --lastChildMarginBottom: -1px
       }
@@ -4224,19 +3942,11 @@
         --column-flex: 980
       }
 
-      #comp-l3mbru5m {
-        --bg-overlay-color: rgb(var(--color_25));
-        --bg-gradient: none;
-        width: 100%;
-        --column-width: 980px;
-        --column-flex: 980
-      }
-
       #comp-l3l3itd14 {
         --bg-overlay-color: rgb(var(--color_32));
         --bg-gradient: none;
         width: 100%;
-        --column-width: 550px;
+        --column-width: 980px;
         --column-flex: 980
       }
 
@@ -4260,36 +3970,6 @@
         --bg: var(--color_25);
         --alpha-bg: 1;
         --shc-mutated-brightness: 13, 13, 13
-      }
-
-      #comp-l3mbru5n {
-        --bg-overlay-color: transparent;
-        --bg-gradient: none;
-        --padding: 0px;
-        --margin: 0px;
-        min-width: 980px;
-        --firstChildMarginTop: -1px;
-        --lastChildMarginBottom: -1px
-      }
-
-      #comp-l3mbru5o2 {
-        --bg-overlay-color: transparent;
-        --bg-gradient: none;
-        --padding: 0px;
-        --margin: 0px;
-        min-width: 980px;
-        --firstChildMarginTop: -1px;
-        --lastChildMarginBottom: -1px
-      }
-
-      #comp-l3mbru5p4 {
-        --bg-overlay-color: transparent;
-        --bg-gradient: none;
-        --padding: 0px;
-        --margin: 0px;
-        min-width: 980px;
-        --firstChildMarginTop: -1px;
-        --lastChildMarginBottom: -1px
       }
 
       #comp-l3l3itd15 {
@@ -4321,57 +4001,6 @@
         width: 100%;
         --column-width: 980px;
         --column-flex: 980
-      }
-
-      #comp-l3mbru5n1 {
-        --bg-overlay-color: transparent;
-        --bg-gradient: none;
-        --fill-layer-image-opacity: 1;
-        width: 100%;
-        --column-width: 490px;
-        --column-flex: 490
-      }
-
-      #comp-l3mbru5n2 {
-        --bg-overlay-color: rgb(var(--color_15));
-        --bg-gradient: none;
-        width: 100%;
-        --column-width: 490px;
-        --column-flex: 490
-      }
-
-      #comp-l3mbru5o3 {
-        --bg-overlay-color: rgb(var(--color_15));
-        --bg-gradient: none;
-        width: 100%;
-        --column-width: 490px;
-        --column-flex: 490
-      }
-
-      #comp-l3mbru5p3 {
-        --bg-overlay-color: transparent;
-        --bg-gradient: none;
-        --fill-layer-image-opacity: 1;
-        width: 100%;
-        --column-width: 490px;
-        --column-flex: 490
-      }
-
-      #comp-l3mbru5p5 {
-        --bg-overlay-color: transparent;
-        --bg-gradient: none;
-        --fill-layer-image-opacity: 1;
-        width: 100%;
-        --column-width: 490px;
-        --column-flex: 490
-      }
-
-      #comp-l3mbru5q {
-        --bg-overlay-color: rgb(var(--color_15));
-        --bg-gradient: none;
-        width: 100%;
-        --column-width: 490px;
-        --column-flex: 490
       }
 
       #comp-l3l3itd2 {
@@ -5899,462 +5528,82 @@
           <main id="PAGES_CONTAINER" tabindex="-1">
             <div id="SITE_PAGES">
               <div id="SITE_PAGES_TRANSITION_GROUP" class="_2YGAo">
-                <div id="c1dmp" class="Ry26q">
+                <div id="hjj6q" class="Ry26q">
                   <div class="_3CemL" data-testid="page-bg"></div>
                   <div class="_3K7uv">
-                    <div id="Containerc1dmp" class="_1KV2M">
-                      <div data-mesh-id="Containerc1dmpinlineContent" data-testid="inline-content" class="">
-                        <div data-mesh-id="Containerc1dmpinlineContent-gridContainer"
+                    <div id="Containerhjj6q" class="_1KV2M">
+                      <div data-mesh-id="Containerhjj6qinlineContent" data-testid="inline-content" class="">
+                        <div data-mesh-id="Containerhjj6qinlineContent-gridContainer"
                           data-testid="mesh-container-content">
-                          <section id="comp-l3l5yfki" class="_3d64y">
-                            <div id="bgLayers_comp-l3l5yfki" data-hook="bgLayers" class="_3wnIc">
+                          <section id="comp-l3l600m2" class="_3d64y">
+                            <div id="bgLayers_comp-l3l600m2" data-hook="bgLayers" class="_3wnIc">
                               <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                              <div id="bgMedia_comp-l3l5yfki" class="_2GUhU"></div>
+                              <div id="bgMedia_comp-l3l600m2" class="_2GUhU"></div>
                             </div>
                             <div data-testid="columns" class="_1uldx">
-                              <div id="comp-l3l5yfkj" class="_1vNJf">
-                                <div id="bgLayers_comp-l3l5yfkj" data-hook="bgLayers" class="_3wnIc">
+                              <div id="comp-l3l600m3" class="_1vNJf">
+                                <div id="bgLayers_comp-l3l600m3" data-hook="bgLayers" class="_3wnIc">
                                   <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                  <div id="bgMedia_comp-l3l5yfkj" class="_2GUhU"></div>
+                                  <div id="bgMedia_comp-l3l600m3" class="_2GUhU"></div>
                                 </div>
-                                <div data-mesh-id="comp-l3l5yfkjinlineContent" data-testid="inline-content" class="">
-                                  <div data-mesh-id="comp-l3l5yfkjinlineContent-gridContainer"
+                                <div data-mesh-id="comp-l3l600m3inlineContent" data-testid="inline-content" class="">
+                                  <div data-mesh-id="comp-l3l600m3inlineContent-gridContainer"
                                     data-testid="mesh-container-content">
-                                    <section id="comp-l3l5yfkj1" class="_3d64y">
-                                      <div id="bgLayers_comp-l3l5yfkj1" data-hook="bgLayers" class="_3wnIc">
+                                    <section id="comp-l3l600m31" class="_3d64y">
+                                      <div id="bgLayers_comp-l3l600m31" data-hook="bgLayers" class="_3wnIc">
                                         <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                        <div id="bgMedia_comp-l3l5yfkj1" class="_2GUhU"></div>
+                                        <div id="bgMedia_comp-l3l600m31" class="_2GUhU"></div>
                                       </div>
                                       <div data-testid="columns" class="_1uldx">
-                                        <div id="comp-l3l5yfkj2" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3l5yfkj2" data-hook="bgLayers" class="_3wnIc _7WhTV">
+                                        <div id="comp-l3l600m32" class="_1vNJf">
+                                          <div id="bgLayers_comp-l3l600m32" data-hook="bgLayers" class="_3wnIc">
                                             <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <wix-bg-media id="bgMedia_comp-l3l5yfkj2" class="_3BaUs"
-                                              data-container-id="comp-l3l5yfkj2" data-container-size="0, 0"
-                                              data-page-id="c1dmp" data-bg-effect-name="BgParallax"
-                                              style="width: 1681px; height: 920px; left: 80px; top: 0px; will-change: transform; transform: translate3d(0px, 36px, 0px);">
-                                                <img src="./image/main_back.png"
-                                                  alt="Startup"
-                                                  style="width: 1681px; height: 920px; object-fit: cover; object-position: 50% 50%;">
-                                              
-                                            </wix-bg-media>
+                                            <div id="bgMedia_comp-l3l600m32" class="_2GUhU"></div>
                                           </div>
-                                          <div data-mesh-id="comp-l3l5yfkj2inlineContent" data-testid="inline-content"
-                                            class="_2RKTZ">
-                                            <div data-mesh-id="comp-l3l5yfkj2inlineContent-gridContainer"
+                                          <div data-mesh-id="comp-l3l600m32inlineContent" data-testid="inline-content"
+                                            class="">
+                                            <div data-mesh-id="comp-l3l600m32inlineContent-gridContainer"
                                               data-testid="mesh-container-content">
-                                              <div id="comp-l3l5yfkj3" class="_1Q9if" data-testid="richTextElement">
-                                                <h1 class="font_4"
-                                                  style="text-align:right; line-height:1.25em; font-size:172px;"><span
-                                                    class="color_27"><span style="font-weight:normal;">아트테리어</span></span>
-                                                </h1>
-                                                <h1 class="font_4"
-                                                  style="text-align:right; line-height:1.25em; font-size:172px;"><span
-                                                    class="color_27"><span style="font-weight:normal;">지원사업</span></span>
-                                                </h1>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </section>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <div id="adi_page1001_1_115" class="qhwIj ignore-focus" tabindex="-1" role="region"
-                            aria-label="Home: Welcome">&nbsp;</div>
-                          <section id="comp-l3l5wwe0" class="_3d64y">
-                            <div id="bgLayers_comp-l3l5wwe0" data-hook="bgLayers" class="_3wnIc">
-                              <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                              <div id="bgMedia_comp-l3l5wwe0" class="_2GUhU"></div>
-                            </div>
-                            <div data-testid="columns" class="_1uldx">
-                              <div id="comp-l3l5wwe1" class="_1vNJf">
-                                <div id="bgLayers_comp-l3l5wwe1" data-hook="bgLayers" class="_3wnIc">
-                                  <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                  <div id="bgMedia_comp-l3l5wwe1" class="_2GUhU"></div>
-                                </div>
-                                <div data-mesh-id="comp-l3l5wwe1inlineContent" data-testid="inline-content" class="">
-                                  <div data-mesh-id="comp-l3l5wwe1inlineContent-gridContainer"
-                                    data-testid="mesh-container-content">
-                                    <div id="comp-l3l5wwe11" class="XUUsC">
-                                      <div data-testid="linkElement" class="xQ_iF">
-                                      
-                                          <img src="./index_files/Modern Office.jpg" alt="Modern Office"
-                                            style="width: 560px; height: 600px; object-fit: cover; object-position: 50% 50%;">
-                                      </div>
-                                    </div>
-                                    <div id="comp-l3l5wwe12" class="_2bjge">
-                                      <div class="qDqoW" data-testid="container-bg"></div>
-                                      <div data-mesh-id="comp-l3l5wwe12inlineContent" data-testid="inline-content"
-                                        class="">
-                                        <div data-mesh-id="comp-l3l5wwe12inlineContent-gridContainer"
-                                          data-testid="mesh-container-content">
-                                          <div id="comp-l3l5wwe13" class="_1Q9if" data-testid="richTextElement">
-                                            <h2 class="font_6"
-                                              style="text-align:left; line-height:1.35em; font-size:40px;"><span
-                                                class="color_32"><span style="font-weight:bold;">Our
-                                                  Business</span></span></h2>
-                                          </div>
-                                          <div id="comp-l3l5wwe2" class="_1Q9if" data-testid="richTextElement">
-                                            <p class="font_9"
-                                              style="text-align:left; line-height:1.875em; font-size:15px;"><span
-                                                class="color_11">With our innovative and insightful technology, we
-                                                strive to enhance our users’ every day experiences. Founded in 2000, our
-                                                incredible team of engineers, programmers, designers and marketers have
-                                                worked tirelessly to bring 아트테리어 to the forefront of the industry. We
-                                                will continue to work relentlessly to become the technological standard,
-                                                providing big picture insights and solutions for companies of all sizes.
-                                                Get in touch to learn more.</span></p>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <div id="adi_page1001_1_116" class="qhwIj ignore-focus" tabindex="-1" role="region"
-                            aria-label="Home: About Us">&nbsp;</div>
-                          <section id="comp-l3l5xgml" class="_3d64y">
-                            <div id="bgLayers_comp-l3l5xgml" data-hook="bgLayers" class="_3wnIc">
-                              <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                              <div id="bgMedia_comp-l3l5xgml" class="_2GUhU"></div>
-                            </div>
-                            <div data-testid="columns" class="_1uldx">
-                              <div id="comp-l3l5xgmm" class="_1vNJf">
-                                <div id="bgLayers_comp-l3l5xgmm" data-hook="bgLayers" class="_3wnIc">
-                                  <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                  <div id="bgMedia_comp-l3l5xgmm" class="_2GUhU"></div>
-                                </div>
-                                <div data-mesh-id="comp-l3l5xgmminlineContent" data-testid="inline-content" class="">
-                                  <div data-mesh-id="comp-l3l5xgmminlineContent-gridContainer"
-                                    data-testid="mesh-container-content">
-                                    <div id="comp-l3l5xgmn" class="XUUsC">
-                                      <div data-testid="linkElement" class="xQ_iF">
-                                        
-                                          <img src="./image/118340_91380_1140.jpg"
-                                            alt="Brainstorm Team Meeting"
-                                            style="width: 560px; height: 640px; object-fit: cover; object-position: 50% 50%;">
-                                      </div>
-                                    </div>
-                                    <div id="comp-l3l5xgmn1" class="_2bjge">
-                                      <div class="qDqoW" data-testid="container-bg"></div>
-                                      <div data-mesh-id="comp-l3l5xgmn1inlineContent" data-testid="inline-content"
-                                        class="">
-                                        <div data-mesh-id="comp-l3l5xgmn1inlineContent-gridContainer"
-                                          data-testid="mesh-container-content">
-                                          <div id="comp-l3l5xgmn2" class="_1Q9if" data-testid="richTextElement">
-                                            <h2 class="font_6"
-                                              style="text-align:left; line-height:1.35em; font-size:40px;"><span
-                                                class="color_32"><span style="font-weight:bold;">Our Innovative
-                                                  Technology</span></span></h2>
-                                          </div>
-                                          <div id="comp-l3l5xgmn3" class="_1Q9if" data-testid="richTextElement">
-                                            <p class="font_9"
-                                              style="text-align:left; line-height:1.875em; font-size:15px;"><span
-                                                class="color_11">At 아트테리어, our comprehensive technological solutions
-                                                help industry leading companies and individuals achieve greater success.
-                                                Our platform has a wide range of features that were created with an aim
-                                                to help you live differently. In order to empower our users to do
-                                                better, 아트테리어 is continually building upon its technology, so stay in
-                                                touch to learn about upgrades and other changes. For a free demo,
-                                                contact us today.</span></p>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <div id="adi_page1001_1_117" class="qhwIj ignore-focus" tabindex="-1" role="region"
-                            aria-label="Home: Our Technology">&nbsp;</div>
-                            <section id="comp-l3mbru5j" class="_3d64y">
-                            <div id="bgLayers_comp-l3mbru5j" data-hook="bgLayers" class="_3wnIc">
-                              <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                              <div id="bgMedia_comp-l3mbru5j" class="_2GUhU"></div>
-                            </div>
-                            <div data-testid="columns" class="_1uldx">
-                              <div id="comp-l3mbru5m" class="_1vNJf">
-                                <div id="bgLayers_comp-l3mbru5m" data-hook="bgLayers" class="_3wnIc">
-                                  <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                  <div id="bgMedia_comp-l3mbru5m" class="_2GUhU"></div>
-                                </div>
-                                <div data-mesh-id="comp-l3mbru5minlineContent" data-testid="inline-content" class="">
-                                  <div data-mesh-id="comp-l3mbru5minlineContent-gridContainer"
-                                    data-testid="mesh-container-content">
-                                    <section id="comp-l3mbru5n" class="_3d64y">
-                                      <div id="bgLayers_comp-l3mbru5n" data-hook="bgLayers" class="_3wnIc">
-                                        <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                        <div id="bgMedia_comp-l3mbru5n" class="_2GUhU"></div>
-                                      </div>
-                                      <div data-testid="columns" class="_1uldx">
-                                        <div id="comp-l3mbru5n1" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3mbru5n1" data-hook="bgLayers" class="_3wnIc">
-                                            <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3mbru5n1" class="_2GUhU">
-                                              <wix-image id="img_comp-l3mbru5n1"
-                                                class="_1-6YJ _3SQN- _2L00W _1Q5R5 bgImage"
-                                                data-image-info="{&quot;containerId&quot;:&quot;comp-l3mbru5n1&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:6260,&quot;height&quot;:4248,&quot;uri&quot;:&quot;bc177aff88e04820a84c0f5dde2f6027.jpg&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;focalPoint&quot;:{&quot;x&quot;:50,&quot;y&quot;:50}}}"
-                                                data-has-bg-scroll-effect="" data-bg-effect-name="" data-image-zoomed=""
-                                                data-has-ssr-src=""
-                                                data-src="https://static.wixstatic.com/media/bc177aff88e04820a84c0f5dde2f6027.jpg/v1/fill/w_921,h_600,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/bc177aff88e04820a84c0f5dde2f6027.jpg">
-                                                <img src="./index_files/bc177aff88e04820a84c0f5dde2f6027.jpg"
-                                                  alt="Young Businessman"
-                                                  style="width: 921px; height: 600px; object-fit: cover; object-position: 50% 50%;">
-                                              </wix-image>
-                                            </div>
-                                          </div>
-                                          <div data-mesh-id="comp-l3mbru5n1inlineContent" data-testid="inline-content"
-                                            class="">
-                                            <div data-mesh-id="comp-l3mbru5n1inlineContent-gridContainer"
-                                              data-testid="mesh-container-content"></div>
-                                          </div>
-                                        </div>
-                                        <div id="comp-l3mbru5n2" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3mbru5n2" data-hook="bgLayers" class="_3wnIc">
-                                            <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3mbru5n2" class="_2GUhU"></div>
-                                          </div>
-                                          <div data-mesh-id="comp-l3mbru5n2inlineContent" data-testid="inline-content"
-                                            class="">
-                                            <div data-mesh-id="comp-l3mbru5n2inlineContent-gridContainer"
-                                              data-testid="mesh-container-content">
-                                              <div id="comp-l3mbru5n3" class="_1Q9if" data-testid="richTextElement">
-                                                <h2 class="font_0"
-                                                  style="text-align:left; line-height:1.41em; font-size:22px;"><span
-                                                    class="color_32"><span style="font-weight:bold;">아티스트
-                                                      소개</span></span></h2>
-                                              </div>
-                                              <div id="comp-l3mbru5o" class="_1Q9if" data-testid="richTextElement">
-                                                <p class="font_8"
-                                                  style="text-align:left; line-height:1.75em; font-size:18px;"><span
-                                                    class="color_11">Analyst</span></p>
-                                              </div>
-                                              <div id="comp-l3mbru5o1" class="_1Q9if" data-testid="richTextElement">
-                                                <p class="font_9"
-                                                  style="text-align:left; line-height:1.875em; font-size:15px;"><span
-                                                    class="color_11">Reese Whiteman boasts nearly a decade of experience
-                                                    in the industry. Passionate about business and innovation, Reese
-                                                    Whiteman managed to recruit an excellent team of professionals and
-                                                    win the attention of investors as well as the media. Give us a call
-                                                    if you want to get in touch with Reese Whiteman.</span></p>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </section>
-                                    <section id="comp-l3mbru5o2" class="_3d64y">
-                                      <div id="bgLayers_comp-l3mbru5o2" data-hook="bgLayers" class="_3wnIc">
-                                        <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                        <div id="bgMedia_comp-l3mbru5o2" class="_2GUhU"></div>
-                                      </div>
-                                      <div data-testid="columns" class="_1uldx">
-                                        <div id="comp-l3mbru5o3" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3mbru5o3" data-hook="bgLayers" class="_3wnIc">
-                                            <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3mbru5o3" class="_2GUhU"></div>
-                                          </div>
-                                          <div data-mesh-id="comp-l3mbru5o3inlineContent" data-testid="inline-content"
-                                            class="">
-                                            <div data-mesh-id="comp-l3mbru5o3inlineContent-gridContainer"
-                                              data-testid="mesh-container-content">
-                                              <div id="comp-l3mbru5p" class="_1Q9if" data-testid="richTextElement">
-                                                <h2 class="font_0"
-                                                  style="text-align:left; line-height:1.41em; font-size:22px;"><span
-                                                    class="color_32"><span style="font-weight:bold;">아티스트
-                                                      소개</span></span></h2>
-                                              </div>
-                                              <div id="comp-l3mbru5p1" class="_1Q9if" data-testid="richTextElement">
-                                                <p class="font_8"
-                                                  style="text-align:left; line-height:1.75em; font-size:18px;"><span
-                                                    class="color_11">Managing Director</span></p>
-                                              </div>
-                                              <div id="comp-l3mbru5p2" class="_1Q9if" data-testid="richTextElement">
-                                                <p class="font_9"
-                                                  style="text-align:left; line-height:1.875em; font-size:15px;"><span
-                                                    class="color_11">A veteran business person who is always looking for
-                                                    the next big challenge, Jamie Lane has been with us since starting
-                                                    our company in 2000. With their passion and expertise, Jamie Lane
-                                                    has managed to take our company to new highs and achieve growth.
-                                                    Check out our press kit for lectures or press opportunities with
-                                                    Jamie Lane.</span></p>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div id="comp-l3mbru5p3" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3mbru5p3" data-hook="bgLayers" class="_3wnIc">
-                                            <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3mbru5p3" class="_2GUhU">
-                                              <wix-image id="img_comp-l3mbru5p3"
-                                                class="_1-6YJ _3SQN- _2L00W _1Q5R5 bgImage"
-                                                data-image-info="{&quot;containerId&quot;:&quot;comp-l3mbru5p3&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:5760,&quot;height&quot;:3840,&quot;uri&quot;:&quot;2eca80590fba43cbbebc8202eb91a12d.jpg&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;focalPoint&quot;:{&quot;x&quot;:50,&quot;y&quot;:50}}}"
-                                                data-has-bg-scroll-effect="" data-bg-effect-name="" data-image-zoomed=""
-                                                data-has-ssr-src=""
-                                                data-src="https://static.wixstatic.com/media/2eca80590fba43cbbebc8202eb91a12d.jpg/v1/fill/w_921,h_600,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/2eca80590fba43cbbebc8202eb91a12d.jpg">
-                                                <img src="./index_files/2eca80590fba43cbbebc8202eb91a12d.jpg"
-                                                  alt="Male Portrait"
-                                                  style="width: 921px; height: 600px; object-fit: cover; object-position: 50% 50%;">
-                                              </wix-image>
-                                            </div>
-                                          </div>
-                                          <div data-mesh-id="comp-l3mbru5p3inlineContent" data-testid="inline-content"
-                                            class="">
-                                            <div data-mesh-id="comp-l3mbru5p3inlineContent-gridContainer"
-                                              data-testid="mesh-container-content"></div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </section>
-                                    <section id="comp-l3mbru5p4" class="_3d64y">
-                                      <div id="bgLayers_comp-l3mbru5p4" data-hook="bgLayers" class="_3wnIc">
-                                        <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                        <div id="bgMedia_comp-l3mbru5p4" class="_2GUhU"></div>
-                                      </div>
-                                      <div data-testid="columns" class="_1uldx">
-                                        <div id="comp-l3mbru5p5" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3mbru5p5" data-hook="bgLayers" class="_3wnIc">
-                                            <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3mbru5p5" class="_2GUhU">
-                                              <wix-image id="img_comp-l3mbru5p5"
-                                                class="_1-6YJ _3SQN- _2L00W _1Q5R5 bgImage"
-                                                data-image-info="{&quot;containerId&quot;:&quot;comp-l3mbru5p5&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:2000,&quot;height&quot;:2000,&quot;uri&quot;:&quot;11062b_bee520ef2f564ccba95330ccdbd6f250~mv2_d_2000_2000_s_2.jpg&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;focalPoint&quot;:{&quot;x&quot;:50,&quot;y&quot;:50}}}"
-                                                data-has-bg-scroll-effect="" data-bg-effect-name="" data-image-zoomed=""
-                                                data-has-ssr-src=""
-                                                data-src="https://static.wixstatic.com/media/11062b_bee520ef2f564ccba95330ccdbd6f250~mv2_d_2000_2000_s_2.jpg/v1/fill/w_921,h_600,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_bee520ef2f564ccba95330ccdbd6f250~mv2_d_2000_2000_s_2.jpg">
-                                                <img
-                                                  src="./index_files/11062b_bee520ef2f564ccba95330ccdbd6f250_mv2_d_2000_2000_s_2.jpg"
-                                                  alt="Happy Young Man"
-                                                  style="width: 921px; height: 600px; object-fit: cover; object-position: 50% 50%;">
-                                              </wix-image>
-                                            </div>
-                                          </div>
-                                          <div data-mesh-id="comp-l3mbru5p5inlineContent" data-testid="inline-content"
-                                            class="">
-                                            <div data-mesh-id="comp-l3mbru5p5inlineContent-gridContainer"
-                                              data-testid="mesh-container-content"></div>
-                                          </div>
-                                        </div>
-                                        <div id="comp-l3mbru5q" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3mbru5q" data-hook="bgLayers" class="_3wnIc">
-                                            <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3mbru5q" class="_2GUhU"></div>
-                                          </div>
-                                          <div data-mesh-id="comp-l3mbru5qinlineContent" data-testid="inline-content"
-                                            class="">
-                                            <div data-mesh-id="comp-l3mbru5qinlineContent-gridContainer"
-                                              data-testid="mesh-container-content">
-                                              <div id="comp-l3mbru5q1" class="_1Q9if" data-testid="richTextElement">
-                                                <h2 class="font_0"
-                                                  style="text-align:left; line-height:1.41em; font-size:22px;"><span
-                                                    class="color_32"><span style="font-weight:bold;">아티스트
-                                                      소개</span></span></h2>
-                                              </div>
-                                              <div id="comp-l3mbru5q2" class="_1Q9if" data-testid="richTextElement">
-                                                <p class="font_8"
-                                                  style="text-align:left; line-height:1.75em; font-size:18px;"><span
-                                                    class="color_11">Co-Founder &amp; Partner</span></p>
-                                              </div>
-                                              <div id="comp-l3mbru5q3" class="_1Q9if" data-testid="richTextElement">
-                                                <p class="font_9"
-                                                  style="text-align:left; line-height:1.875em; font-size:15px;"><span
-                                                    class="color_11">We trust Drew Carlyle with all of our business
-                                                    needs. Eager and curious, Drew Carlyle proves that no technological
-                                                    feat is too big to tackle. From business analysis to technological
-                                                    solutions, you want this hard working innovator in your corner. Get
-                                                    in touch to learn more.</span></p>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </section>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                          <div id="adi_page1001_1_140" class="qhwIj ignore-focus" tabindex="-1" role="region"
-                            aria-label="Home: Our Team">&nbsp;</div>
-                          <section id="comp-l3l3itd13" class="_3d64y">
-                            <div id="bgLayers_comp-l3l3itd13" data-hook="bgLayers" class="_3wnIc">
-                              <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                              <div id="bgMedia_comp-l3l3itd13" class="_2GUhU"></div>
-                            </div>
-                            <div data-testid="columns" class="_1uldx">
-                              <div id="comp-l3l3itd14" class="_1vNJf">
-                                <div id="bgLayers_comp-l3l3itd14" data-hook="bgLayers" class="_3wnIc">
-                                  <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                  <div id="bgMedia_comp-l3l3itd14" class="_2GUhU"></div>
-                                </div>
-                                <div data-mesh-id="comp-l3l3itd14inlineContent" data-testid="inline-content" class="">
-                                  <div data-mesh-id="comp-l3l3itd14inlineContent-gridContainer"
-                                    data-testid="mesh-container-content">
-                                    <section id="comp-l3l3itd15" class="_3d64y">
-                                      <div id="bgLayers_comp-l3l3itd15" data-hook="bgLayers" class="_3wnIc">
-                                        <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                        <div id="bgMedia_comp-l3l3itd15" class="_2GUhU"></div>
-                                      </div>
-                                      <div data-testid="columns" class="_1uldx">
-                                        <div id="comp-l3l3itd2" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3l3itd2" data-hook="bgLayers" class="_3wnIc">
-                                            <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3l3itd2" class="_2GUhU"></div>
-                                          </div>
-                                          <div data-mesh-id="comp-l3l3itd2inlineContent" data-testid="inline-content"
-                                            class="">
-                                            <div data-mesh-id="comp-l3l3itd2inlineContent-gridContainer"
-                                              data-testid="mesh-container-content">
-                                              <div id="comp-l3l3itd21" class="_1Q9if" data-testid="richTextElement">
-                                                <h2 class="font_6"
+                                              <div id="comp-l3l600m33" class="_1Q9if" data-testid="richTextElement">
+                                                <h1 class="font_6"
                                                   style="text-align:center; line-height:1.35em; font-size:40px;"><span
-                                                    class="color_32"><span style="font-weight:bold;">사업문의</span></span></h2>
+                                                    class="color_32"><span style="font-weight:bold;">Who We
+                                                      Are</span></span></h1>
                                               </div>
-                                              <div id="comp-l3l3itd22" class="_1Q9if" data-testid="richTextElement">
+                                              <div id="comp-l3l600m34" class="_1Q9if" data-testid="richTextElement">
                                                 <p class="font_9"
                                                   style="text-align:center; line-height:1.875em; font-size:15px;"><span
-                                                    class="color_11">광주광역시 광산구 사암로 885</span></p>
-                                              </div>
-                                              <div id="comp-l3l3itd23" class="_1Q9if" data-testid="richTextElement">
-                                                <p class="font_9"
-                                                  style="text-align:center; line-height:1.875em; font-size:15px;"><span
-                                                    class="color_11"><a data-auto-recognition="true"
-                                                      href="mailto:dongb94@gmail.com">jiho363@hanmail.net</a></span></p>
-                                              </div>
-                                              <div id="comp-l3l3itd24" class="_1Q9if" data-testid="richTextElement">
-                                                <p class="font_9"
-                                                  style="text-align:center; line-height:1.875em; font-size:15px;"><span
-                                                    class="color_11">010-9602-2436</span></p>
+                                                    class="color_11">아트테리어 is a leading provider of cutting-edge
+                                                    technologies and services, offering scalable solutions for
+                                                    businesses of all sizes. Founded by a group of friends who started
+                                                    by scribbling their ideas on a piece of paper, today we offer smart,
+                                                    innovative services to dozens of clients worldwide. Why not join our
+                                                    fast growing client base? Get in touch today to learn more.</span>
+                                                </p>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
-                                        <div id="comp-l3l3itd25" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3l3itd25" data-hook="bgLayers" class="_3wnIc">
+                                        <div id="comp-l3l600m35" class="_1vNJf">
+                                          <div id="bgLayers_comp-l3l600m35" data-hook="bgLayers" class="_3wnIc">
                                             <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3l3itd25" class="_2GUhU">
-                                              <wix-image id="img_comp-l3l3itd25"
+                                            <div id="bgMedia_comp-l3l600m35" class="_2GUhU">
+                                              <wix-image id="img_comp-l3l600m35"
                                                 class="_1-6YJ _3SQN- _2L00W _1Q5R5 bgImage"
-                                                data-image-info="{&quot;containerId&quot;:&quot;comp-l3l3itd25&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:2301,&quot;height&quot;:1536,&quot;uri&quot;:&quot;11062b_6694be830cd1452ba1d012dc3593e29e~mv2.jpg&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;focalPoint&quot;:{&quot;x&quot;:50,&quot;y&quot;:50}}}"
+                                                data-image-info="{&quot;containerId&quot;:&quot;comp-l3l600m35&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:6639,&quot;height&quot;:4351,&quot;uri&quot;:&quot;11062b_dd38548231d544e487e49bd50760c3b4~mv2.jpg&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;focalPoint&quot;:{&quot;x&quot;:50,&quot;y&quot;:50}}}"
                                                 data-has-bg-scroll-effect="" data-bg-effect-name="" data-image-zoomed=""
                                                 data-has-ssr-src=""
-                                                data-src="https://static.wixstatic.com/media/11062b_6694be830cd1452ba1d012dc3593e29e~mv2.jpg/v1/fill/w_841,h_409,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_6694be830cd1452ba1d012dc3593e29e~mv2.jpg">
-                                                <img src="./index_files/11062b_6694be830cd1452ba1d012dc3593e29e_mv2.jpg"
-                                                  alt="Office Hallway"
-                                                  style="width: 841px; height: 409px; object-fit: cover; object-position: 50% 50%;">
+                                                data-src="https://static.wixstatic.com/media/11062b_dd38548231d544e487e49bd50760c3b4~mv2.jpg/v1/fill/w_831,h_540,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_dd38548231d544e487e49bd50760c3b4~mv2.jpg">
+                                                <img
+                                                  src="./About _ 아트테리어_files/11062b_dd38548231d544e487e49bd50760c3b4_mv2.jpg"
+                                                  alt="Confident Businesswoman"
+                                                  style="width: 831px; height: 540px; object-fit: cover; object-position: 50% 50%;">
                                               </wix-image>
                                             </div>
                                           </div>
-                                          <div data-mesh-id="comp-l3l3itd25inlineContent" data-testid="inline-content"
+                                          <div data-mesh-id="comp-l3l600m35inlineContent" data-testid="inline-content"
                                             class="">
-                                            <div data-mesh-id="comp-l3l3itd25inlineContent-gridContainer"
+                                            <div data-mesh-id="comp-l3l600m35inlineContent-gridContainer"
                                               data-testid="mesh-container-content"></div>
                                           </div>
                                         </div>
@@ -6365,8 +5614,6 @@
                               </div>
                             </div>
                           </section>
-                          <div id="adi_page1001_1_102" class="qhwIj ignore-focus" tabindex="-1" role="region"
-                            aria-label="Home: Contact">&nbsp;</div>
                         </div>
                       </div>
                     </div>
@@ -6406,10 +5653,9 @@
                             class="color_11">광주광역시 광산구 사암로 885</span></p>
                       </div>
                       <div id="comp-l3l3i5ke" class="_1Q9if" data-testid="richTextElement">
-                        <p class="font_10" style="text-align:center; line-height:1.79em; font-size:14px;">
-                          <span class="color_11">©2022 by 아트테리어. Proudly created with Wix.com</span></p>
+                        <p class="font_10" style="text-align:center; line-height:1.79em; font-size:14px;"><span
+                            class="color_11">©2022 by 아트테리어. Proudly created with Wix.com</span></p>
                       </div>
-                      
                     </div>
                   </div>
                 </div>
