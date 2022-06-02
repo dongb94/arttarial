@@ -1,5 +1,6 @@
 # arttarial
 
-netlify,
+heroku,
+nodejs,
 bootstrap,
 react
