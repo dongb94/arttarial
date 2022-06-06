@@ -15,7 +15,7 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId);
 });
 
-export function query(queryText){
+exports.query = function(queryText){
     connection.query('queryText', function (error, results, fields) {
         if (error) throw error;
     });

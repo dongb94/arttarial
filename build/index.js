@@ -4,7 +4,7 @@
  var fs = require('fs');
  var path = require('path');
 
- var DB = require("./DB/mysql.js");
+ var DB = require("./DB/mysql");
 
  http.createServer(function (request, response) {
 
