@@ -16,7 +16,7 @@ connection.connect(function(err) {
 });
 
 exports.query = function(queryText){
-    connection.query('queryText', function (error, results, fields) {
+    connection.query(queryText, function (error, results, fields) {
         if (error) throw error;
     });
 } 
