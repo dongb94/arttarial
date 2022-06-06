@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <head>
-<meta charset="UTF-8">
-<title>게시판</title>
- 
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/bootstrap.js"></script>
 </head>
 <body>
   <?$board_id=$_GET['board_id'];?>

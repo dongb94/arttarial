@@ -4,6 +4,8 @@
  var fs = require('fs');
  var path = require('path');
 
+ var DB = require("./DB/mysql");
+
  http.createServer(function (request, response) {
 
     console.log('request starting for ');
@@ -44,6 +46,8 @@
             response.end();
         }
    });
+
+   DB.query("INSERT INTO 'Test' values(post) as ('Test String')");
 
 }).listen(process.env.PORT || 5000);
 
