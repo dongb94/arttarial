@@ -18,5 +18,10 @@ connection.connect(function(err) {
 exports.query = function(queryText){
     connection.query(queryText, function (error, results, fields) {
         if (error) throw error;
+
+        console.log(results);
+        console.log(fields);
+
+        return results;
     });
 } 

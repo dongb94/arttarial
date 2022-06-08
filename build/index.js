@@ -47,7 +47,6 @@
         }
    });
 
-   DB.query("INSERT INTO `Test` (`post`) VALUES ('Test String')");
+   // DB.query(`INSERT INTO 'Test' ('post') VALUES (${request})`);
 
 }).listen(process.env.PORT || 5000);
-

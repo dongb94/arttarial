@@ -519,9 +519,14 @@
       width: 100%
     }
 
+    #masterPage.mesh-layout #SITE_FOOTER
+    {
+      position: fixed;
+      bottom: 0px;
+    }
+
     #masterPage.mesh-layout #masterPageinlineContent,
     #masterPage.mesh-layout #PAGES_CONTAINER,
-    #masterPage.mesh-layout #SITE_FOOTER,
     #masterPage.mesh-layout #SITE_FOOTER_WRAPPER,
     #masterPage.mesh-layout #SITE_HEADER,
     #masterPage.mesh-layout #SITE_HEADER_WRAPPER,
@@ -700,6 +705,10 @@
       background-image: var(--bg-gradient)
     }
 
+    .backgroud_gray{
+      background-color: #191919;
+    }
+    
     ._2L00W {
       opacity: var(--fill-layer-image-opacity);
       height: var(--fill-layer-image-height, 100%)
@@ -899,8 +908,7 @@
 
     ._2v3yk {
       position: var(--bg-position);
-      top: var(--wix-ads-height);
-      min-height: calc(100vh - var(--wix-ads-height));
+      min-height: calc(100vh);
       height: 100%;
       width: 100%;
       min-width: var(--site-width)
@@ -1356,27 +1364,6 @@
       max-width: 100%;
       transition: inherit
     }
-
-    .StylableButton2545352419__icon {
-      -archetype: icon;
-      -controller-part-type: LayoutChildDisplayDropdown, LayoutFlexChildSpacing(last);
-      min-width: 1px;
-      height: 50px;
-      transition: inherit;
-      flex-shrink: 0
-    }
-
-    .StylableButton2545352419__icon.StylableButton2545352419--override {
-      display: block !important
-    }
-
-    .StylableButton2545352419__icon>div,
-    .StylableButton2545352419__icon svg {
-      display: flex;
-      width: inherit;
-      height: inherit
-    }
-
     .qhwIj {
       pointer-events: none;
       overflow: hidden;
@@ -1937,8 +1924,7 @@
       left: 0;
       position: fixed;
       width: 100%;
-      height: calc(100% - var(--wix-ads-height));
-      margin-top: var(--wix-ads-height);
+      height: calc(100%);
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr
@@ -2402,20 +2388,6 @@
   <script>if (window.componentsRegistry.manifestsLoadedResolve) { window.componentsRegistry.manifestsLoadedResolve() }</script>
 
 
-  <script src="./js/rb_wixui.thunderbolt_bootstrap-classic.733fba01.chunk.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt[SkipToContentButton].fa0eb679.bundle.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt_bootstrap.c6850b31.chunk.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt_bootstrap-responsive.5b1e7e12.chunk.min.js"></script>
-  <script
-    src="./js/rb_wixui.thunderbolt[FreemiumBannerDesktop].d3a0e49d.bundle.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt[GoogleMap].8f151841.bundle.min.js"></script>
-  <script
-    src="./js/rb_wixui.thunderbolt[Container_RectangleArea].36708828.bundle.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt_bootstrap-classic.733fba01.chunk.min.js"></script>
-  <link rel="stylesheet" type="text/css"
-    href="./css/rb_wixui.thunderbolt[HtmlComponent].37bd0eeb.min.css">
-  <script src="./js/rb_wixui.thunderbolt[HtmlComponent].b368fe32.bundle.min.js"></script>
-  <script src="./js/requirejs.min.js"></script>
   <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
     data-requiremodule="https://static.parastorage.com/services/wix-vod-widget/1.2673.0/viewerWidget.js"
     src="./js/viewerWidget.js"></script>
@@ -6005,13 +5977,13 @@
                           data-testid="mesh-container-content">
                           <section id="comp-l3l3itd13" class="_3d64y">
                             <div id="bgLayers_comp-l3l3itd13" data-hook="bgLayers" class="_3wnIc">
-                              <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
+                              <div data-testid="colorUnderlay" class="backgroud_gray _3SQN-"></div>
                               <div id="bgMedia_comp-l3l3itd13" class="_2GUhU"></div>
                             </div>
                             <div data-testid="columns" class="_1uldx">
                               <div id="comp-l3l3itd14" class="_1vNJf">
                                 <div id="bgLayers_comp-l3l3itd14" data-hook="bgLayers" class="_3wnIc">
-                                  <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
+                                  <div data-testid="colorUnderlay" class="backgroud_gray _3SQN-"></div>
                                   <div id="bgMedia_comp-l3l3itd14" class="_2GUhU"></div>
                                 </div>
                                 <div data-mesh-id="comp-l3l3itd14inlineContent" data-testid="inline-content" class="">

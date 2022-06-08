@@ -7,45 +7,53 @@
     
     <script src="../js/jquery-3.6.0.js"></script>
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/get_board.js"></script>
 </head>
 
 <body>
     <div class="container">
         <table class="table table-striped">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
-                    <th>번호</th>
-                    <th>제목</th>
+                    <th style="width: 10%;">번호</th>
+                    <th style="width: 50%;">제목</th>
                     <th>작성자</th>
-                    <th>날짜</th>
                     <th>조회수</th>
+                    <th>날짜</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>156</td>
-                    <td>23</td>
-                    <td>44</td>
-                    <td>15446</td>
-                    <td>15226</td>
-                </tr>
-                <tr>
-                    <td>156</td>
-                    <td>23</td>
-                    <td>44</td>
-                    <td>15446</td>
-                    <td>15226</td>
-                </tr>
+                <script>
+                    document.write(`
+                        <tr>
+                            <td>${result.number}</td>
+                            <td><a href="read.php" class="text-reset">2235252353</a></td>
+                            <td>관리자</td>
+                            <td>2021-01-02</td>
+                            <td>20</td>
+                        </tr>
+                        `)
+                </script>
             </tbody>
         </table>
         <hr />
-        <a class="btn btn-default pull-right" href="./write_board.php">글쓰기</a>
-
-        <div class="text-center">
-            <ul class="pagination">
-                <li><a href="#">1</a></li>
-            </ul>
+        <div class="container">
+            <div class="btn-toolbar row justify-content-md-evenly" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group mr-2 col-4" role="group" aria-label="First group">
+                    <button type="button" class="btn btn-secondary">&lt;</button>
+                    <button type="button" class="btn btn-secondary">1</button>
+                    <button type="button" class="btn btn-secondary">2</button>
+                    <button type="button" class="btn btn-secondary">3</button>
+                    <button type="button" class="btn btn-secondary">4</button>
+                    <button type="button" class="btn btn-secondary">5</button>
+                    <button type="button" class="btn btn-secondary">&gt;</button>
+                </div>
+            </div>
+            <div class="row justify-content-end" style="margin-top: 10px;">
+                <a class="btn btn-dark col-2" href="./write_board.html">글쓰기</a>
+            </div>
         </div>
+
     </div>
 </body>
 </html>

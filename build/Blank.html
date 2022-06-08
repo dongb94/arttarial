@@ -23,155 +23,8 @@
   <script src="./js/focus-within-polyfill.js" nomodule=""></script>
   <script src="./js/polyfill.min.js" nomodule=""></script>
 
-
-
-  <!-- Performance API Polyfills -->
-  <script>
-    (function () {
-      var noop = function noop() { };
-      if ("performance" in window === false) {
-        window.performance = {};
-      }
-      window.performance.mark = performance.mark || noop;
-      window.performance.measure = performance.measure || noop;
-      if ("now" in window.performance === false) {
-        var nowOffset = Date.now();
-        if (performance.timing && performance.timing.navigationStart) {
-          nowOffset = performance.timing.navigationStart;
-        }
-        window.performance.now = function now() {
-          return Date.now() - nowOffset;
-        };
-      }
-    })();
-  </script>
-
-  <!-- Globals Definitions -->
-  <script>
-    (function () {
-      var now = Date.now()
-      window.initialTimestamps = {
-        initialTimestamp: now,
-        initialRequestTimestamp: Math.round(performance.timeOrigin ? performance.timeOrigin : now - performance.now())
-      }
-
-      window.thunderboltTag = "QA_READY"
-      window.thunderboltVersion = "1.10130.0"
-    })();
-  </script>
-
-
-
-  <!-- registry runtime -->
-  <script>
-    window.componentsRegistry = {};
-    window.componentsRegistry.runtimeReady = new Promise((resolve) => { window.componentsRegistry.manifestsLoadedResolve = resolve });
-  </script>
-
-  <!-- Polyfills check -->
-  <script>
-    if (
-      typeof Promise === 'undefined' ||
-      typeof Set === 'undefined' ||
-      typeof Object.assign === 'undefined' ||
-      typeof Array.from === 'undefined' ||
-      typeof Symbol === 'undefined'
-    ) {
-      // send bi in order to detect the browsers in which polyfills are not working
-      window.fedops.phaseStarted('missing_polyfills')
-    }
-  </script>
-
-  <!-- Viewer Model -->
-  <script>
-    window.viewerModel = JSON.parse(document.getElementById('wix-viewer-model').textContent)
-    window.fetchDynamicModel = fetch(window.viewerModel.dynamicModelUrl, { credentials: 'same-origin' }).then(function (r) { return r.ok ? r.json() : "[" + r.status + "] " + r.statusText }).catch(function (e) { return e.message; });
-    window.commonConfig = viewerModel.commonConfig
-  </script>
-
-  <script
-    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/externals-registry.inline.af27e1e5.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[58], { 47510: function () { "use strict"; const { lodash: e, react: o, reactDOM: a } = window.externalsRegistry = { lodash: {}, react: {}, reactDOM: {} }; e.loaded = new Promise((o => { e.onload = o })), window.reactDOMReference = window.ReactDOM = { loading: !0 }, a.loaded = new Promise((e => { a.onload = () => { Object.assign(window.reactDOMReference, window.ReactDOM, window.preactCompat, { loading: !1 }), e() } })), window.reactReference = window.React = { loading: !0 }, o.loaded = new Promise((e => { o.onload = () => { Object.assign(window.reactReference, window.React, window.preactCompat, { loading: !1 }), e() } })), window.reactAndReactDOMLoaded = Promise.all([o.loaded, a.loaded]) } }, function (e) { "use strict"; var o; o = 47510, e(e.s = o) }]);
-//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/externals-registry.inline.af27e1e5.bundle.min.js.map</script>
-
-  <!-- bi -->
-  <script
-    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/bi.inline.9eb8c444.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[2892], { 81570: function (n, I, N) { "use strict"; var t, A; N.d(I, { sT: function () { return t }, $7: function () { return A }, i7: function () { return E } }), function (n) { n[n.START = 1] = "START", n[n.VISIBLE = 2] = "VISIBLE", n[n.PAGE_FINISH = 33] = "PAGE_FINISH", n[n.FIRST_CDN_RESPONSE = 4] = "FIRST_CDN_RESPONSE", n[n.TBD = -1] = "TBD", n[n.PAGE_NAVIGATION = 101] = "PAGE_NAVIGATION", n[n.PAGE_NAVIGATION_DONE = 103] = "PAGE_NAVIGATION_DONE" }(t || (t = {})), function (n) { n[n.NAVIGATION = 1] = "NAVIGATION", n[n.DYNAMIC_REDIRECT = 2] = "DYNAMIC_REDIRECT", n[n.INNER_ROUTE = 3] = "INNER_ROUTE", n[n.NAVIGATION_ERROR = 4] = "NAVIGATION_ERROR", n[n.CANCELED = 5] = "CANCELED" }(A || (A = {})); const E = { 1: "page-navigation", 2: "page-navigation-redirect", 3: "page-navigation-inner-route", 4: "navigation-error", 5: "navigation-canceled" } } }, function (n) { "use strict"; n.O(0, [142], (function () { return I = 87931, n(n.s = I); var I })); n.O() }]);
-//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/bi.inline.9eb8c444.bundle.min.js.map</script>
-
-  <!-- preloading pre-scripts -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- renderIndicator -->
-
-
-  <!-- Business Manager -->
-
-
-  <!-- initial scripts -->
-  <script
-    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/createPlatformWorker.inline.dd320646.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[5457], { 47770: function (e, r, t) { "use strict"; t.r(r), t.d(r, { platformWorkerPromise: function () { return c } }); const { siteAssets: { clientTopology: o }, siteFeatures: s, siteFeaturesConfigs: { platform: a } } = window.viewerModel, p = Worker && s.includes("platform"), c = p ? (async () => { const e = "platform_create-worker started"; performance.mark(e); const r = a.clientWorkerUrl, t = r.startsWith("http://localhost:4200/") || r.startsWith("https://bo.wix.com/suricate/") || document.baseURI !== location.href ? (e => { const r = new Blob([`importScripts('${e}');`], { type: "application/javascript" }); return URL.createObjectURL(r) })(a.clientWorkerUrl) : r.replace(o.fileRepoUrl, "/_partials"), s = new Worker(t), p = Object.keys(a.appsScripts.urls).filter((e => { var r; return !(null === (r = a.bootstrapData.appsSpecData[e]) || void 0 === r ? void 0 : r.isModuleFederated) })).reduce(((e, r) => (e[r] = a.appsScripts.urls[r], e)), {}); s.postMessage({ type: "platformScriptsToPreload", appScriptsUrls: p }); const c = "platform_create-worker ended"; return performance.mark(c), performance.measure("Create Platform Web Worker", e, c), s })() : Promise.resolve() } }, function (e) { "use strict"; var r; r = 47770, e(e.s = r) }]);
-//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/createPlatformWorker.inline.dd320646.bundle.min.js.map</script>
-  <script
-    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/windowMessageRegister.inline.8c9e8df6.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[9439], { 64277: function () { "use strict"; !function (n) { const e = new Set, t = [], a = n => { const t = []; e.forEach((e => { n.canHandleEvent(e) && t.push(e) })), t.forEach((t => { e.delete(t), n.handleEvent(t) })) }; n.addEventListener("message", (n => { const s = { source: n.source, data: n.data, origin: n.origin }, d = t.find((n => n.canHandleEvent(s))); d ? (a(d), d.handleEvent(s)) : e.add(s) })), n._addWindowMessageHandler = n => { t.push(n), a(n) } }(window) } }, function (n) { "use strict"; var e; e = 64277, n(n.s = e) }]);
-//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/windowMessageRegister.inline.8c9e8df6.bundle.min.js.map</script>
-  <script src="./js/bootstrap-features.f118cb86.bundle.min.js" async=""></script>
-  <script
-    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/tslib.inline.ef0662b7.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[8050], {
-        31191: function (t, n, r) {
-          "use strict"; r.d(n, { ZT: function () { return o }, pi: function () { return c }, _T: function () { return u }, mG: function () { return i }, Jh: function () { return l }, XA: function () { return a }, CR: function () { return f }, fl: function () { return p }, ev: function () { return y } });
-          /*! *****************************************************************************
-          Copyright (c) Microsoft Corporation.
-          
-          Permission to use, copy, modify, and/or distribute this software for any
-          purpose with or without fee is hereby granted.
-          
-          THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-          REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-          AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-          INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-          LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-          OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-          PERFORMANCE OF THIS SOFTWARE.
-          ***************************************************************************** */
-          var e = function (t, n) { return e = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function (t, n) { t.__proto__ = n } || function (t, n) { for (var r in n) Object.prototype.hasOwnProperty.call(n, r) && (t[r] = n[r]) }, e(t, n) }; function o(t, n) { if ("function" != typeof n && null !== n) throw new TypeError("Class extends value " + String(n) + " is not a constructor or null"); function r() { this.constructor = t } e(t, n), t.prototype = null === n ? Object.create(n) : (r.prototype = n.prototype, new r) } var c = function () { return c = Object.assign || function (t) { for (var n, r = 1, e = arguments.length; r < e; r++)for (var o in n = arguments[r]) Object.prototype.hasOwnProperty.call(n, o) && (t[o] = n[o]); return t }, c.apply(this, arguments) }; function u(t, n) { var r = {}; for (var e in t) Object.prototype.hasOwnProperty.call(t, e) && n.indexOf(e) < 0 && (r[e] = t[e]); if (null != t && "function" == typeof Object.getOwnPropertySymbols) { var o = 0; for (e = Object.getOwnPropertySymbols(t); o < e.length; o++)n.indexOf(e[o]) < 0 && Object.prototype.propertyIsEnumerable.call(t, e[o]) && (r[e[o]] = t[e[o]]) } return r } function i(t, n, r, e) { return new (r || (r = Promise))((function (o, c) { function u(t) { try { l(e.next(t)) } catch (t) { c(t) } } function i(t) { try { l(e.throw(t)) } catch (t) { c(t) } } function l(t) { var n; t.done ? o(t.value) : (n = t.value, n instanceof r ? n : new r((function (t) { t(n) }))).then(u, i) } l((e = e.apply(t, n || [])).next()) })) } function l(t, n) { var r, e, o, c, u = { label: 0, sent: function () { if (1 & o[0]) throw o[1]; return o[1] }, trys: [], ops: [] }; return c = { next: i(0), throw: i(1), return: i(2) }, "function" == typeof Symbol && (c[Symbol.iterator] = function () { return this }), c; function i(c) { return function (i) { return function (c) { if (r) throw new TypeError("Generator is already executing."); for (; u;)try { if (r = 1, e && (o = 2 & c[0] ? e.return : c[0] ? e.throw || ((o = e.return) && o.call(e), 0) : e.next) && !(o = o.call(e, c[1])).done) return o; switch (e = 0, o && (c = [2 & c[0], o.value]), c[0]) { case 0: case 1: o = c; break; case 4: return u.label++, { value: c[1], done: !1 }; case 5: u.label++, e = c[1], c = [0]; continue; case 7: c = u.ops.pop(), u.trys.pop(); continue; default: if (!(o = u.trys, (o = o.length > 0 && o[o.length - 1]) || 6 !== c[0] && 2 !== c[0])) { u = 0; continue } if (3 === c[0] && (!o || c[1] > o[0] && c[1] < o[3])) { u.label = c[1]; break } if (6 === c[0] && u.label < o[1]) { u.label = o[1], o = c; break } if (o && u.label < o[2]) { u.label = o[2], u.ops.push(c); break } o[2] && u.ops.pop(), u.trys.pop(); continue }c = n.call(t, u) } catch (t) { c = [6, t], e = 0 } finally { r = o = 0 } if (5 & c[0]) throw c[1]; return { value: c[0] ? c[1] : void 0, done: !0 } }([c, i]) } } } Object.create; function a(t) { var n = "function" == typeof Symbol && Symbol.iterator, r = n && t[n], e = 0; if (r) return r.call(t); if (t && "number" == typeof t.length) return { next: function () { return t && e >= t.length && (t = void 0), { value: t && t[e++], done: !t } } }; throw new TypeError(n ? "Object is not iterable." : "Symbol.iterator is not defined.") } function f(t, n) { var r = "function" == typeof Symbol && t[Symbol.iterator]; if (!r) return t; var e, o, c = r.call(t), u = []; try { for (; (void 0 === n || n-- > 0) && !(e = c.next()).done;)u.push(e.value) } catch (t) { o = { error: t } } finally { try { e && !e.done && (r = c.return) && r.call(c) } finally { if (o) throw o.error } } return u } function p() { for (var t = [], n = 0; n < arguments.length; n++)t = t.concat(f(arguments[n])); return t } function y(t, n, r) { if (r || 2 === arguments.length) for (var e, o = 0, c = n.length; o < c; o++)!e && o in n || (e || (e = Array.prototype.slice.call(n, 0, o)), e[o] = n[o]); return t.concat(e || Array.prototype.slice.call(n)) } Object.create
-        }
-      }]);
-//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/tslib.inline.ef0662b7.bundle.min.js.map</script>
-  <script src="./js/main.fda34a52.bundle.min.js" async=""></script>
-  <script
-    data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/openPerformanceTool.inline.70ca4a87.bundle.min.js">(self.webpackJsonp__wix_thunderbolt_app = self.webpackJsonp__wix_thunderbolt_app || []).push([[2759, 5457], { 10580: function (e, r, t) { "use strict"; var o = t(47770); const { fleetConfig: a } = window.viewerModel, s = (e, r) => { window.addEventListener("message", (t => { "opened" === t.data && e.postMessage({ type: "performanceData", data: JSON.parse(JSON.stringify(r)) }, "*") })) }; ("Canary" === a.type || window.location.search.includes("performanceTool=true")) && (window.openPerformanceTool = async () => { const e = await o.platformWorkerPromise, r = window.open("https://apps.wix.com/tb-performance-tool", "_blank"), t = window.performance.getEntries(); e ? (e.addEventListener("message", (e => { var o; if ("workerPerformanceData" === (null === (o = e.data) || void 0 === o ? void 0 : o.type)) { const o = e.data.data.performanceEntries, a = e.data.data.workerStartTime - window.performance.timeOrigin; o.forEach((e => { e.startTime = e.startTime + a, e.worker = "WORKER" })), t.push(...o), s(r, t) } })), e.postMessage({ type: "PerformanceTool" })) : s(r, t) }) }, 47770: function (e, r, t) { "use strict"; t.r(r), t.d(r, { platformWorkerPromise: function () { return i } }); const { siteAssets: { clientTopology: o }, siteFeatures: a, siteFeaturesConfigs: { platform: s } } = window.viewerModel, n = Worker && a.includes("platform"), i = n ? (async () => { const e = "platform_create-worker started"; performance.mark(e); const r = s.clientWorkerUrl, t = r.startsWith("http://localhost:4200/") || r.startsWith("https://bo.wix.com/suricate/") || document.baseURI !== location.href ? (e => { const r = new Blob([`importScripts('${e}');`], { type: "application/javascript" }); return URL.createObjectURL(r) })(s.clientWorkerUrl) : r.replace(o.fileRepoUrl, "/_partials"), a = new Worker(t), n = Object.keys(s.appsScripts.urls).filter((e => { var r; return !(null === (r = s.bootstrapData.appsSpecData[e]) || void 0 === r ? void 0 : r.isModuleFederated) })).reduce(((e, r) => (e[r] = s.appsScripts.urls[r], e)), {}); a.postMessage({ type: "platformScriptsToPreload", appScriptsUrls: n }); const i = "platform_create-worker ended"; return performance.mark(i), performance.measure("Create Platform Web Worker", e, i), a })() : Promise.resolve() } }, function (e) { "use strict"; var r; r = 10580, e(e.s = r) }]);
-//# sourceMappingURL=https://static.parastorage.com/services/wix-thunderbolt/dist/openPerformanceTool.inline.70ca4a87.bundle.min.js.map</script>
-
-  <!-- lodash script -->
-
-
-  <script async="" onload="externalsRegistry.lodash.onload()" src="./js/lodash.min.js"></script>
-
-
-
-
-  <!-- react -->
-
-  <script crossorigin="" src="./js/react.production.min.js"
-    onload="externalsRegistry.react.onload()" defer=""></script>
-
-
-
-
   <!-- Initial CSS -->
-  <style data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/main.46f3937f.min.css">
+  <style>
     a,
     abbr,
     acronym,
@@ -521,16 +374,24 @@
       width: 100%
     }
 
+    
+    #masterPage.mesh-layout #SITE_FOOTER
+    {
+      position: fixed;
+      bottom: 0px;
+    }
+
     #masterPage.mesh-layout #masterPageinlineContent,
     #masterPage.mesh-layout #PAGES_CONTAINER,
-    #masterPage.mesh-layout #SITE_FOOTER,
     #masterPage.mesh-layout #SITE_FOOTER_WRAPPER,
     #masterPage.mesh-layout #SITE_HEADER,
     #masterPage.mesh-layout #SITE_HEADER_WRAPPER,
     #masterPage.mesh-layout #SITE_PAGES,
     #site-root {
-      position: relative
+      position: relative;
     }
+
+
 
     #site-root {
       top: 0;
@@ -611,34 +472,9 @@
     crossorigin="anonymous">
 
 
-  <script async="" id="wix-perf-measure" src="./js/wix-perf-measure.bundle.min.js"></script>
-
-
-
-
-
-
-  <!-- react-dom -->
-
-  <script crossorigin="" src="./js/react-dom.production.min.js"
-    onload="externalsRegistry.reactDOM.onload()" defer=""></script>
-
-
-
-
-  <meta http-equiv="X-Wix-Meta-Site-Id" content="aa6ba133-914f-4f9a-aefd-33d0da9884e4">
-  <meta http-equiv="X-Wix-Application-Instance-Id" content="22ef1d97-4b06-49c4-af5d-87dc39fbd243">
-
-  <meta http-equiv="X-Wix-Published-Version" content="57">
-
-
-
-  <meta http-equiv="etag" content="bug">
-
   <!-- render-head end -->
 
-  <style
-    data-href="https://static.parastorage.com/services/editor-elements/dist/rb_wixui.thunderbolt~bootstrap-classic.f2a418a3.chunk.min.css">
+  <style>
     ._1vNJf {
       position: relative;
       overflow: visible
@@ -701,6 +537,10 @@
     ._3KzuS {
       background-color: var(--bg-overlay-color);
       background-image: var(--bg-gradient)
+    }
+
+    .backgroud_gray{
+      background-color: #5f6360;
     }
 
     ._2L00W {
@@ -902,8 +742,7 @@
 
     ._2v3yk {
       position: var(--bg-position);
-      top: var(--wix-ads-height);
-      min-height: calc(100vh - var(--wix-ads-height));
+      min-height: calc(100vh);
       height: 100%;
       width: 100%;
       min-width: var(--site-width)
@@ -1288,8 +1127,7 @@
       right: 10px
     }
   </style>
-  <style
-    data-href="https://static.parastorage.com/services/editor-elements/dist/rb_wixui.thunderbolt~bootstrap.5641211f.chunk.min.css">
+  <style>
     .StylableButton2545352419__root {
       -archetype: box;
       cursor: pointer;
@@ -1359,27 +1197,6 @@
       max-width: 100%;
       transition: inherit
     }
-
-    .StylableButton2545352419__icon {
-      -archetype: icon;
-      -controller-part-type: LayoutChildDisplayDropdown, LayoutFlexChildSpacing(last);
-      min-width: 1px;
-      height: 50px;
-      transition: inherit;
-      flex-shrink: 0
-    }
-
-    .StylableButton2545352419__icon.StylableButton2545352419--override {
-      display: block !important
-    }
-
-    .StylableButton2545352419__icon>div,
-    .StylableButton2545352419__icon svg {
-      display: flex;
-      width: inherit;
-      height: inherit
-    }
-
     .qhwIj {
       pointer-events: none;
       overflow: hidden;
@@ -1940,8 +1757,7 @@
       left: 0;
       position: fixed;
       width: 100%;
-      height: calc(100% - var(--wix-ads-height));
-      margin-top: var(--wix-ads-height);
+      height: calc(100%);
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr
@@ -1953,8 +1769,7 @@
       z-index: var(--pinned-layer-in-container, var(--above-all-in-container))
     }
   </style>
-  <style
-    data-href="https://static.parastorage.com/services/editor-elements/dist/rb_wixui.thunderbolt~bootstrap-responsive.a66c1914.chunk.min.css">
+  <style>
     ._3SSUZ {
       overflow-x: hidden
     }
@@ -2121,7 +1936,6 @@
       font-family: 국립박물관문화재단클래식M;
       font-weight: 700;
       src: url(./font/국립박물관문화재단클래식M.ttf);
-      src: url(./font/국립박물관문화재단클래식M.ttf) format("eot"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/60be5c39-863e-40cb-9434-6ebafb62ab2b.woff) format("woff"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/4c6503c9-859b-4d3b-a1d5-2d42e1222415.ttf) format("truetype"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/36c182c6-ef98-4021-9b0d-d63122c2bbf5.svg#36c182c6-ef98-4021-9b0d-d63122c2bbf5) format("svg")
     }
 
     
@@ -2131,7 +1945,6 @@
       font-family: wixFreemiumFontW02-65Medi;
       font-weight: 700;
       src: url(./font/국립박물관문화재단클래식L.ttf);
-      src: url(./font/국립박물관문화재단클래식L.ttf) format("eot"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/5b4a262e-3342-44e2-8ad7-719998a68134.woff) format("woff"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/4a3ef5d8-cfd9-4b96-bd67-90215512f1e5.ttf) format("truetype"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/58ab5075-53ea-46e6-9783-cbb335665f88.svg#58ab5075-53ea-46e6-9783-cbb335665f88) format("svg")
     }
 
     
@@ -2141,7 +1954,6 @@
       font-family: wixFreemiumFontW10-65Medi;
       font-weight: 700;
       src: url(./font/국립박물관문화재단클래식B.ttf);
-      src: url(./font/국립박물관문화재단클래식B.ttf) format("eot"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/5b29e833-1b7a-40ab-82a5-cfd69c8650f4.woff) format("woff"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/b0298148-2d59-44d1-9ec9-1ca6bb097603.ttf) format("truetype"), url(//static.parastorage.com/services/third-party/fonts/Helvetica/Fonts/ae1dea8c-a953-4845-b616-74a257ba72e6.svg#ae1dea8c-a953-4845-b616-74a257ba72e6) format("svg")
     }
 
    
@@ -2251,8 +2063,7 @@
       background-color: #a0138e
     }
   </style>
-  <style
-    data-href="https://static.parastorage.com/services/editor-elements/dist/rb_wixui.thunderbolt[SkipToContentButton].99a6a99f.min.css">
+  <style>
     ._2SeL5 {
       position: absolute;
       top: 60px;
@@ -2280,8 +2091,7 @@
       pointer-events: auto
     }
   </style>
-  <style
-    data-href="https://static.parastorage.com/services/editor-elements/dist/rb_wixui.thunderbolt[GoogleMap].f52e40aa.min.css">
+  <style>
     ._1Cu5u ._36gi0 {
       position: absolute;
       top: 0;
@@ -2376,8 +2186,7 @@
       background-position: 100% 0
     }
   </style>
-  <style
-    data-href="https://static.parastorage.com/services/editor-elements/dist/rb_wixui.thunderbolt[Container_RectangleArea].02b07b80.min.css">
+  <style>
     ._2bjge {
       --container-corvid-background-color: rgba(var(--bg, var(--color_11)), var(--alpha-bg, 1))
     }
@@ -2400,31 +2209,17 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Blank | 아트테리어">
-  <script type="application/json"
-    id="registry-components-manifests">{"libraries":[{"version":"2.0","host":"thunderbolt","namespace":"wixui","baseURL":"https://static.parastorage.com/services/editor-elements/dist/","model":["68af14f7.bundle.min.js","75def18b.min.css"],"assets":[["stylable-metadata","editor-elements-library.31b2c2346d326a24e7260526c42349f68b99be4f.metadata.json"]],"components":{"Container_RectangleArea":["36708828.bundle.min.js","02b07b80.min.css",[0,1,6,7]],"FreemiumBannerDesktop":["d3a0e49d.bundle.min.js","5b26625f.min.css",[0,1]],"GoogleMap":["8f151841.bundle.min.js","f52e40aa.min.css",[0,1]],"SkipToContentButton":["fa0eb679.bundle.min.js","99a6a99f.min.css"]},"batches":{"bootstrap":{"url":["75890492.bundle.min.js",[0,1,6,7]],"components":["Anchor","LinkBar_Classic","BackgroundGroup","PageGroup","PagesContainer","WRichText","MasterPage"],"parts":[],"url_v2":["5641211f.chunk.min.css","c6850b31.chunk.min.js",[0,1]]},"bootstrap-classic":{"url":["ac54697d.bundle.min.js",[0,1]],"components":["Column","FooterContainer_DefaultScreen","Group","HeaderContainer_DefaultScreen","PageBackground","SiteButton_BasicButton","StripColumnsContainer","WPhoto_NoSkinPhoto","ContainerWrapper","Page_TransparentPageSkin"],"parts":[],"url_v2":["f2a418a3.chunk.min.css","733fba01.chunk.min.js"]},"bootstrap-responsive":{"url":["6e34a602.bundle.min.js",[0,1,2,3]],"components":["DropDownMenu_TextOnlyMenuButtonSkin"],"parts":[],"url_v2":["a66c1914.chunk.min.css","5b1e7e12.chunk.min.js",[0,1]]}},"shared":["rb_wixui.thunderbolt~bootstrap-classic.f2a418a3.chunk.min.css","rb_wixui.thunderbolt~bootstrap-classic.733fba01.chunk.min.js","rb_wixui.thunderbolt~bootstrap-responsive.a66c1914.chunk.min.css","rb_wixui.thunderbolt~bootstrap-responsive.5b1e7e12.chunk.min.js","-","-","rb_wixui.thunderbolt~bootstrap.5641211f.chunk.min.css","rb_wixui.thunderbolt~bootstrap.c6850b31.chunk.min.js","-","-","-"],"statics":{},"parts":{}},{"version":"2.0","host":"thunderbolt","namespace":"dsgnsys","baseURL":"https://static.parastorage.com/services/editor-elements/dist/","model":["baa86446.bundle.min.js","13bd2a61.min.css"],"assets":[["stylable-metadata","editor-elements-design-systems.bcbafe732523870c28e03456def0285b7554b6e9.metadata.json"]],"components":{},"shared":[],"batches":{},"statics":{},"parts":{}}]}</script>
-  <script>
-    window.componentsRegistry.runtime = JSON.parse(document.getElementById('registry-components-manifests').textContent)
-  </script>
-  <script>if (window.componentsRegistry.manifestsLoadedResolve) { window.componentsRegistry.manifestsLoadedResolve() }</script>
-
+  
 
   <script src="./js/rb_wixui.thunderbolt_bootstrap-classic.733fba01.chunk.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt[SkipToContentButton].fa0eb679.bundle.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt_bootstrap.c6850b31.chunk.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt_bootstrap-responsive.5b1e7e12.chunk.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt[FreemiumBannerDesktop].d3a0e49d.bundle.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt[GoogleMap].8f151841.bundle.min.js"></script>
   <script
     src="./js/rb_wixui.thunderbolt[Container_RectangleArea].36708828.bundle.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt_bootstrap-classic.733fba01.chunk.min.js"></script>
   <link rel="stylesheet" type="text/css"
     href="./css/rb_wixui.thunderbolt[HtmlComponent].37bd0eeb.min.css">
-  <script src="./js/rb_wixui.thunderbolt[HtmlComponent].b368fe32.bundle.min.js"></script>
-  <script src="./js/requirejs.min.js"></script>
-  <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_"
-    data-requiremodule="https://static.parastorage.com/services/wix-vod-widget/1.2673.0/viewerWidget.js"
-    src="./js/viewerWidget.js"></script>
-  <style></style>
 </head>
 
 <body class="focus-within">
@@ -2518,9 +2313,7 @@
         --font_8: normal normal normal 18px/1.75em raleway, sans-serif;
         --font_9: normal normal normal 15px/1.875em raleway, sans-serif;
         --font_10: normal normal normal 14px/1.79em raleway, sans-serif;
-        --wix-ads-height: 50px;
-        --wix-ads-top-height: 50px;
-        --site-width: 980px;
+        --site-width: 100%;
         --above-all-z-index: 100000;
         --portals-z-index: 100001;
         --minViewportSize: 320;
@@ -3025,12 +2818,13 @@
       }
 
       #SITE_FOOTER {
+        position: absolute;
         left: 0;
         margin-left: 0;
         width: 100%;
         min-width: 980px;
-        --pinned-layer-in-container: 50;
-        --above-all-in-container: 49
+        --pinned-layer-in-container: 0;
+        --above-all-in-container: 0
       }
 
       #PAGES_CONTAINER {
@@ -5018,7 +4812,7 @@
 
       [data-mesh-id=comp-l3l71a9winlineContent-gridContainer]>[id="comp-l3l71a9w1"] {
         position: relative;
-        margin: 120px 0px 10px calc((100% - 980px) * 0.5);
+        margin: 80px 0px 10px calc((100% - 980px) * 0.5);
         left: 20px;
         grid-area: 1 / 1 / 2 / 2;
         justify-self: start;
@@ -5070,7 +4864,7 @@
 
       #comp-l3l71a9w1 {
         width: 940px;
-        height: 327px
+        height: 100%;
       }
 
       #oaqbr {
@@ -5933,7 +5727,7 @@
                                         class="Y5j6d _3KF65" data-original-gap-between-text-and-btn="0"
                                         aria-hidden="false"
                                         style="width: 76px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: inherit;">
-                                        <a data-testid="linkElement" href="아티스트.html" target="_self" class="_2DUrw"
+                                        <a data-testid="linkElement" href="Artist.html" target="_self" class="_2DUrw"
                                           aria-haspopup="false">
                                           <div class="_1u8sp">
                                             <div class="" style="text-align:right">
@@ -6008,7 +5802,7 @@
                           data-testid="mesh-container-content">
                           <section id="comp-l3l71a9v" class="_3d64y">
                             <div id="bgLayers_comp-l3l71a9v" data-hook="bgLayers" class="_3wnIc">
-                              <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
+                              <div data-testid="colorUnderlay" class="backgroud_gray _3SQN-"></div>
                               <div id="bgMedia_comp-l3l71a9v" class="_2GUhU"></div>
                             </div>
                             <div data-testid="columns" class="_1uldx">
@@ -6045,6 +5839,7 @@
             </div>
           </main>
           <footer tabindex="-1" id="SITE_FOOTER_WRAPPER">
+            <footer tabindex="-1" id="SITE_FOOTER_WRAPPER">
             <div id="SITE_FOOTER" class="ZW5SX">
               <div class="_2o25M">
                 <div class="_1nRb9"></div>
@@ -6075,9 +5870,10 @@
                             class="color_11">광주광역시 광산구 사암로 885</span></p>
                       </div>
                       <div id="comp-l3l3i5ke" class="_1Q9if" data-testid="richTextElement">
-                        <p class="font_10" style="text-align:center; line-height:1.79em; font-size:14px;"><span
-                            class="color_11">©2022 by 아트테리어</span></p>
+                        <p class="font_10" style="text-align:center; line-height:1.79em; font-size:14px;">
+                          <span class="color_11">©2022 by 아트테리어</span></p>
                       </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -6086,8 +5882,6 @@
           </footer>
         </div>
       </div>
-      <div id="SCROLL_TO_BOTTOM" class="qhwIj ignore-focus" tabindex="-1" role="region" aria-label="bottom of page">
-        &nbsp;</div>
     </div>
   </div>
 
