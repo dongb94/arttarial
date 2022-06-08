@@ -10,8 +10,10 @@ var DB = require("./DB/mysql");
 var app = express();
 
 app.get('/', function(request, response){
-    response.sendFile(__dirname+'/index.html');
+    response.sendFile(__dirname+'/public/index.html');
 });
+
+app.use(express.static(`public`));
 
 app.listen(process.env.PORT || 5000, ()=>{
     console.log(`start server`);
