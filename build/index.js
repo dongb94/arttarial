@@ -14,7 +14,7 @@ app.get('/', function(request, response){
 });
 
 app.get('/html/board.html', function(request, response){
-    result = DB.query(`SELECT 'number', 'title', 'text', 'owner', 'time', 'views' FROM 'board' WHERE 1`);
+    result = DB.query(`SELECT 'number', 'title', 'text', 'owner', 'time', 'views' FROM board WHERE 1`);
     console.log(result);
     var res =
     `
