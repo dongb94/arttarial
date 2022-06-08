@@ -7,7 +7,7 @@
     
     <script src="../js/jquery-3.6.0.js"></script>
     <script src="../js/bootstrap.js"></script>
-    <script src="../js/get_board.js"></script>
+    <script type="text/javascript" src="../js/get_board.js"></script>
 </head>
 
 <body>
@@ -24,6 +24,8 @@
             </thead>
             <tbody>
                 <script>
+                    var result = readTable();
+                    console.log(result);
                     document.write(`
                         <tr>
                             <td>${result.number}</td>

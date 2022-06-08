@@ -1,15 +1,44 @@
 
+var express = require('express');
+var http = require('http');
+var fs = require('fs');
+var path = require('path');
+var qs = require('querystring');
 
- var http = require('http');
- var fs = require('fs');
- var path = require('path');
+var DB = require("./DB/mysql");
 
- var DB = require("./DB/mysql");
+var app = express();
 
- http.createServer(function (request, response) {
+app.get('/', function(request, response){
+    response.sendFile(__dirname+'/index.html');
+});
+
+app.listen(process.env.PORT || 5000, ()=>{
+    console.log(`start server`);
+});
+/*
+http.createServer(function (request, response) {
 
     console.log('request starting for ');
     console.log(request);
+
+    if (request.method == 'POST') {
+        var body = '';
+
+        request.on('data', function (data) {
+            body += data;
+
+            // Too much POST data, kill the connection!
+            // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
+            if (body.length > 1e6)
+                request.connection.destroy();
+        });
+
+        request.on('end', function () {
+            var post = qs.parse(body);
+            // use post['blah'], etc.
+        });
+    }
 
     var filePath = '.' + request.url;
     if (filePath == './')
@@ -50,3 +79,4 @@
    // DB.query(`INSERT INTO 'Test' ('post') VALUES (${request})`);
 
 }).listen(process.env.PORT || 5000);
+*/
