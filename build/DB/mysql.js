@@ -21,8 +21,8 @@ exports.query = function(queryText){
         if (error) throw error;
 
         console.log("SQL query Success");
-        console.log(results);
-        console.log(fields);
+        console.log("RESUILT : "+result);
+        console.log("FIELD : "+fields);
     });
     return result;
 } 
