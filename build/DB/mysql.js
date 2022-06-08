@@ -16,12 +16,13 @@ connection.connect(function(err) {
 });
 
 exports.query = function(queryText){
+    var result;
     connection.query(queryText, function (error, results, fields) {
         if (error) throw error;
 
+        console.log("SQL query Success");
         console.log(results);
         console.log(fields);
-
-        return results;
     });
+    return result;
 } 
