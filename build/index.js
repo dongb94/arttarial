@@ -27,7 +27,7 @@ app.get('/board/:dyn', function(request, response){
 });
 
 app.post("/html/write_board.html", function(req, res){
-    console.log(req);
+    console.log(req.body);
 
     var title = req.body.utitle;
     var owner = req.body.uname;
@@ -38,9 +38,11 @@ app.post("/html/write_board.html", function(req, res){
         {
             console.log(err);
         }
+        else
+        {
+            makeBoardRes(1, res);
+        }
     });
-
-    makeBoardRes(1, res);
 });
 
 app.use('/', router);
@@ -82,10 +84,10 @@ function makeBoardRes(page, response)
                         <thead class="thead-dark">
                             <tr>
                                 <th style="width: 10%;">번호</th>
-                                <th style="width: 50%;">제목</th>
+                                <th style="width: 48%;">제목</th>
                                 <th>작성자</th>
                                 <th>조회수</th>
-                                <th>날짜</th>
+                                <th style="width: 25%">날짜</th>
                             </tr>
                         </thead>
                         <tbody>`;
