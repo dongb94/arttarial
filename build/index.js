@@ -27,7 +27,7 @@ app.get('/board/:dyn', function(request, response){
 });
 
 app.get('/post/:page/:postNum', function(request, response){
-    console.log(`request Post Page ${request.params.page}${request.params.postNum}`);
+    console.log(`request Post Page ${request.params.page}:${request.params.postNum}`);
     readPost(request.params.page, request.params.postNum, response);
 });
 
@@ -172,7 +172,7 @@ function readPost(page, postNum, response)
         
         if(!err)
         {
-            DB.executeQuery(`Update board SET views=${Number(views)+1} WHERE number=${postNum}`);
+            DB.executeQuery(`Update board SET views=${Number(rows[0].views)+1} WHERE number=${postNum}`);
             res = `<!DOCTYPE html>
             <html lang="en">
                 <head>
