@@ -1,5 +1,5 @@
 var mysql      = require('mysql');
-var connection = mysql.createPool({
+var pool = mysql.createPool({
   host     : '13.209.67.44',
   user     : 'centos',
   password : 'art3640#',
