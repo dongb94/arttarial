@@ -17,11 +17,11 @@ app.get('/', function(request, response){
 
 
 app.get('/html/board/:dyn', function(request, response){
-    DB.executeQuery(`SELECT 'number', 'title', 'text', 'owner', 'time', 'views' FROM board`, (err, rows)=>{
+    DB.executeQuery('SELECT number, title, text, owner, time, views FROM board', (err, rows)=>{
         if(!err)
         {
             console.log(rows);
-            var num = request.params.dyn*10<rows.length?10:rows.length/10;
+            var num = request.params.dyn*10<rows.length?10:rows.length%10;
             var res =
             `
             <html style="height: 100%">
