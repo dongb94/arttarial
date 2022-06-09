@@ -8,15 +8,18 @@ var qs = require('querystring');
 var DB = require("./DB/mysql");
 
 var app = express();
+var router = express.Router();
 
 app.get('/', function(request, response){
     response.sendFile(__dirname+'/public/index.html');
 });
 
+
+
 app.get('/html/board/:dyn', function(request, response){
-    var result = DB.query(`SELECT 'number', 'title', 'text', 'owner', 'time', 'views' FROM board WHERE 1`);
+    var result = DB.query(`SELECT 'number', 'title', 'text', 'owner', 'time', 'views' FROM board`);
     console.log(result);
-    var num = result.params.dyn*10<result.length?10:result.length/10;
+    var num = request.params.dyn*10<result.length?10:result.length/10;
     var res =
     `
     <html style="height: 100%">
