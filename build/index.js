@@ -27,6 +27,7 @@ app.get('/board/:dyn', function(request, response){
 });
 
 app.get('/post/:page/:postNum', function(request, response){
+    console.log(`request Post Page ${request.params.page}${request.params.postNum}`);
     readPost(request.params.page, request.params.postNum, response);
 });
 
