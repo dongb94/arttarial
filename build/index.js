@@ -188,7 +188,7 @@ function readPost(page, postNum, response)
                 </head>
                 <body>
                     <!-- Page content-->
-                    <div class="container mt-5">
+                    <div class="container">
                         <div class="row">
                             <div class="col-lg-8">
                                 <!-- Post content-->
@@ -212,7 +212,7 @@ function readPost(page, postNum, response)
                                     <section class="mb-5">
                                         ${rows[0].text}
                                     </section>
-            
+                                    <hr/>
                                     <div class="mb-5 justify-content-end">
                                         <button class="btn btn-dark" style="margin-left: 90%;" onclick="location.href='/board/${page}'">목록</button>
                                     </div>
