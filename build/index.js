@@ -167,11 +167,11 @@ function makeBoardRes(page, response)
 
 function readPost(page, postNum, response)
 {
-    DB.executeQuery(`SELECT number, title, text, owner, views, date_format(time, '%Y.%m.%d %T') as time FROM board WHERE number=${postNum}`,  (err, rows)=>{
+    DB.executeQuery(`SELECT title, text, owner, views, date_format(time, '%Y.%m.%d %T') as time FROM board WHERE number=${postNum}`,  (err, rows)=>{
         
         if(!err)
         {
-    
+            DB.executeQuery(`Update board SET views=${Number(views)+1} WHERE number=${postNum}`);
             res = `<!DOCTYPE html>
             <html lang="en">
                 <head>
