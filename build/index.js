@@ -14,7 +14,7 @@ var router = express.Router();
 var nofPostPerPage = 10;
 
 app.use(body_parser.json());
-app.use(body_parser.urlencoded({extended: true}));
+app.use(body_parser.urlencoded({extended: false}));
 
 app.get('/', function(request, response){
     response.sendFile(__dirname+'/public/index.html');
