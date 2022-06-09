@@ -10,6 +10,8 @@ var DB = require("./DB/mysql");
 var app = express();
 var router = express.Router();
 
+var nofPostPerPage = 10;
+
 app.get('/', function(request, response){
     response.sendFile(__dirname+'/public/index.html');
 });
@@ -17,11 +19,45 @@ app.get('/', function(request, response){
 app.use(express.static(`public`));
 
 app.get('/board/:dyn', function(request, response){
+    makeBoardRes(request.params.dyn, response);
+});
+
+app.post("/html/write_board", function(req, res){
+    var title = req.body.utitle;
+    var owner = req.body.uname;
+    var text = req.body.utext;
+
+    DB.executeQuery(`INSERT INTO board(title, text, owner, views) VALUES ("${title}","${text}","${owner}", 0)`, (err, rows)=>{
+        if(err)
+        {
+            console.log(err);
+        }
+    });
+
+    makeBoardRes(1, res);
+});
+
+app.use('/', router);
+
+app.all('*', function(req, res){//등록되지 않은 패스에 대해 페이지 오류 응답
+    console.log(req);
+    // res.status(404).send('<h1>ERROR - 페이지를 찾을 수 없습니다.</h1>');
+})
+
+app.listen(process.env.PORT || 5000, ()=>{
+    console.log(`start server`);
+});
+
+
+// functions
+
+function makeBoardRes(page, response)
+{
     DB.executeQuery(`SELECT number, title, text, owner, views, date_format(time, '%y/%m/%d %T') as time FROM board`, (err, rows)=>{
         if(!err)
         {
             console.log(rows);
-            var num = request.params.dyn*10<rows.length?10:rows.length%10;
+            var num = page*nofPostPerPage<rows.length?nofPostPerPage:rows.length%nofPostPerPage;
             var res =
             `
             <html style="height: 100%">
@@ -52,11 +88,11 @@ app.get('/board/:dyn', function(request, response){
                         {
                             res += `
                             <tr>
-                                <td>${rows[i].number}</td>
-                                <td><a href="read.php" class="text-reset">${rows[i].title}</a></td>
-                                <td>${rows[i].owner}</td>
-                                <td>${rows[i].views}</td>
-                                <td>${rows[i].time}</td>
+                                <td>${rows[(page-1)*nofPostPerPage + i].number}</td>
+                                <td><a href="read.php" class="text-reset">${rows[(page-1)*nofPostPerPage + i].title}</a></td>
+                                <td>${rows[(page-1)*nofPostPerPage + i].owner}</td>
+                                <td>${rows[(page-1)*nofPostPerPage + i].views}</td>
+                                <td>${rows[(page-1)*nofPostPerPage + i].time}</td>
                             </tr>`;
                         }
                         
@@ -96,31 +132,8 @@ app.get('/board/:dyn', function(request, response){
             console.log(err);
         }
     });
-});
+}
 
-app.post("/html/write_board", function(req, res){
-    var title = req.body.utitle;
-    var owner = req.body.uname;
-    var text = req.body.utext;
-
-    DB.executeQuery(`INSERT INTO board(title, text, owner, views) VALUES ("${title}","${text}","${owner}", 0)`, (err, rows)=>{
-        if(err)
-        {
-            console.log(err);
-        }
-    });
-});
-
-app.use('/', router);
-
-app.all('*', function(req, res){//등록되지 않은 패스에 대해 페이지 오류 응답
-    console.log(req);
-    // res.status(404).send('<h1>ERROR - 페이지를 찾을 수 없습니다.</h1>');
-})
-
-app.listen(process.env.PORT || 5000, ()=>{
-    console.log(`start server`);
-});
 /*
 http.createServer(function (request, response) {
 
