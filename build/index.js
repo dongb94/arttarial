@@ -80,7 +80,7 @@ app.get('/html/board/:dyn', function(request, response){
                             </div>
                         </div>
                         <div class="row justify-content-end" style="margin-top: 10px;">
-                            <a class="btn btn-dark col-2" href="html/write_board.html">글쓰기</a>
+                            <a class="btn btn-dark col-2" href="/html/write_board.html">글쓰기</a>
                         </div>
                     </div>
         
