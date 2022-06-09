@@ -1,6 +1,7 @@
 
 var express = require('express');
 var http = require('http');
+var body_parser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
 var qs = require('querystring');
@@ -11,6 +12,9 @@ var app = express();
 var router = express.Router();
 
 var nofPostPerPage = 10;
+
+app.use(body_parser.json());
+app.use(body_parser.urlencoded({extended: true}));
 
 app.get('/', function(request, response){
     response.sendFile(__dirname+'/public/index.html');
