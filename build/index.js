@@ -13,9 +13,10 @@ app.get('/', function(request, response){
     response.sendFile(__dirname+'/public/index.html');
 });
 
-app.get('/html/board.html', function(request, response){
-    result = DB.query(`SELECT 'number', 'title', 'text', 'owner', 'time', 'views' FROM board WHERE 1`);
+app.get('/html/board/:dyn', function(request, response){
+    var result = DB.query(`SELECT 'number', 'title', 'text', 'owner', 'time', 'views' FROM board WHERE 1`);
     console.log(result);
+    var num = result.params.dyn*10<result.length?10:result.length/10;
     var res =
     `
     <html style="height: 100%">
@@ -40,26 +41,36 @@ app.get('/html/board.html', function(request, response){
                         <th>날짜</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody>`;
+
+                for(var i=0; i<num; i++)
+                {
+                    res += `
                     <tr>
-                        <td>22</td>
-                        <td><a href="read.php" class="text-reset">2235252353</a></td>
-                        <td>관리자</td>
-                        <td>2021-01-02</td>
-                        <td>20</td>
-                    </tr>
+                        <td>${result[i].number}</td>
+                        <td><a href="read.php" class="text-reset">${result[i].title}</a></td>
+                        <td>${result[i].owner}</td>
+                        <td>${result[i].time}</td>
+                        <td>${result[i].views}</td>
+                    </tr>`;
+                }
+                
+                
+    res += `
                 </tbody>
             </table>
             <hr />
             <div class="container">
                 <div class="btn-toolbar row justify-content-md-evenly" role="toolbar" aria-label="Toolbar with button groups">
                     <div class="btn-group mr-2 col-4" role="group" aria-label="First group">
-                        <button type="button" class="btn btn-secondary">&lt;</button>
-                        <button type="button" class="btn btn-secondary">1</button>
-                        <button type="button" class="btn btn-secondary">2</button>
-                        <button type="button" class="btn btn-secondary">3</button>
-                        <button type="button" class="btn btn-secondary">4</button>
-                        <button type="button" class="btn btn-secondary">5</button>
+                        <button type="button" class="btn btn-secondary">&lt;</button>`;
+                        for(var i=0; i<result.length; i+=10)
+                        {
+                            res+=`
+                            <button type="button" class="btn btn-secondary" id="${(i/10)+1}">${(i/10)+1}</button>
+                            `;
+                        }
+    res+=`
                         <button type="button" class="btn btn-secondary">&gt;</button>
                     </div>
                 </div>
