@@ -13,9 +13,6 @@ var router = express.Router();
 
 var nofPostPerPage = 10;
 
-// app.use(body_parser.json());
-app.use(body_parser.urlencoded({extended: false}));
-
 app.get('/', function(request, response){
     response.sendFile(__dirname+'/public/index.html');
 });
@@ -46,6 +43,9 @@ app.post("/html/write_board.html", function(req, res){
 });
 
 app.use('/', router);
+
+// app.use(body_parser.json());
+app.use(body_parser.urlencoded({extended: true}));
 
 // app.all('*', function(req, res){//등록되지 않은 패스에 대해 페이지 오류 응답
 //     console.log(req);
@@ -123,18 +123,18 @@ function makeBoardRes(page, response)
                         <div class="btn-toolbar row justify-content-md-evenly" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mr-2 col-4" role="group" aria-label="First group">
                                 <button type="button" class="btn btn-secondary" onclick="location.href='/board/${page<rows.length?(Number(page)-1):1}'">&lt;</button>`;
-                                for(var i=0; i<nOfPage; i++)
+                                for(var i=1; i<nOfPage; i++)
                                 {
-                                    if(i+1==page)
+                                    if(i==page)
                                     {
                                         res+=`
-                                        <button type="button" class="btn btn-secondary active" onclick="location.href='/board/${i+1}'">${i+1}</button>
+                                        <button type="button" class="btn btn-secondary active" onclick="location.href='/board/${i}'">${i}</button>
                                         `;
                                     }
                                     else
                                     {
                                         res+=`
-                                        <button type="button" class="btn btn-secondary" onclick="location.href='/board/${i+1}'">${i+1}</button>
+                                        <button type="button" class="btn btn-secondary" onclick="location.href='/board/${i}'">${i}</button>
                                         `;
                                     }
                                 }
