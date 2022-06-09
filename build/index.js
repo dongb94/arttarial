@@ -13,7 +13,7 @@ var router = express.Router();
 
 var nofPostPerPage = 10;
 
-app.use(body_parser.json());
+// app.use(body_parser.json());
 app.use(body_parser.urlencoded({extended: false}));
 
 app.get('/', function(request, response){
@@ -112,15 +112,24 @@ function makeBoardRes(page, response)
                     <div class="container">
                         <div class="btn-toolbar row justify-content-md-evenly" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mr-2 col-4" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-secondary">&lt;</button>`;
+                                <a href="/board/${page>1?page-1:1}"><button type="button" class="btn btn-secondary">&lt;</button></a>`;
                                 for(var i=0; i<rows.length; i+=10)
                                 {
-                                    res+=`
-                                    <button type="button" class="btn btn-secondary" id="${(i/10)+1}">${(i/10)+1}</button>
-                                    `;
+                                    if(i+1==page)
+                                    {
+                                        res+=`
+                                        <button type="button" class="btn btn-secondary active" id="${(i/10)+1}">${(i/10)+1}</button>
+                                        `;
+                                    }
+                                    else
+                                    {
+                                        res+=`
+                                        <button type="button" class="btn btn-secondary" id="${(i/10)+1}">${(i/10)+1}</button>
+                                        `;
+                                    }
                                 }
             res+=`
-                                <button type="button" class="btn btn-secondary">&gt;</button>
+                                <a href="/board/${page<rows.length?page+1:1}"><button type="button" class="btn btn-secondary">&gt;</button></a>
                             </div>
                         </div>
                         <div class="row justify-content-end" style="margin-top: 10px;">
