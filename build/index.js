@@ -69,6 +69,7 @@ function makeBoardRes(page, response)
                 return;
             }
             var num = page*nofPostPerPage<rows.length?nofPostPerPage:rows.length%nofPostPerPage;
+            var nOfPage = rows.length/nofPostPerPage+1;
             var res =
             `
             <html style="height: 100%">
@@ -79,6 +80,12 @@ function makeBoardRes(page, response)
                 
                 <script src="/js/jquery-3.6.0.js"></script>
                 <script src="/js/bootstrap.js"></script>
+
+                <style>
+                    a{
+                        text-decoration-line: none;
+                    }
+                </style>
             </head>
         
             <body>
@@ -116,23 +123,23 @@ function makeBoardRes(page, response)
                         <div class="btn-toolbar row justify-content-md-evenly" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mr-2 col-4" role="group" aria-label="First group">
                                 <a href="/board/${page>1?(page-1):1}"><button type="button" class="btn btn-secondary">&lt;</button></a>`;
-                                for(var i=0; i<rows.length; i+=10)
+                                for(var i=0; i<nOfPage; i++)
                                 {
                                     if(i+1==page)
                                     {
                                         res+=`
-                                        <a href="/board/${(i/10)+1}"><button type="button" class="btn btn-secondary active" id="${(i/10)+1}">${(i/10)+1}</button></a>
+                                        <a href="/board/${i+1}"><button type="button" class="btn btn-secondary active" id="${i+1}">${i+1}</button></a>
                                         `;
                                     }
                                     else
                                     {
                                         res+=`
-                                        <a href="/board/${(i/10)+1}"><button type="button" class="btn btn-secondary" id="${(i/10)+1}">${(i/10)+1}</button></a>
+                                        <button type="button" class="btn btn-secondary" id="${i+1}"><a href="/board/${i+1}">${i+1}</a></button>
                                         `;
                                     }
                                 }
             res+=`
-                                <a href="/board/${page<rows.length?(page+1):1}"><button type="button" class="btn btn-secondary">&gt;</button></a>
+                                <a href="/board/${page<rows.length?(Number(page)+1):1}"><button type="button" class="btn btn-secondary">&gt;</button></a>
                             </div>
                         </div>
                         <div class="row justify-content-end" style="margin-top: 10px;">
