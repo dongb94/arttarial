@@ -83,11 +83,11 @@ function makeBoardRes(page, response)
                     <table class="table table-striped">
                         <thead class="thead-dark">
                             <tr>
-                                <th style="width: 10%;">번호</th>
+                                <th style="width: 6%;">No.</th>
                                 <th style="width: 48%;">제목</th>
                                 <th>작성자</th>
                                 <th>조회수</th>
-                                <th style="width: 25%">날짜</th>
+                                <th style="width: 22%">작성일</th>
                             </tr>
                         </thead>
                         <tbody>`;
