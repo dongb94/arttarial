@@ -111,9 +111,11 @@ app.post("/public/html/write_board", function(req, res){
     });
 });
 
+app.use('/', router);
+
 app.all('*', function(req, res){//등록되지 않은 패스에 대해 페이지 오류 응답
-    console.log("reqeust : "+ req);
-    res.status(404).send('<h1>ERROR - 페이지를 찾을 수 없습니다.</h1>');
+    console.log(req);
+    // res.status(404).send('<h1>ERROR - 페이지를 찾을 수 없습니다.</h1>');
 })
 
 app.listen(process.env.PORT || 5000, ()=>{
