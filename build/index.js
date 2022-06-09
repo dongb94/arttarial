@@ -23,7 +23,7 @@ app.get('/board/:dyn', function(request, response){
 });
 
 app.post("/html/write_board.html", function(req, res){
-    console.log(req.body);
+    console.log(req);
 
     var title = req.body.utitle;
     var owner = req.body.uname;
