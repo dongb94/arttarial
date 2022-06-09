@@ -13,6 +13,9 @@ var router = express.Router();
 
 var nofPostPerPage = 10;
 
+// app.use(body_parser.json());
+app.use(body_parser.urlencoded({extended: true}));
+
 app.get('/', function(request, response){
     response.sendFile(__dirname+'/public/index.html');
 });
@@ -43,9 +46,6 @@ app.post("/html/write_board.html", function(req, res){
 });
 
 app.use('/', router);
-
-// app.use(body_parser.json());
-app.use(body_parser.urlencoded({extended: true}));
 
 // app.all('*', function(req, res){//등록되지 않은 패스에 대해 페이지 오류 응답
 //     console.log(req);
