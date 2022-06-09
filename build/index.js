@@ -17,7 +17,7 @@ app.get('/', function(request, response){
 
 
 app.get('/html/board/:dyn', function(request, response){
-    DB.executeQuery('SELECT number, title, text, owner, time, views FROM board', (err, rows)=>{
+    DB.executeQuery(`SELECT number, title, text, owner, views, date_format(time, '%y/%m/%d %T') as time FROM board`, (err, rows)=>{
         if(!err)
         {
             console.log(rows);
