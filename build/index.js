@@ -26,6 +26,10 @@ app.get('/board/:dyn', function(request, response){
     makeBoardRes(request.params.dyn, response);
 });
 
+app.get('/post/:dyn', function(request, response){
+    
+});
+
 app.post("/html/write_board.html", function(req, res){
     console.log(req.body);
 
@@ -107,7 +111,7 @@ function makeBoardRes(page, response)
                             res += `
                             <tr>
                                 <td>${rows[(page-1)*nofPostPerPage + i].number}</td>
-                                <td><a href="read.php" class="text-reset">${rows[(page-1)*nofPostPerPage + i].title}</a></td>
+                                <td><a href="/html/read.html" class="text-reset">${rows[(page-1)*nofPostPerPage + i].title}</a></td>
                                 <td>${rows[(page-1)*nofPostPerPage + i].owner}</td>
                                 <td>${rows[(page-1)*nofPostPerPage + i].views}</td>
                                 <td>${rows[(page-1)*nofPostPerPage + i].time}</td>

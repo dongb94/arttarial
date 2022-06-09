@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>게시판</title>
+</head>
+<body>
+<!-- 글 불러오기 -->
+  <div id="board_read">
+       <h2>제목</h2>
+           <div id="user_info" align=right>
+                  작성자 작성일 조회:0
+                    <div id="bo_line"></div>
+            </div>
+            <div>
+                파일 : <a href="uploads/" download>file</a>
+            </div>
+            <div id="bo_content">
+                내용이라네~
+            </div>
+ 
+    <!-- 목록, 수정, 삭제 -->
+ 
+       <div id="bo_ser">
+             <ul>
+                    <li><a href="/board/1">[목록으로]</a></li>
+              
+                    <li><a href="#">[수정]</a></li>
+                    <li><a href="#">[삭제]</a></li>
+              
+            </ul>
+      </div>
+ 
+  </div>
+  <!--- 댓글 불러오기 -->
+<div class="reply_view">
+    <h3>댓글목록</h3>
+        
+        <div class="dap_lo">
+            <div><b>name</b></div>
+            <div class="dap_to comt_edit">sody</div>
+            <div class="rep_me dap_to">date</div>
+ 
+        </div>
+ 
+ 
+    <!--- 댓글 입력 폼 -->
+    <div class="dap_ins">
+        <form method="post">
+            <input type="hidden" name="dat_user" id="dat_user" class="dat_user" size="15" placeholder="아이디" value=111>
+            <div style="margin-top:10px; ">
+                <textarea name="content" class="reply_content" id="re_content" ></textarea>
+                <button id="rep_bt" class="re_bt">댓글</button>
+            </div>
+        </form>
+    </div>
+</div><!--- 댓글 불러오기 끝 -->
+<div id="foot_box"></div>
+</div>
+</body>
+</html>
