@@ -165,67 +165,97 @@ function makeBoardRes(page, response)
     });
 }
 
-/*
-http.createServer(function (request, response) {
-
-    console.log('request starting for ');
-    console.log(request);
-
-    if (request.method == 'POST') {
-        var body = '';
-
-        request.on('data', function (data) {
-            body += data;
-
-            // Too much POST data, kill the connection!
-            // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
-            if (body.length > 1e6)
-                request.connection.destroy();
-        });
-
-        request.on('end', function () {
-            var post = qs.parse(body);
-            // use post['blah'], etc.
-        });
-    }
-
-    var filePath = '.' + request.url;
-    if (filePath == './')
-        filePath = './index.html';
-
-    console.log(filePath);
-    var extname = path.extname(filePath);
-    var contentType = 'text/html';
-    switch (extname) {
-        case '.js':
-            contentType = 'text/javascript';
-            break;
-        case '.css':
-            contentType = 'text/css';
-            break;
-    }
-
-    fs.exists(filePath, function(exists) {
-
-        if (exists) {
-            fs.readFile(filePath, function(error, content) {
-                if (error) {
-                    response.writeHead(500);
-                    response.end();
-                }
-                else {
-                    response.writeHead(200, { 'Content-Type': contentType });
-                    response.end(content, 'utf-8');
-                }
-            });
+function readPost(postNum, response)
+{
+    DB.executeQuery(`SELECT number, title, text, owner, views, date_format(time, '%Y.%m.%d %T') as time FROM board WHERE number=${postNum}`,  (err, rows)=>{
+        
+        if(!err)
+        {
+    
+            res = `<!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <meta charset="utf-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+                    <!-- Core theme CSS (includes Bootstrap)-->
+                    <link href="../css/bootstrap.css" rel="stylesheet" />
+                </head>
+                <body>
+                    <!-- Page content-->
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <!-- Post content-->
+                                <article>
+                                    <!-- Post header-->
+                                    <header class="mb-4">
+                                        <!-- Post title-->
+                                        <h1 class="fw-bolder mb-1">${rows[0].title}</h1>
+                                        <!-- Post meta content-->
+                                        <div class="text-muted fst-italic mb-2">
+                                            ${rows[0].owner}
+                                            <p class="float-end">${rows[0].time} 조회수 : ${rows[0].views}</p>
+                                        </div>
+                                        <!-- Post categories
+                                        <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
+                                        <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+                                        -->
+                                    </header>
+                                    <hr/>
+                                    <!-- Post content-->
+                                    <section class="mb-5">
+                                        ${rows[0].text}
+                                    </section>
+            
+                                    <div class="mb-5 justify-content-end">
+                                        <button class="btn btn-dark" style="margin-left: 90%;">목록</button>
+                                    </div>
+                                </article>
+                                <!-- Comments section-->
+                                <section class="mb-5">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <!-- Comment form-->
+                                            <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
+                                            <!-- Comment with nested comments-->
+                                            <div class="d-flex mb-4">
+                                                <!-- Parent comment-->
+                                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                <div class="ms-3">
+                                                    <div class="fw-bold">Commenter Name</div>
+                                                    If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
+                                                    <!-- Child comment 1-->
+                                                    <div class="d-flex mt-4">
+                                                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                        <div class="ms-3">
+                                                            <div class="fw-bold">Commenter Name</div>
+                                                            And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Single comment-->
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                                <div class="ms-3">
+                                                    <div class="fw-bold">Commenter Name</div>
+                                                    When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </body>
+            </html>
+            `;
+            response.send(res);
         }
-        else {
-            response.writeHead(404);
-            response.end();
+        else
+        {
+            console.log(err);
         }
-   });
-
-   // DB.query(`INSERT INTO 'Test' ('post') VALUES (${request})`);
-
-}).listen(process.env.PORT || 5000);
-*/
+    });
+}

@@ -1,6 +1,7 @@
 # arttarial
 
 heroku,
-nodejs,
+nodejs, express
 bootstrap,
-react
+react,
+mysql
