@@ -13,19 +13,19 @@
         <div id="write_area" class="container">
             <h4>새 글 작성</h4>
             <hr/>
-            <form enctype="multipart/form-data" action="write_ok.php?board_id=<?echo $board_id;?>" method="post">
+            <form enctype="multipart/form-data" method="post">
                 <div id="in_title" class="row">
                     <div class="input-group mb-3 col">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="utitle">제목</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" maxlength="128">
+                        <input type="text" id="uname" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" maxlength="128">
                     </div>
                     <div class="input-group mb-3 col">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="uname">작성자</span>
+                            <span class="input-group-text">작성자</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" maxlength="32">
+                        <input type="text" id="uname" class="form-control" placeholder="Username" aria-label="Username"  aria-describedby="basic-addon1" maxlength="32">
                     </div>
                 </div>
 
@@ -33,13 +33,13 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text">내용</span>
                     </div>
-                    <textarea class="form-control" aria-label="내용" style="height: 10em; resize: none;"></textarea>
+                    <textarea id="utext" class="form-control" aria-label="내용" style="height: 10em; resize: none;"></textarea>
                 </div>
                 <hr/>
                 <div class="form-group row justify-content-between">
                     <!--<input type="file" class="form-control-file col-4" id="File">-->
                     <div class="col"></div>
-                    <button type="button" class="btn btn-dark align-self-end col-4">글 작성</button>
+                    <button type="submit" class="btn btn-dark align-self-end col-4">글 작성</button>
                 </div>
                 
             </form>

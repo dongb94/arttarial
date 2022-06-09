@@ -55,8 +55,8 @@ app.get('/html/board/:dyn', function(request, response){
                                 <td>${rows[i].number}</td>
                                 <td><a href="read.php" class="text-reset">${rows[i].title}</a></td>
                                 <td>${rows[i].owner}</td>
-                                <td>${rows[i].time}</td>
                                 <td>${rows[i].views}</td>
+                                <td>${rows[i].time}</td>
                             </tr>`;
                         }
                         
@@ -80,7 +80,7 @@ app.get('/html/board/:dyn', function(request, response){
                             </div>
                         </div>
                         <div class="row justify-content-end" style="margin-top: 10px;">
-                            <a class="btn btn-dark col-2" href="./write_board.html">글쓰기</a>
+                            <a class="btn btn-dark col-2" href="html/write_board.html">글쓰기</a>
                         </div>
                     </div>
         
@@ -96,6 +96,14 @@ app.get('/html/board/:dyn', function(request, response){
             console.log(err);
         }
     });
+});
+
+app.post("html/write_board/", function(req, res){
+    var title = req.body.utitle;
+    var owner = req.body.uname;
+    var text = req.body.utext;
+
+    DB.executeQuery(`INSERT INTO board(title, text, owner, views) VALUES ("${title}","${text}","${owner}", 0)`, null);
 });
 
 app.use(express.static(`public`));
