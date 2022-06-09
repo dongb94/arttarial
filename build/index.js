@@ -172,7 +172,12 @@ function readPost(page, postNum, response)
         
         if(!err)
         {
-            DB.executeQuery(`Update board SET views=${Number(rows[0].views)+1} WHERE number=${postNum}`);
+            DB.executeQuery(`Update board SET views=${Number(rows[0].views)+1} WHERE number=${postNum}`, (err, rows)=>{
+                if(err)
+                {
+                    console.log(err);
+                }
+            });
             res = `<!DOCTYPE html>
             <html lang="en">
                 <head>
