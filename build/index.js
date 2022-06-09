@@ -22,7 +22,7 @@ app.get('/board/:dyn', function(request, response){
     makeBoardRes(request.params.dyn, response);
 });
 
-app.post("/html/write_board", function(req, res){
+app.post("/html/write_board.html", function(req, res){
     var title = req.body.utitle;
     var owner = req.body.uname;
     var text = req.body.utext;
