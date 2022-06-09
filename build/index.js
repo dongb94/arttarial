@@ -26,8 +26,8 @@ app.get('/board/:dyn', function(request, response){
     makeBoardRes(request.params.dyn, response);
 });
 
-app.get('/post/:dyn', function(request, response){
-    
+app.get('/post/:page/:postNum', function(request, response){
+    readPost(request.params.page, request.params.postNum, response);
 });
 
 app.post("/html/write_board.html", function(req, res){
@@ -111,7 +111,7 @@ function makeBoardRes(page, response)
                             res += `
                             <tr>
                                 <td>${rows[(page-1)*nofPostPerPage + i].number}</td>
-                                <td><a href="/html/read.html" class="text-reset">${rows[(page-1)*nofPostPerPage + i].title}</a></td>
+                                <td><a href="/post/${page}/${rows[(page-1)*nofPostPerPage + i].number}" class="text-reset">${rows[(page-1)*nofPostPerPage + i].title}</a></td>
                                 <td>${rows[(page-1)*nofPostPerPage + i].owner}</td>
                                 <td>${rows[(page-1)*nofPostPerPage + i].views}</td>
                                 <td>${rows[(page-1)*nofPostPerPage + i].time}</td>
@@ -165,7 +165,7 @@ function makeBoardRes(page, response)
     });
 }
 
-function readPost(postNum, response)
+function readPost(page, postNum, response)
 {
     DB.executeQuery(`SELECT number, title, text, owner, views, date_format(time, '%Y.%m.%d %T') as time FROM board WHERE number=${postNum}`,  (err, rows)=>{
         
@@ -208,43 +208,9 @@ function readPost(postNum, response)
                                     </section>
             
                                     <div class="mb-5 justify-content-end">
-                                        <button class="btn btn-dark" style="margin-left: 90%;">목록</button>
+                                        <button class="btn btn-dark" style="margin-left: 90%;" onclick="location.href='/board/${page}'">목록</button>
                                     </div>
                                 </article>
-                                <!-- Comments section-->
-                                <section class="mb-5">
-                                    <div class="card bg-light">
-                                        <div class="card-body">
-                                            <!-- Comment form-->
-                                            <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
-                                            <!-- Comment with nested comments-->
-                                            <div class="d-flex mb-4">
-                                                <!-- Parent comment-->
-                                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                                <div class="ms-3">
-                                                    <div class="fw-bold">Commenter Name</div>
-                                                    If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
-                                                    <!-- Child comment 1-->
-                                                    <div class="d-flex mt-4">
-                                                        <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                                        <div class="ms-3">
-                                                            <div class="fw-bold">Commenter Name</div>
-                                                            And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- Single comment-->
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                                <div class="ms-3">
-                                                    <div class="fw-bold">Commenter Name</div>
-                                                    When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
                             </div>
                         </div>
                     </div>
