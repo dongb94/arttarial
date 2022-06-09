@@ -122,24 +122,24 @@ function makeBoardRes(page, response)
                     <div class="container">
                         <div class="btn-toolbar row justify-content-md-evenly" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mr-2 col-4" role="group" aria-label="First group">
-                                <a href="/board/${page>1?(page-1):1}"><button type="button" class="btn btn-secondary">&lt;</button></a>`;
+                                <button type="button" class="btn btn-secondary" onclick="location.href='/board/${page<rows.length?(Number(page)-1):1}'">&lt;</button>`;
                                 for(var i=0; i<nOfPage; i++)
                                 {
                                     if(i+1==page)
                                     {
                                         res+=`
-                                        <a href="/board/${i+1}"><button type="button" class="btn btn-secondary active" id="${i+1}">${i+1}</button></a>
+                                        <button type="button" class="btn btn-secondary active" onclick="location.href='/board/${i+1}'">${i+1}</button>
                                         `;
                                     }
                                     else
                                     {
                                         res+=`
-                                        <button type="button" class="btn btn-secondary" id="${i+1}"><a href="/board/${i+1}">${i+1}</a></button>
+                                        <button type="button" class="btn btn-secondary" onclick="location.href='/board/${i+1}'">${i+1}</button>
                                         `;
                                     }
                                 }
             res+=`
-                                <a href="/board/${page<rows.length?(Number(page)+1):1}"><button type="button" class="btn btn-secondary">&gt;</button></a>
+                                <button type="button" class="btn btn-secondary" onclick="location.href='/board/${page<nOfPage?(Number(page)+1):nOfPage}'">&gt;</button>
                             </div>
                         </div>
                         <div class="row justify-content-end" style="margin-top: 10px;">
