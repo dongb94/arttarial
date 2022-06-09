@@ -16,7 +16,7 @@ app.get('/', function(request, response){
 
 
 
-app.get('/html/board/:dyn', function(request, response){
+app.get('/board/:dyn', function(request, response){
     DB.executeQuery(`SELECT number, title, text, owner, views, date_format(time, '%y/%m/%d %T') as time FROM board`, (err, rows)=>{
         if(!err)
         {
@@ -98,7 +98,7 @@ app.get('/html/board/:dyn', function(request, response){
     });
 });
 
-app.post("html/write_board/", function(req, res){
+app.post("/html/write_board", function(req, res){
     var title = req.body.utitle;
     var owner = req.body.uname;
     var text = req.body.utext;
