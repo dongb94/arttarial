@@ -69,12 +69,12 @@ function makeBoardRes(page, response)
     DB.executeQuery(`SELECT number, title, text, owner, views, date_format(time, '%y/%m/%d %T') as time FROM board`, (err, rows)=>{
         if(!err)
         {
-            if(rows.length/10 < page-1)
+            if(rows.length/10 < page)
             {
                 return;
             }
-            var num = page*nofPostPerPage<rows.length?nofPostPerPage:rows.length%nofPostPerPage;
-            var nOfPage = rows.length/nofPostPerPage+1;
+            var num = page*nofPostPerPage<=rows.length?nofPostPerPage:rows.length%nofPostPerPage;
+            var nOfPage = ((rows.length-1)/nofPostPerPage)+1;
             var res =
             `
             <html style="height: 100%">
@@ -95,6 +95,7 @@ function makeBoardRes(page, response)
         
             <body>
                 <div class="container">
+                    <h1>게시판</h1>
                     <table class="table table-striped">
                         <thead class="thead-dark">
                             <tr>
@@ -127,7 +128,7 @@ function makeBoardRes(page, response)
                     <div class="container">
                         <div class="btn-toolbar row justify-content-md-evenly" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mr-2 col-4" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-secondary" onclick="location.href='/board/${page<rows.length?(Number(page)-1):1}'">&lt;</button>`;
+                                <button type="button" class="btn btn-secondary" onclick="location.href='/board/${page>1?(Number(page)-1):1}'">&lt;</button>`;
                                 for(var i=1; i<nOfPage; i++)
                                 {
                                     if(i==page)
