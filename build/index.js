@@ -213,7 +213,7 @@ function readPost(page, postNum, response)
                                         ${rows[0].text}
                                     </section>
                                     <hr/>
-                                    <div class="mb-5 justify-content-end">
+                                    <div class="mb-5 justify-content-end" style="">
                                         <button class="btn btn-dark" style="margin-left: 90%;" onclick="location.href='/board/${page}'">목록</button>
                                     </div>
                                 </article>
