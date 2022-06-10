@@ -94,7 +94,7 @@ function makeBoardRes(page, response)
             </head>
         
             <body>
-                <div class="container">
+                <div class="container" style="max-width:100%;">
                     <h1>게시판</h1>
                     <table class="table table-striped">
                         <thead class="thead-dark">
