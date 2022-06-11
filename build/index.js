@@ -38,7 +38,9 @@ app.post("/html/write_board.html", function(req, res){
     var owner = req.body.uname;
     var text = req.body.utext;
 
-    DB.executeQuery(`INSERT INTO board(title, text, owner, views) VALUES ("${title}","${text}","${owner}", 0)`, (err, rows)=>{
+    let replcae = text.replace(/\n/g,'<br>');
+
+    DB.executeQuery(`INSERT INTO board(title, text, owner, views) VALUES ("${title}","${replcae}","${owner}", 0)`, (err, rows)=>{
         if(err)
         {
             console.log(err);
