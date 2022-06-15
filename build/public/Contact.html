@@ -520,12 +520,7 @@
       width: 100%
     }
 
-    #masterPage.mesh-layout #SITE_FOOTER
-    {
-      position: fixed;
-      bottom: 0px;
-    }
-
+    #masterPage.mesh-layout #SITE_FOOTER,
     #masterPage.mesh-layout #masterPageinlineContent,
     #masterPage.mesh-layout #PAGES_CONTAINER,
     #masterPage.mesh-layout #SITE_FOOTER_WRAPPER,
@@ -2416,26 +2411,6 @@
   <!--pageHtmlEmbeds.bodyStart end-->
 
 
-
-
-  <script id="wix-first-paint">
-    if (window.ResizeObserver &&
-      (!window.PerformanceObserver || !PerformanceObserver.supportedEntryTypes || PerformanceObserver.supportedEntryTypes.indexOf('paint') === -1)) {
-      new ResizeObserver(function (entries, observer) {
-        entries.some(function (entry) {
-          var contentRect = entry.contentRect;
-          if (contentRect.width > 0 && contentRect.height > 0) {
-            requestAnimationFrame(function (now) {
-              window.wixFirstPaint = now;
-              dispatchEvent(new CustomEvent('wixFirstPaint'));
-            });
-            observer.disconnect();
-            return true;
-          }
-        });
-      }).observe(document.body);
-    }
-  </script>
 
   <pages-css id="pages-css">
     <style id="css_masterPage">
@@ -5462,7 +5437,7 @@
         display: grid;
         height: auto;
         width: 100%;
-        min-height: 989px;
+        min-height: 1046px;
         grid-template-rows: min-content 1fr;
         grid-template-columns: 100%
       }
@@ -5476,7 +5451,7 @@
         align-self: start
       }
 
-      [data-mesh-id=comp-l3l600m51inlineContent-gridContainer]>[id="comp-l3l600m66"] {
+      [data-mesh-id=comp-l3l600m51inlineContent-gridContainer]>[id="comp-l4fdxyoc"] {
         position: relative;
         margin: 0px 0px 10px calc((100% - 980px) * 0.5);
         left: 0px;
@@ -5495,15 +5470,15 @@
         display: grid;
         height: auto;
         width: 100%;
-        min-height: 409px;
+        min-height: 466px;
         grid-template-rows: repeat(3, min-content) 1fr;
         grid-template-columns: 100%
       }
 
       [data-mesh-id=comp-l3l600m6inlineContent-gridContainer]>[id="comp-l3l600m61"] {
         position: relative;
-        margin: 120px 0px 17px calc((100% - 490px) * 0.5);
-        left: 15px;
+        margin: 120px 0px 0px calc((100% - 490px) * 0.5);
+        left: 0px;
         grid-area: 1 / 1 / 2 / 2;
         justify-self: start;
         align-self: start
@@ -5511,8 +5486,8 @@
 
       [data-mesh-id=comp-l3l600m6inlineContent-gridContainer]>[id="comp-l3l600m62"] {
         position: relative;
-        margin: 0px 0px 7px calc((100% - 490px) * 0.5);
-        left: 15px;
+        margin: 0px 0px 20px calc((100% - 490px) * 0.5);
+        left: 0px;
         grid-area: 2 / 1 / 3 / 2;
         justify-self: start;
         align-self: start
@@ -5520,8 +5495,8 @@
 
       [data-mesh-id=comp-l3l600m6inlineContent-gridContainer]>[id="comp-l3l600m63"] {
         position: relative;
-        margin: 0px 0px 7px calc((100% - 490px) * 0.5);
-        left: 15px;
+        margin: 0px 0px 20px calc((100% - 490px) * 0.5);
+        left: 0px;
         grid-area: 3 / 1 / 4 / 2;
         justify-self: start;
         align-self: start
@@ -5530,7 +5505,7 @@
       [data-mesh-id=comp-l3l600m6inlineContent-gridContainer]>[id="comp-l3l600m64"] {
         position: relative;
         margin: 0px 0px 10px calc((100% - 490px) * 0.5);
-        left: 15px;
+        left: 0px;
         grid-area: 4 / 1 / 5 / 2;
         justify-self: start;
         align-self: start
@@ -5540,15 +5515,15 @@
         height: auto;
         width: 100%;
         position: static;
-        min-height: 409px
+        min-height: 466px
       }
 
-      [data-mesh-id=comp-l3l600m67inlineContent] {
+      [data-mesh-id=comp-l4fdxyoc1inlineContent] {
         height: auto;
         width: 100%
       }
 
-      [data-mesh-id=comp-l3l600m67inlineContent-gridContainer] {
+      [data-mesh-id=comp-l4fdxyoc1inlineContent-gridContainer] {
         position: static;
         display: grid;
         height: auto;
@@ -5558,7 +5533,7 @@
         grid-template-columns: 100%
       }
 
-      [data-mesh-id=comp-l3l600m67inlineContent-gridContainer]>[id="comp-l3l600m7"] {
+      [data-mesh-id=comp-l4fdxyoc1inlineContent-gridContainer]>[id="comp-l4fdxyoc2"] {
         position: relative;
         margin: 0px 0 0px 0;
         left: 0;
@@ -5611,26 +5586,26 @@
       }
 
       #comp-l3l600m61 {
-        width: 460px;
+        width: 490px;
         height: 54px
       }
 
       #comp-l3l600m62 {
-        width: 460px;
-        height: 28px
+        width: 490px;
+        height: 56px
       }
 
       #comp-l3l600m63 {
-        width: 460px;
+        width: 490px;
         height: 28px
       }
 
       #comp-l3l600m64 {
-        width: 460px;
+        width: 490px;
         height: 28px
       }
 
-      #comp-l3l600m7 {
+      #comp-l4fdxyoc2 {
         left: 0;
         margin-left: 0;
         width: 100%;
@@ -5653,7 +5628,7 @@
       }
 
       #comp-l3l600m51 {
-        width: 12px
+        width: 980px
       }
 
       #comp-l3l600m52 {
@@ -5663,7 +5638,7 @@
         min-width: 980px
       }
 
-      #comp-l3l600m66 {
+      #comp-l4fdxyoc {
         margin-left: auto;
         margin-right: auto;
         width: calc(100% - 80px - 80px);
@@ -5671,15 +5646,15 @@
       }
 
       #comp-l3l600m6 {
-        width: 6px
+        width: 490px
       }
 
       #comp-l3l600m65 {
-        width: 6px
+        width: 490px
       }
 
-      #comp-l3l600m67 {
-        width: 12px
+      #comp-l4fdxyoc1 {
+        width: 980px
       }
 
       #masterPage {
@@ -5687,22 +5662,18 @@
       }
 
       #comp-l3l600m61 {
-        --min-height: 54px;
         height: auto
       }
 
       #comp-l3l600m62 {
-        --min-height: 28px;
         height: auto
       }
 
       #comp-l3l600m63 {
-        --min-height: 28px;
         height: auto
       }
 
       #comp-l3l600m64 {
-        --min-height: 28px;
         height: auto
       }
 
@@ -5725,8 +5696,8 @@
         --bg-overlay-color: rgb(var(--color_25));
         --bg-gradient: none;
         width: 100%;
-        --column-width: 12px;
-        --column-flex: 12
+        --column-width: 980px;
+        --column-flex: 980
       }
 
       #comp-l3l600m52 {
@@ -5739,7 +5710,7 @@
         --lastChildMarginBottom: -1px
       }
 
-      #comp-l3l600m66 {
+      #comp-l4fdxyoc {
         --bg-overlay-color: transparent;
         --bg-gradient: none;
         --padding: 0px;
@@ -5753,8 +5724,8 @@
         --bg-overlay-color: rgb(var(--color_15));
         --bg-gradient: none;
         width: 100%;
-        --column-width: 6px;
-        --column-flex: 6
+        --column-width: 490px;
+        --column-flex: 490
       }
 
       #comp-l3l600m65 {
@@ -5762,16 +5733,16 @@
         --bg-gradient: none;
         --fill-layer-image-opacity: 1;
         width: 100%;
-        --column-width: 6px;
-        --column-flex: 6
+        --column-width: 490px;
+        --column-flex: 490
       }
 
-      #comp-l3l600m67 {
+      #comp-l4fdxyoc1 {
         --bg-overlay-color: rgb(var(--color_15));
         --bg-gradient: none;
         width: 100%;
-        --column-width: 12px;
-        --column-flex: 12
+        --column-width: 980px;
+        --column-flex: 980
       }
 
       #pageBackground_dtiuc {
@@ -5829,9 +5800,7 @@
                               <div data-mesh-id="comp-l3l6yd551inlineContent-gridContainer"
                                 data-testid="mesh-container-content">
                                 <div id="comp-l3l6yd56" class="_1Q9if" data-testid="richTextElement">
-                                  <p class="font_0" style="line-height:1.41em; font-size:22px;"><span
-                                      class="color_11"><span style="text-decoration:none;"><a href="index.html"
-                                          target="_self">아트테리어</a></span></span></p>
+                                  <a href="index.html" target="_self"><img src="./image/logo.png" alt="" style="height: 30px;"></a>
                                 </div>
                               </div>
                             </div>
@@ -5857,13 +5826,13 @@
                                         data-data-id="bmi23nr" data-state="menu selected  link" data-index="0"
                                         class="Y5j6d _3KF65" data-original-gap-between-text-and-btn="0"
                                         aria-hidden="false"
-                                        style="width: 59px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: inherit;">
+                                        style="width: 76px; height: 30px; position: relative; box-sizing: border-box; overflow: visible; visibility: inherit;">
                                         <a data-testid="linkElement" href="index.html" class="_2DUrw"
                                           aria-haspopup="false">
                                           <div class="_1u8sp">
                                             <div class="" style="text-align:right">
                                               <p class="_1zyfI" style="text-align: right; line-height: 30px;"
-                                                id="comp-l3l72zfu0label">홈</p>
+                                                id="comp-l3l72zfu0label">사업소개</p>
                                             </div>
                                           </div>
                                         </a>
@@ -5878,7 +5847,7 @@
                                           <div class="_1u8sp">
                                             <div class="" style="text-align:right">
                                               <p class="_1zyfI" style="text-align: right; line-height: 30px;"
-                                                id="comp-l3l72zfu1label">사업소개</p>
+                                                id="comp-l3l72zfu1label">회사소개</p>
                                             </div>
                                           </div>
                                         </a>
@@ -5961,79 +5930,105 @@
                       <div data-mesh-id="ContainerdtiucinlineContent" data-testid="inline-content" class="">
                         <div data-mesh-id="ContainerdtiucinlineContent-gridContainer"
                           data-testid="mesh-container-content">
-                          <section id="comp-l3l3itd13" class="_3d64y">
-                            <div id="bgLayers_comp-l3l3itd13" data-hook="bgLayers" class="_3wnIc">
-                              <div data-testid="colorUnderlay" class="backgroud_gray _3SQN-"></div>
-                              <div id="bgMedia_comp-l3l3itd13" class="_2GUhU"></div>
+                          <section id="comp-l3l600m5" class="_3d64y">
+                            <div id="bgLayers_comp-l3l600m5" data-hook="bgLayers" class="_3wnIc">
+                              <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
+                              <div id="bgMedia_comp-l3l600m5" class="_2GUhU"></div>
                             </div>
                             <div data-testid="columns" class="_1uldx">
-                              <div id="comp-l3l3itd14" class="_1vNJf">
-                                <div id="bgLayers_comp-l3l3itd14" data-hook="bgLayers" class="_3wnIc">
-                                  <div data-testid="colorUnderlay" class="backgroud_gray _3SQN-"></div>
-                                  <div id="bgMedia_comp-l3l3itd14" class="_2GUhU"></div>
+                              <div id="comp-l3l600m51" class="_1vNJf">
+                                <div id="bgLayers_comp-l3l600m51" data-hook="bgLayers" class="_3wnIc">
+                                  <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
+                                  <div id="bgMedia_comp-l3l600m51" class="_2GUhU"></div>
                                 </div>
-                                <div data-mesh-id="comp-l3l3itd14inlineContent" data-testid="inline-content" class="">
-                                  <div data-mesh-id="comp-l3l3itd14inlineContent-gridContainer"
+                                <div data-mesh-id="comp-l3l600m51inlineContent" data-testid="inline-content" class="">
+                                  <div data-mesh-id="comp-l3l600m51inlineContent-gridContainer"
                                     data-testid="mesh-container-content">
-                                    <section id="comp-l3l3itd15" class="_3d64y">
-                                      <div id="bgLayers_comp-l3l3itd15" data-hook="bgLayers" class="_3wnIc">
+                                    <section id="comp-l3l600m52" class="_3d64y">
+                                      <div id="bgLayers_comp-l3l600m52" data-hook="bgLayers" class="_3wnIc">
                                         <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                        <div id="bgMedia_comp-l3l3itd15" class="_2GUhU"></div>
+                                        <div id="bgMedia_comp-l3l600m52" class="_2GUhU"></div>
                                       </div>
                                       <div data-testid="columns" class="_1uldx">
-                                        <div id="comp-l3l3itd2" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3l3itd2" data-hook="bgLayers" class="_3wnIc">
+                                        <div id="comp-l3l600m6" class="_1vNJf">
+                                          <div id="bgLayers_comp-l3l600m6" data-hook="bgLayers" class="_3wnIc">
                                             <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3l3itd2" class="_2GUhU"></div>
+                                            <div id="bgMedia_comp-l3l600m6" class="_2GUhU"></div>
                                           </div>
-                                          <div data-mesh-id="comp-l3l3itd2inlineContent" data-testid="inline-content"
+                                          <div data-mesh-id="comp-l3l600m6inlineContent" data-testid="inline-content"
                                             class="">
-                                            <div data-mesh-id="comp-l3l3itd2inlineContent-gridContainer"
+                                            <div data-mesh-id="comp-l3l600m6inlineContent-gridContainer"
                                               data-testid="mesh-container-content">
-                                              <div id="comp-l3l3itd21" class="_1Q9if" data-testid="richTextElement">
-                                                <h2 class="font_6"
+                                              <div id="comp-l3l600m61" class="_1Q9if" data-testid="richTextElement">
+                                                <h1 class="font_6"
                                                   style="text-align:center; line-height:1.35em; font-size:40px;"><span
-                                                    class="color_32"><span style="font-weight:bold;">사업문의</span></span></h2>
+                                                    class="color_32"><span style="font-weight:bold;">문의</span></span>
+                                                </h1>
                                               </div>
-                                              <div id="comp-l3l3itd22" class="_1Q9if" data-testid="richTextElement">
+                                              <div id="comp-l3l600m62" class="_1Q9if" data-testid="richTextElement">
                                                 <p class="font_9"
-                                                  style="text-align:center; line-height:1.875em; font-size:15px;"><span
-                                                    class="color_11">광주광역시 북구 오룡동 1110-32, 광주디지털미디어시티 제주2동 제101호</span></p>
+                                                  style="line-height:1.875em; text-align:center; font-size:15px;">
+                                                  <span class="color_11">광주광역시 북구 오룡동 1110-32, <br>광주디지털미디어시티 제주2동 제101호</span>
+                                                </p>
                                               </div>
-                                              <div id="comp-l3l3itd23" class="_1Q9if" data-testid="richTextElement">
+                                              <div id="comp-l3l600m63" class="_1Q9if" data-testid="richTextElement">
                                                 <p class="font_9"
                                                   style="text-align:center; line-height:1.875em; font-size:15px;"><span
                                                     class="color_11"><a data-auto-recognition="true"
-                                                      href="mailto:jiho363@hanmail.net">jiho363@hanmail.net</a></span></p>
+                                                      href="mailto:jiho363@hanmail.net">jiho363@hanmail.net</a></span>
+                                                </p>
                                               </div>
-                                              <div id="comp-l3l3itd24" class="_1Q9if" data-testid="richTextElement">
+                                              <div id="comp-l3l600m64" class="_1Q9if" data-testid="richTextElement">
                                                 <p class="font_9"
                                                   style="text-align:center; line-height:1.875em; font-size:15px;"><span
-                                                    class="color_11">010-9602-2436</span></p>
+                                                    class="color_11">062-971-9998</span></p>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
-                                        <div id="comp-l3l3itd25" class="_1vNJf">
-                                          <div id="bgLayers_comp-l3l3itd25" data-hook="bgLayers" class="_3wnIc">
+                                        <div id="comp-l3l600m65" class="_1vNJf">
+                                          <div id="bgLayers_comp-l3l600m65" data-hook="bgLayers" class="_3wnIc">
                                             <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
-                                            <div id="bgMedia_comp-l3l3itd25" class="_2GUhU">
-                                              <wix-image id="img_comp-l3l3itd25"
+                                            <div id="bgMedia_comp-l3l600m65" class="_2GUhU">
+                                              <wix-image id="img_comp-l3l600m65"
                                                 class="_1-6YJ _3SQN- _2L00W _1Q5R5 bgImage"
-                                                data-image-info="{&quot;containerId&quot;:&quot;comp-l3l3itd25&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:2301,&quot;height&quot;:1536,&quot;uri&quot;:&quot;11062b_6694be830cd1452ba1d012dc3593e29e~mv2.jpg&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;focalPoint&quot;:{&quot;x&quot;:50,&quot;y&quot;:50}}}"
+                                                data-image-info="{&quot;containerId&quot;:&quot;comp-l3l600m65&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:2301,&quot;height&quot;:1536,&quot;uri&quot;:&quot;11062b_6694be830cd1452ba1d012dc3593e29e_mv2.jpg&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;focalPoint&quot;:{&quot;x&quot;:50,&quot;y&quot;:50}}}"
                                                 data-has-bg-scroll-effect="" data-bg-effect-name="" data-image-zoomed=""
-                                                data-has-ssr-src=""
-                                                data-src="https://static.wixstatic.com/media/11062b_6694be830cd1452ba1d012dc3593e29e~mv2.jpg/v1/fill/w_841,h_409,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_6694be830cd1452ba1d012dc3593e29e~mv2.jpg">
-                                                <img src="./index_files/11062b_6694be830cd1452ba1d012dc3593e29e_mv2.jpg"
+                                                data-has-ssr-src="">
+                                                <img
+                                                  src="./image/사무실.jpg"
                                                   alt="Office Hallway"
-                                                  style="width: 841px; height: 409px; object-fit: cover; object-position: 50% 50%;">
+                                                  style="width: 757px; height: 466px; object-fit: cover; object-position: 50% 50%;">
                                               </wix-image>
                                             </div>
                                           </div>
-                                          <div data-mesh-id="comp-l3l3itd25inlineContent" data-testid="inline-content"
+                                          <div data-mesh-id="comp-l3l600m65inlineContent" data-testid="inline-content"
                                             class="">
-                                            <div data-mesh-id="comp-l3l3itd25inlineContent-gridContainer"
+                                            <div data-mesh-id="comp-l3l600m65inlineContent-gridContainer"
                                               data-testid="mesh-container-content"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </section>
+                                    <section id="comp-l4fdxyoc" class="_3d64y">
+                                      <div id="bgLayers_comp-l4fdxyoc" data-hook="bgLayers" class="_3wnIc">
+                                        <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
+                                        <div id="bgMedia_comp-l4fdxyoc" class="_2GUhU"></div>
+                                      </div>
+                                      <div data-testid="columns" class="_1uldx">
+                                        <div id="comp-l4fdxyoc1" class="_1vNJf">
+                                          <div id="bgLayers_comp-l4fdxyoc1" data-hook="bgLayers" class="_3wnIc">
+                                            <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
+                                            <div id="bgMedia_comp-l4fdxyoc1" class="_2GUhU"></div>
+                                          </div>
+                                          <div data-mesh-id="comp-l4fdxyoc1inlineContent" data-testid="inline-content"
+                                            class="">
+                                            <div data-mesh-id="comp-l4fdxyoc1inlineContent-gridContainer"
+                                              data-testid="mesh-container-content">
+                                              <div id="comp-l4fdxyoc2" tabindex="0" class="_1Cu5u">
+                                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3259.256792671549!2d126.84969341562591!3d35.22497708030336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718e1475ecf041%3A0xbf3731a59d518c51!2z6rSR7KO86rSR7Jet7IucIOu2geq1rCDsmKTro6Hrj5kgMTExMC0zMg!5e0!3m2!1sko!2skr!4v1655290737407!5m2!1sko!2skr" style="height: 100%; width: 100%; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                              </div>
+                                            </div>
                                           </div>
                                         </div>
                                       </div>
@@ -6072,7 +6067,7 @@
                       </div>
                       <div id="comp-l3mbwnw2" class="_1Q9if" data-testid="richTextElement">
                         <p class="font_9" style="text-align:center; line-height:1.875em; font-size:15px;"><span
-                            class="color_11">010-9602-2436</span></p>
+                            class="color_11">062-971-9998</span></p>
                       </div>
                       <div id="comp-l3mbwp0h" class="_1Q9if" data-testid="richTextElement">
                         <p class="font_9" style="text-align:center; line-height:1.875em; font-size:15px;"><span
