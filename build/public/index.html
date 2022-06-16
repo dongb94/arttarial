@@ -113,9 +113,26 @@
 
   <script crossorigin="" src="./js/react.production.min.js" onload="externalsRegistry.react.onload()" defer=""></script>
 
-
   <!-- Initial CSS -->
-  <style data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/main.46f3937f.min.css">
+  <style>
+
+    
+    body {
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity .65s .15s
+    }
+
+    body.reveal {
+        opacity: 1;
+        overflow-y: auto
+    }
+
+    body.hidden {
+        opacity: 0
+    }
+
+
     a,
     abbr,
     acronym,
@@ -579,8 +596,8 @@
 
   <!-- render-head end -->
 
-  <style
-    data-href="https://static.parastorage.com/services/editor-elements/dist/rb_wixui.thunderbolt~bootstrap-classic.f2a418a3.chunk.min.css">
+  <style>
+
     ._1vNJf {
       position: relative;
       overflow: visible
@@ -2327,24 +2344,19 @@
   <script src="./js/rb_wixui.thunderbolt[SkipToContentButton].fa0eb679.bundle.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt_bootstrap.c6850b31.chunk.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt_bootstrap-responsive.5b1e7e12.chunk.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt[FreemiumBannerDesktop].d3a0e49d.bundle.min.js"></script>
-  <script src="./js/rb_wixui.thunderbolt[GoogleMap].8f151841.bundle.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt[Container_RectangleArea].36708828.bundle.min.js"></script>
   <script src="./js/rb_wixui.thunderbolt_bootstrap-classic.733fba01.chunk.min.js"></script>
   <link rel="stylesheet" type="text/css" href="./css/rb_wixui.thunderbolt[HtmlComponent].37bd0eeb.min.css">
   <script src="./js/rb_wixui.thunderbolt[HtmlComponent].b368fe32.bundle.min.js"></script>
 </head>
 
-<body class="">
+<body class="reveal">
   <script type="text/javascript">
     var bodyCacheable = false;
 
     var exclusionReason = { "shouldRender": true, "forced": false };
-    var ssrInfo = { "renderBodyTime": 1315, "renderTimeStamp": 1653468136305 }
+    var ssrInfo = { "renderBodyTime": 1315, "renderTimeStamp": 1653468136305 };
   </script>
-
-
-
 
   <script>window.clientSideRender = false;</script>
 
@@ -3663,7 +3675,7 @@
         position: relative;
         margin: 0px 0px 0 calc((100% - 980px) * 0.5);
         left: 0px;
-        grid-area: 4 / 1 / 5 / 2;
+        grid-area: 5 / 1 / 6 / 2;
         justify-self: start;
         align-self: start
       }
@@ -3672,28 +3684,11 @@
         position: relative;
         margin: 0px 0 10px 0;
         left: 0;
-        grid-area: 4 / 1 / 5 / 2;
+        grid-area: 6 / 1 / 7 / 2;
         justify-self: stretch;
         align-self: start
       }
 
-      [data-mesh-id=Containerc1dmpinlineContent-gridContainer]>[id="comp-l3l3itd13"] {
-        position: relative;
-        margin: 0px 0px 0 calc((100% - 980px) * 0.5);
-        left: 0px;
-        grid-area: 5 / 1 / 6 / 2;
-        justify-self: start;
-        align-self: start
-      }
-
-      [data-mesh-id=Containerc1dmpinlineContent-gridContainer]>[id="adi_page1001_1_102"] {
-        position: relative;
-        margin: 0px 0 10px 0;
-        left: 0;
-        grid-area: 5 / 1 / 6 / 2;
-        justify-self: stretch;
-        align-self: start
-      }
 
       #adi_page1001_1_115 {
         left: 0;
@@ -3720,14 +3715,6 @@
       }
 
       #adi_page1001_1_140 {
-        left: 0;
-        margin-left: 0;
-        width: 100%;
-        min-width: initial;
-        height: 21px
-      }
-
-      #adi_page1001_1_102 {
         left: 0;
         margin-left: 0;
         width: 100%;
@@ -7421,7 +7408,7 @@
                                               <div id="comp-l3l5yfkj3" class="_1Q9if" data-testid="richTextElement">
                                                 <h1 class="font_4"
                                                   style="text-align:right; line-height:1.25em; font-size:172px;"><span
-                                                    class="color_15"><span style="font-weight:normal;">Artterior</span></span>
+                                                    class="color_15"><span style="font-weight:normal;">Arterior</span></span>
                                                 </h1>
                                                 <h1 class="font_2"
                                                   style="text-align:right; line-height:1.25em; font-size:60px;"><span
@@ -7440,8 +7427,7 @@
                           </section>
                           <section id="comp-l3l5xgml" class="_3d64y">
                             <div data-testid="columns" class="_1uldx" st>
-                              <img src="./image/colorful-2137080_1920.jpg"></img>
-                              <div id="comp-l3l5xgmm" class="_1vNJf">
+                              <div id="comp-l3l5xgmm" class="_1vNJf" style="z-index: 2;">
                                 <div id="bgLayers_comp-l3l5xgmm" data-hook="bgLayers" class="_3wnIc">
                                   <div data-testid="colorUnderlay" class="_3KzuS _3SQN-"></div>
                                   <div id="bgMedia_comp-l3l5xgmm" class="_2GUhU"></div>
@@ -7501,7 +7487,7 @@
                                     <div id="comp-l3l5wwe11" class="XUUsC">
                                       <div data-testid="linkElement" class="xQ_iF">
                                       
-                                          <img src="./image/Brainstorm Team Meeting.jpg" alt="Modern Office"
+                                          <img src="./image/colorful-2137080_1920.jpg" alt="Modern Office"
                                             style="width: 560px; height: 600px; object-fit: cover; object-position: 50% 50%;">
                                       </div>
                                     </div>
@@ -7514,12 +7500,12 @@
                                           <div id="comp-l3l5wwe13" class="_1Q9if" data-testid="richTextElement">
                                             <h2 class="font_6"
                                               style="text-align:left; line-height:1.35em; font-size:35px;"><span
-                                                class="color_32"><span style="font-weight:bold;">문화체육관광진흥원</span></span></h2>
+                                                class="color_32"><span style="font-weight:bold;">2022년 아트테리어 소상공인 지원사업</span></span></h2>
                                           </div>
                                           <div id="comp-l3l5wwe2" class="_1Q9if" data-testid="richTextElement">
                                             <p class="font_9"
                                               style="text-align:left; line-height:1.875em; font-size:15px;"><span
-                                                class="color_11">문화체육관광진흥원은 대한민국 국민의 건전한 문화, 체육, 관광 관련 산업의 발전을 위해 지역의 문화, 체육, 관광 인재양성 및 지역간, 세대간 소통과 배려, 다양한 계층간 나눔과 화합을 실현하고자 합니다.</span>
+                                                class="color_11"></span>
                                             </p>
                                           </div>
                                         </div>
