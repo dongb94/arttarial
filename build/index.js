@@ -32,7 +32,7 @@ app.get('/post/:page/:postNum', function(request, response){
 });
 
 app.post("/html/write_board.html", function(req, res){
-    console.log(req.body);
+    // console.log(req.body);
 
     var title = req.body.utitle;
     var owner = req.body.uname;
@@ -51,6 +51,10 @@ app.post("/html/write_board.html", function(req, res){
             makeBoardRes(1, res);
         }
     });
+});
+
+app.post('/html/fix_popup/:postNum', function(req,res){
+    console.log(`${req.body.upasswd} fix req`);
 });
 
 app.put("/post/:page/:postNum", function(req, res){
@@ -194,9 +198,9 @@ function readPost(page, postNum, response)
                     <!-- Core theme CSS (includes Bootstrap)-->
                     <link href="/css/bootstrap.css" rel="stylesheet" />
                     <script>
-                        function showPopUp(postNum)
+                        function showPopUp()
                         {
-                            window.open("/html/fix_popup.html", "a", "width=400, height=300, left=100, top=50");
+                            window.open("/html/fix_popup.html/${postNum}", "a", "width=400, height=300, left=100, top=50");
                         }
                     </script>
                 </head>
@@ -228,7 +232,7 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <button class="btn btn-dark" style="margin-left: 80%;" onclick="showPopUp(${postNum});">수정</button>
+                                        <button class="btn btn-dark" style="margin-left: 80%;" onclick="showPopUp();">수정</button>
                                         <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}'">목록</button>
                                     </div>
                                 </article>
