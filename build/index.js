@@ -32,6 +32,15 @@ app.get('/post/:page/:postNum', function(request, response){
     readPost(request.params.page, request.params.postNum, response);
 });
 
+app.put("/post/:page/:postNum", function(request, response){
+    console.log(`request Put Page ${request.params.page}:${request.params.postNum}`);
+    response.sendFile(__dirname+'/html/fix_board.html/${postNum}');
+});
+
+app.delete("/post/:page/:postNum", function(request, response){
+    console.log(`request Delete Page ${request.params.page}:${request.params.postNum}`);
+});
+
 app.post("/html/write_board.html", function(req, res){
     // console.log(req.body);
 
@@ -265,8 +274,8 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <button class="btn btn-danger" data-method="delete" style="margin-left: 68%;" location.href='/board/${page}';">수정</button>
-                                        <button class="btn btn-dark" style="margin-left: 2%;" location.href='/board/${page}';">수정</button>
+                                        <button class="btn btn-danger" data-method="delete" style="margin-left: 68%;">삭제</button>
+                                        <button class="btn btn-dark" value="put" style="margin-left: 2%;" >수정</button>
                                         <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
                                     </div>
                                 </article>
