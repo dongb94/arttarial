@@ -90,6 +90,10 @@ app.get('/html/fix_popup.html/:postNum', function(req,res){
     fixPopUp(req.params.postNum, res);
 });
 
+app.post('/html/fix_popup.html/:postNum', function(req,res){
+    
+});
+
 app.use('/', router);
 
 // app.all('*', function(req, res){//등록되지 않은 패스에 대해 페이지 오류 응답
