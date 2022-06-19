@@ -296,7 +296,7 @@ function fixPopUp(postNum, res)
             </script>
         </head>
         <body>
-            <form method="post">
+            <form>
                 비밀번호
                 <input type="password" name="passwd" id="fixpasswd">
                 <button onclick="moveClose(this.form);">확인</button>
