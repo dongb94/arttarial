@@ -294,7 +294,7 @@ function fixPopUp(postNum, res)
             <script language="javascript">
                 function moveClose(form) {
                     var passwd = form.passwd.value;
-                    opener.location.href="/html/fix_board.html/${postNum}/"+passwd;
+                    window.opener.location.href="/html/fix_board.html/${postNum}/"+passwd;
                     self.close();
                 }
             </script>
