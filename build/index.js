@@ -7,6 +7,7 @@ var path = require('path');
 var qs = require('querystring');
 
 var DB = require("./DB/mysql");
+const { response } = require('express');
 
 var app = express();
 var router = express.Router();
@@ -53,12 +54,38 @@ app.post("/html/write_board.html", function(req, res){
     });
 });
 
-app.post('/html/fix_popup/:postNum', function(req,res){
-    console.log(`${req.body.upasswd} fix req`);
+app.get("/html/fix_board.html/:postNum/:passwd", function(req, res){
+    var postNum = req.params.postNum;
+    var passwd = req.params.passwd;
+
+    // DB.executeQuery(`SELECT `)
+
+    response.sendFile(__dirname+'/public/html/fix_board.html');
+    response.send("<script>alert('알림 창입니다.');</script>");
 });
 
-app.put("/post/:page/:postNum", function(req, res){
+app.put("/html/fix_board.html/:postNum", function(req, res){
+    var title = req.body.utitle;
+    var owner = req.body.uname;
+    var text = req.body.utext;
+    var passwd = req.body.upasswd;
 
+    let replcae = text.replace(/\n/g,'<br>');
+
+    DB.executeQuery(`Update board SET title = "${title}", text = "${replcae}", owner = "${owner}", passwd="${passwd}" WHERE number="${req.params.postNum}"`, (err, rows)=>{
+        if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
+            makeBoardRes(1, res);
+        }
+    });
+});
+
+app.post('/html/fix_popup.html/:postNum', function(req,res){
+    fixPopUp(req.params.postNum);
 });
 
 app.use('/', router);
@@ -249,4 +276,30 @@ function readPost(page, postNum, response)
             console.log(err);
         }
     });
+}
+
+function fixPopUp(postNum)
+{
+    let res = 
+    `
+    <html>
+        <head>
+            <title>비밀번호 확인</title>
+            <script language="javascript">
+                function moveClose(form) {
+                    var passwd = form.passwd.value;
+                    opener.location.href="/html/fix_board.html/${postNum}/"+passwd;
+                    self.close();
+                }
+            </script>
+        </head>
+        <body>
+            <form method="post">
+                비밀번호
+                <input type="password" name="passwd" id="fixpasswd">
+                <button onclick="moveClose(this.form);">확인</button>
+            </form>
+        </body>
+    </html>
+    `
 }

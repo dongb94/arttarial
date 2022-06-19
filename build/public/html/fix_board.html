@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    
+    <script src="../js/jquery-3.6.0.js"></script>
+    <script src="../js/bootstrap.js"></script>
+</head>
+<body>
+    <div id="board_write">
+        <div id="write_area" class="container">
+            <h4>새 글 작성</h4>
+            <hr/>
+            <form method="put">
+                <div id="in_title" class="row">
+                    <div class="input-group mb-3 col">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">작성자</span>
+                        </div>
+                        <input type="text" id="uname" name="uname" class="form-control" placeholder="Username" aria-label="Username"  aria-describedby="basic-addon1" maxlength="32" required>
+                    </div>
+                    <div class="input-group mb-3 col">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">비밀번호</span>
+                        </div>
+                        <input type="password" id="upasswd" name="upasswd" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" maxlength="128" required>
+                    </div>
+                </div>
+
+                <div id="in_title" class="row">
+                    <div class="input-group mb-3 col">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">제목</span>
+                        </div>
+                        <input type="text" id="utitle" name="utitle" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" maxlength="128" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">내용</span>
+                    </div>
+                    <textarea id="utext" name="utext" class="form-control" aria-label="내용" style="height: 10em; resize: none;" required></textarea>
+                </div>
+                <hr/>
+                <div class="form-group row justify-content-between">
+                    <!--<input type="file" class="form-control-file col-4" id="File">-->
+                    <div class="col"></div>
+                    <button type="submit" class="btn btn-dark align-self-end col-4">수정</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <script>
+        const onClick = () => {
+            console.log("button click");
+        };
+        document.querySelector('.btn').addEventListener('click', onClick);
+    </script>
+</body>
+</html>
