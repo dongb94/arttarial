@@ -60,6 +60,8 @@ app.get("/html/fix_board.html/:postNum/:passwd", function(req, res){
 
     // DB.executeQuery(`SELECT `)
 
+    console.log("get fix board");
+
     response.sendFile(__dirname+'/public/html/fix_board.html');
     response.send("<script>alert('알림 창입니다.');</script>");
 });
@@ -85,7 +87,7 @@ app.put("/html/fix_board.html/:postNum", function(req, res){
 });
 
 app.post('/html/fix_popup.html/:postNum', function(req,res){
-    fixPopUp(req.params.postNum);
+    fixPopUp(req.params.postNum, res);
 });
 
 app.use('/', router);
@@ -278,9 +280,9 @@ function readPost(page, postNum, response)
     });
 }
 
-function fixPopUp(postNum)
+function fixPopUp(postNum, res)
 {
-    let res = 
+    let popup = 
     `
     <html>
         <head>
@@ -302,4 +304,6 @@ function fixPopUp(postNum)
         </body>
     </html>
     `
+
+    res.send(popup);
 }
