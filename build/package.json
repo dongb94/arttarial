@@ -1,13 +1,13 @@
 {
   "name": "art-terior",
-  "description": "a really cool app",
+  "description": "a really cool app", &
   "version": "1.0.0",
   "engines": {
     "node": "16.x"
   },
   "scripts": {
     "start": "node ./index.js",
-    "test": "nodemon --watch ./index.js"
+    "test": "nodemon --watch ./index.js &"
   },
   "dependencies": {
     "express": "^4.18.1",
