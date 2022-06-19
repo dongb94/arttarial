@@ -274,9 +274,11 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <button class="btn btn-danger" data-method="delete" style="margin-left: 68%;">삭제</button>
-                                        <button class="btn btn-dark" value="put" style="margin-left: 2%;" >수정</button>
-                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
+                                        <form method="post">
+                                            <button class="btn btn-danger" data-method="delete" style="margin-left: 68%;">삭제</button>
+                                            <button class="btn btn-dark" value="put" style="margin-left: 2%;" >수정</button>
+                                            <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
+                                        </form>
                                     </div>
                                 </article>
                             </div>
