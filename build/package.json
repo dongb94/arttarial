@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node ./index.js",
-    "test": ""
+    "test": "nodemon --watch ./index.js"
   },
   "dependencies": {
     "express": "^4.18.1",
