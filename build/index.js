@@ -196,7 +196,7 @@ function readPost(page, postNum, response)
                     <script>
                         function showPopUp(postNum)
                         {
-                            window.open("html/fix_popup.html", "a", "width=400, height=300, left=100, top=50");
+                            window.open("/html/fix_popup.html", "a", "width=400, height=300, left=100, top=50");
                         }
                     </script>
                 </head>
