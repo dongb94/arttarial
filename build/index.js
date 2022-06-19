@@ -37,10 +37,11 @@ app.post("/html/write_board.html", function(req, res){
     var title = req.body.utitle;
     var owner = req.body.uname;
     var text = req.body.utext;
+    var passwd = req.body.upasswd;
 
     let replcae = text.replace(/\n/g,'<br>');
 
-    DB.executeQuery(`INSERT INTO board(title, text, owner, views) VALUES ("${title}","${replcae}","${owner}", 0)`, (err, rows)=>{
+    DB.executeQuery(`INSERT INTO board(title, text, owner, views, passwd) VALUES ("${title}","${replcae}","${owner}", 0, "${passwd}")`, (err, rows)=>{
         if(err)
         {
             console.log(err);
