@@ -192,6 +192,12 @@ function readPost(page, postNum, response)
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
                     <!-- Core theme CSS (includes Bootstrap)-->
                     <link href="/css/bootstrap.css" rel="stylesheet" />
+                    <script>
+                        function showPopUp(postNum)
+                        {
+                            window.open("html/fix_popup.html", "a", "width=400, height=300, left=100, top=50");
+                        }
+                    </script>
                 </head>
                 <body>
                     <!-- Page content-->
@@ -221,7 +227,7 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <button class="btn btn-dark" style="margin-left: 80%; onclick="location.href='/fix/${postNum}'">수정</button>
+                                        <button class="btn btn-dark" style="margin-left: 80%; onclick="showPopUp(${postNum});">수정</button>
                                         <button class="btn btn-dark" style="margin-left: 2%; onclick="location.href='/board/${page}'">목록</button>
                                     </div>
                                 </article>
