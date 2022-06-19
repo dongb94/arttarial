@@ -86,7 +86,7 @@ app.put("/html/fix_board.html/:postNum", function(req, res){
     });
 });
 
-app.post('/html/fix_popup.html/:postNum', function(req,res){
+app.get('/html/fix_popup.html/:postNum', function(req,res){
     fixPopUp(req.params.postNum, res);
 });
 
