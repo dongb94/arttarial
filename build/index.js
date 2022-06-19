@@ -52,6 +52,10 @@ app.post("/html/write_board.html", function(req, res){
     });
 });
 
+app.put("/post/:page/:postNum", function(req, res){
+
+});
+
 app.use('/', router);
 
 // app.all('*', function(req, res){//등록되지 않은 패스에 대해 페이지 오류 응답
@@ -217,7 +221,8 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <button class="btn btn-dark" style="margin-left: 90%;" onclick="location.href='/board/${page}'">목록</button>
+                                        <button class="btn btn-dark" style="margin-left: 80%; onclick="location.href='/fix/${postNum}'">수정</button>
+                                        <button class="btn btn-dark" style="margin-left: 2%; onclick="location.href='/board/${page}'">목록</button>
                                     </div>
                                 </article>
                             </div>
@@ -233,4 +238,9 @@ function readPost(page, postNum, response)
             console.log(err);
         }
     });
+}
+
+function showPopUp()
+{
+    window.open("html/fix_popup.html", "a", "width=400, height=300, left=100, top=50");
 }
