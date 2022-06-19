@@ -292,7 +292,8 @@ function fixPopUp(postNum, res)
         <head>
             <title>비밀번호 확인</title>
             <script language="javascript">
-                function moveClose(form) {
+                function moveClose() {
+                    var form = document.frmSubmit;
                     var passwd = form.passwd.value;
                     window.opener.location.href="/html/fix_board.html/${postNum}/"+passwd;
                     self.close();
@@ -300,10 +301,10 @@ function fixPopUp(postNum, res)
             </script>
         </head>
         <body>
-            <form>
+            <form name=frmSubmit>
                 비밀번호
-                <input type="password" name="passwd" id="fixpasswd">
-                <button onclick="moveClose(this.form);">확인</button>
+                <input type="password" name="passwd" id="passwd">
+                <button type="button" onclick="moveClose();">확인</button>
             </form>
         </body>
     </html>
