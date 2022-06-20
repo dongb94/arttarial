@@ -72,12 +72,9 @@ app.get("/html/fix_board.html/:postNum", function(req, res){
     var postNum = req.params.postNum;
     var passwd = req.params.passwd;
 
-    // DB.executeQuery(`SELECT `)
-
-    console.log("get fix board");
+    // DB.executeQuery(`SELECT `);
 
     response.sendFile(__dirname+'/public/html/fix_board.html');
-    response.send("<script>alert('알림 창입니다.');</script>");
 });
 
 app.post("/html/fix_board.html/:postNum", function(req, res){
