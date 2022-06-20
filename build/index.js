@@ -49,6 +49,8 @@ app.post("/post/:page", function(req, res){
 app.post("/html/write_board.html", function(req, res){
     // console.log(req.body);
 
+    console.log(`Write Post [${req.params.postNum}]`);
+
     var title = req.body.utitle;
     var owner = req.body.uname;
     var text = req.body.utext;
@@ -63,7 +65,8 @@ app.post("/html/write_board.html", function(req, res){
         }
         else
         {
-            makeBoardRes(1, res);
+            res.redirect(`/board/1`);
+            // makeBoardRes(1, res);
         }
     });
 });
@@ -78,6 +81,9 @@ app.get("/html/fix_board.html/:postNum", function(req, res){
 });
 
 app.post("/html/fix_board.html/:postNum", function(req, res){
+
+    console.log(`Update Post [${req.params.postNum}]`);
+
     var title = req.body.utitle;
     var owner = req.body.uname;
     var text = req.body.utext;
@@ -92,7 +98,8 @@ app.post("/html/fix_board.html/:postNum", function(req, res){
         }
         else
         {
-            makeBoardRes(1, res);
+            res.redirect(`/board/1`);
+            //makeBoardRes(1, res);
         }
     });
 });
