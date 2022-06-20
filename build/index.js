@@ -264,6 +264,12 @@ function readPost(page, postNum, response)
         
         if(!err)
         {
+            if(rows.length==0)
+            {
+                makeBoardRes(page, response);
+                return;
+            }
+
             DB.executeQuery(`Update board SET views=${Number(rows[0].views)+1} WHERE number=${postNum}`, (err, rows)=>{
                 if(err)
                 {
@@ -327,12 +333,10 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <form>
-                                            <input type="password" placeholder="password" style="margin-left: 40%;" name="passwd">
-                                            <button class="btn btn-danger" style="margin-left: 2%;" onclick="sendPost(1); location.href='/board/${page}';">삭제</button>
-                                            <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2);">수정</button>
-                                            <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
-                                        </form>
+                                        <input type="password" placeholder="password" style="margin-left: 40%;" name="passwd">
+                                        <button class="btn btn-danger" style="margin-left: 2%;" onclick="sendPost(1); location.href='/board/${page}';">삭제</button>
+                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2);">수정</button>
+                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
                                     </div>
                                 </article>
                             </div>
