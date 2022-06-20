@@ -42,7 +42,36 @@ app.post("/post/:page", function(req, res){
 
     console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
 
-    res.redirect(`/html/fix_board.html/${post}`);
+    DB.executeQuery(`SELECT title, text, owner, passwd FROM board WHERE number=${post}`, (err, rows)=>{
+        if(!err)
+        {
+            if(rows.length != 1 || rows[0].passwd != passwd)
+            {
+                res.send(`<script>alert("잘못된 비밀번호 입니다.");</script>`);
+                return;
+            }
+
+            if(type==1) // delete
+            {
+                DB.executeQuery(`DELETE FROM board WHERE number=${post}`, (err, rows)=>{
+                    if(err)
+                    {
+                        console.log(err);
+                    }
+                });
+            }
+            else
+            {
+        
+                res.redirect(`/html/fix_board.html/${post}`);
+            }
+        }
+        else
+        {
+            console.log(err);
+        }
+    });
+
 
 });
 
