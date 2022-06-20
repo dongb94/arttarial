@@ -32,13 +32,17 @@ app.get('/post/:page/:postNum', function(request, response){
     readPost(request.params.page, request.params.postNum, response);
 });
 
-app.put("/post/:page/:postNum", function(request, response){
-    console.log(`request Put Page ${request.params.page}:${request.params.postNum}`);
-    response.sendFile(__dirname+'/html/fix_board.html/${postNum}');
-});
+app.post("/post/:page", function(req, response){
 
-app.delete("/post/:page/:postNum", function(request, response){
-    console.log(`request Delete Page ${request.params.page}:${request.params.postNum}`);
+    console.log(req.body);
+    
+    var type = req.body.ureqType;
+    var post = req.body.upost;
+    var passwd = req.body.upasswd;
+
+    console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
+
+    response.sendFile(__dirname+`/html/fix_board.html/${postNum}`);
 });
 
 app.post("/html/write_board.html", function(req, res){
@@ -245,6 +249,20 @@ function readPost(page, postNum, response)
                             window.open("/html/fix_popup.html/${postNum}", "a", "width=400, height=300, left=100, top=50");
                         }
                     </script>
+
+                    <script>
+
+                        function sendPost(type, passwd){
+                            var xhr = new XMLHttpRequest();
+                            xhr.open("POST", "/post/${page}", true);
+                            xhr.setRequestHeader('Content-Type', 'application/json');
+                            xhr.send(JSON.stringify({
+                                ureqType: type,
+                                upasswd: passwd,
+                                upost: ${postNum}
+                            }));
+                        }
+                    </script>
                 </head>
                 <body>
                     <!-- Page content-->
@@ -274,11 +292,9 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <form method="post">
-                                            <button class="btn btn-danger" data-method="delete" style="margin-left: 68%;">삭제</button>
-                                            <button class="btn btn-dark" value="put" style="margin-left: 2%;" >수정</button>
-                                            <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
-                                        </form>
+                                        <button class="btn btn-danger" style="margin-left: 68%;" onclick="sendPost(1, 1234)">삭제</button>
+                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2, 1234)">수정</button>
+                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
                                     </div>
                                 </article>
                             </div>
