@@ -32,7 +32,7 @@ app.get('/post/:page/:postNum', function(request, response){
     readPost(request.params.page, request.params.postNum, response);
 });
 
-app.post("/post/:page", function(req, response){
+app.post("/post/:page", function(req, res){
 
     console.log(req.body);
     
@@ -42,7 +42,18 @@ app.post("/post/:page", function(req, response){
 
     console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
 
-    response.sendFile(__dirname+`/public/html/fix_board.html`);
+    let filePath = __dirname+`/public/html/fix_board.html`;
+    fs.open(filePath, function(error, data){
+        if(!error)
+        { 
+            res.writeHead(200, {'Content-Type':'text/html'});
+            res.end(data);
+        }
+        else{
+            console.log(error);
+        }
+    });
+
 });
 
 app.post("/html/write_board.html", function(req, res){
