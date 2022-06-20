@@ -42,8 +42,7 @@ app.post("/post/:page", function(req, res){
 
     console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
 
-    let filePath = __dirname+`/public/html/fix_board.html/${post}`;
-    res.redirect(filePath);
+    res.redirect(`/html/fix_board.html/${post}`);
 
 });
 
