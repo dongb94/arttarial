@@ -42,7 +42,7 @@ app.post("/post/:page", function(req, response){
 
     console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
 
-    response.sendFile(__dirname+`/html/fix_board.html/${post}`);
+    response.sendFile(__dirname+`/public/html/fix_board.html/${post}`);
 });
 
 app.post("/html/write_board.html", function(req, res){
@@ -67,7 +67,7 @@ app.post("/html/write_board.html", function(req, res){
     });
 });
 
-app.get("/html/fix_board.html/:postNum/:passwd", function(req, res){
+app.get("/html/fix_board.html/:postNum", function(req, res){
     var postNum = req.params.postNum;
     var passwd = req.params.passwd;
 
@@ -79,7 +79,7 @@ app.get("/html/fix_board.html/:postNum/:passwd", function(req, res){
     response.send("<script>alert('알림 창입니다.');</script>");
 });
 
-app.put("/html/fix_board.html/:postNum", function(req, res){
+app.post("/html/fix_board.html/:postNum", function(req, res){
     var title = req.body.utitle;
     var owner = req.body.uname;
     var text = req.body.utext;
