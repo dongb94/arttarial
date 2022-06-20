@@ -76,8 +76,8 @@ app.get("/html/fix_board.html/:postNum", function(req, res){
     var passwd = req.params.passwd;
 
     // DB.executeQuery(`SELECT `);
-
-    res.sendFile(__dirname+'/public/html/fix_board.html');
+    res.send("<h1>HELLOOOOOO</h1>");
+    //res.sendFile(__dirname+'/public/html/fix_board.html');
 });
 
 app.post("/html/fix_board.html/:postNum", function(req, res){
