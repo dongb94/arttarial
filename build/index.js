@@ -287,7 +287,7 @@ function readPost(page, postNum, response)
                     <script>
 
                         function sendPost(type){
-                            var passwd = document.getElementsByName('passwd').values;
+                            var passwd = document.getElementsByName('passwd')[0].value;
                             var xhr = new XMLHttpRequest();
                             xhr.open("POST", "/post/${page}", true);
                             xhr.setRequestHeader('Content-Type', 'application/json');
@@ -327,10 +327,12 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <input type="password" placeholder="password" style="margin-left: 40%;" name="passwd">
-                                        <button class="btn btn-danger" style="margin-left: 2%;" onclick="sendPost(1); location.href='/board/${page}';">삭제</button>
-                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2);">수정</button>
-                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
+                                        <form>
+                                            <input type="password" placeholder="password" style="margin-left: 40%;" name="passwd">
+                                            <button class="btn btn-danger" style="margin-left: 2%;" onclick="sendPost(1); location.href='/board/${page}';">삭제</button>
+                                            <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2);">수정</button>
+                                            <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
+                                        </form>
                                     </div>
                                 </article>
                             </div>
