@@ -42,7 +42,7 @@ app.post("/post/:page", function(req, response){
 
     console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
 
-    response.sendFile(__dirname+`/public/html/fix_board.html/:${post}`);
+    response.sendFile(__dirname+`/public/html/fix_board.html`);
 });
 
 app.post("/html/write_board.html", function(req, res){
