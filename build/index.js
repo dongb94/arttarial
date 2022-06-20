@@ -41,8 +41,8 @@ app.post("/post/:page", function(req, res){
     var passwd = req.body.upasswd;
 
     console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
-
-    res.redirect(`/html/fix_board.html/${post}`);
+    res.redirect(`/board/1`);
+    //res.redirect(`/html/fix_board.html/${post}`);
 
 });
 
@@ -76,8 +76,7 @@ app.get("/html/fix_board.html/:postNum", function(req, res){
     var passwd = req.params.passwd;
 
     // DB.executeQuery(`SELECT `);
-    res.send("<h1>HELLOOOOOO</h1>");
-    //res.sendFile(__dirname+'/public/html/fix_board.html');
+    res.sendFile(__dirname+'/public/html/fix_board.html');
 });
 
 app.post("/html/fix_board.html/:postNum", function(req, res){
