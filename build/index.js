@@ -47,7 +47,7 @@ app.post("/post/:page", function(req, res){
         if(!error)
         { 
             res.writeHead(200, {'Content-Type':'text/html'});
-            res.send(data);
+            res.sendDate(data);
         }
         else{
             console.log(error);
