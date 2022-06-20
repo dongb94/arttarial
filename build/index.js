@@ -336,7 +336,7 @@ function readPost(page, postNum, response)
                                     <div class="mb-5 justify-content-end" style="">
                                         <input type="password" placeholder="password" style="margin-left: 40%;" name="passwd">
                                         <button class="btn btn-danger" style="margin-left: 2%;" onclick="sendPost(1); location.href='/board/${page}';">삭제</button>
-                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2); location.href='/html/fix_board/${postNum}';">수정</button>
+                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2); location.href='/html/fix_board.html/${postNum}';">수정</button>
                                         <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
                                     </div>
                                 </article>
