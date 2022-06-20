@@ -41,8 +41,8 @@ app.post("/post/:page", function(req, res){
     var passwd = req.body.upasswd;
 
     console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
-    res.redirect(`/board/1`);
-    //res.redirect(`/html/fix_board.html/${post}`);
+
+    res.redirect(`/html/fix_board.html/${post}`);
 
 });
 
@@ -296,8 +296,8 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <button class="btn btn-danger" style="margin-left: 68%;" onclick="sendPost(1, 1234)">삭제</button>
-                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2, 1234)">수정</button>
+                                        <button class="btn btn-danger" style="margin-left: 68%;" onclick="sendPost(1, 1234); location.href='/board/${page};'">삭제</button>
+                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2, 1234);">수정</button>
                                         <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
                                     </div>
                                 </article>
