@@ -14,14 +14,14 @@ var router = express.Router();
 
 var nofPostPerPage = 10;
 
-// app.use(body_parser.json());
+app.use(body_parser.json());
 app.use(body_parser.urlencoded({extended: false}));
+app.use(express.static(`public`));
 
 app.get('/', function(request, response){
     response.sendFile(__dirname+'/public/index.html');
 });
 
-app.use(express.static(`public`));
 
 app.get('/board/:dyn', function(request, response){
     makeBoardRes(request.params.dyn, response);
@@ -42,7 +42,7 @@ app.post("/post/:page", function(req, response){
 
     console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
 
-    response.sendFile(__dirname+`/html/fix_board.html/${postNum}`);
+    response.sendFile(__dirname+`/html/fix_board.html/${post}`);
 });
 
 app.post("/html/write_board.html", function(req, res){
