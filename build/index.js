@@ -74,7 +74,7 @@ app.get("/html/fix_board.html/:postNum", function(req, res){
 
     // DB.executeQuery(`SELECT `);
 
-    response.sendFile(__dirname+'/public/html/fix_board.html');
+    res.sendFile(__dirname+'/public/html/fix_board.html');
 });
 
 app.post("/html/fix_board.html/:postNum", function(req, res){
