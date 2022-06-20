@@ -42,17 +42,8 @@ app.post("/post/:page", function(req, res){
 
     console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
 
-    let filePath = __dirname+`/public/html/fix_board.html`;
-    fs.open(filePath, function(error, data){
-        if(!error)
-        { 
-            res.writeHead(200, {'Content-Type':'text/html'});
-            res.sendDate(data);
-        }
-        else{
-            console.log(error);
-        }
-    });
+    let filePath = __dirname+`/public/html/fix_board.html/${post}`;
+    res.redirect(filePath);
 
 });
 
