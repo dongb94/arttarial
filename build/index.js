@@ -40,11 +40,12 @@ app.post("/post/:page", function(req, res){
     var post = req.body.upost;
     var passwd = req.body.upasswd;
 
-    console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
+    // console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
 
     DB.executeQuery(`SELECT title, text, owner, passwd FROM board WHERE number=${post}`, (err, rows)=>{
         if(!err)
         {
+            console.log(rows);
             if(rows.length != 1 || rows[0].passwd != passwd)
             {
                 res.send(`<script>alert("잘못된 비밀번호 입니다.");</script>`);
@@ -285,7 +286,8 @@ function readPost(page, postNum, response)
 
                     <script>
 
-                        function sendPost(type, passwd){
+                        function sendPost(type){
+                            var passwd = document.getElementsByName('passwd').values;
                             var xhr = new XMLHttpRequest();
                             xhr.open("POST", "/post/${page}", true);
                             xhr.setRequestHeader('Content-Type', 'application/json');
@@ -325,8 +327,9 @@ function readPost(page, postNum, response)
                                     </section>
                                     <hr/>
                                     <div class="mb-5 justify-content-end" style="">
-                                        <button class="btn btn-danger" style="margin-left: 68%;" onclick="sendPost(1, 1234); location.href='/board/${page}';">삭제</button>
-                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2, 1234);">수정</button>
+                                        <input type="password" placeholder="password" style="margin-left: 40%;" name="passwd">
+                                        <button class="btn btn-danger" style="margin-left: 2%;" onclick="sendPost(1); location.href='/board/${page}';">삭제</button>
+                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2);">수정</button>
                                         <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
                                     </div>
                                 </article>

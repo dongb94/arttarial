@@ -9,6 +9,7 @@
         <script>
 
             function sendPost(type){
+                var passwd = document.getElementsByName('passwd').values;
                 var xhr = new XMLHttpRequest();
                 xhr.open("POST", "/post/", true);
                 xhr.setRequestHeader('Content-Type', 'application/json');
@@ -50,7 +51,8 @@
 
                         <div class="mb-5 justify-content-end">
                             <form action="" method="post">
-                                <button class="btn btn-danger" style="margin-left: 68%;" onclick="sendPost(1)">삭제</button>
+                                <input type="password" placeholder="password" style="margin-left: 40%;" name="passwd">
+                                <button class="btn btn-danger" style="margin-left: 2%;" onclick="sendPost(1)">삭제</button>
                                 <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2)">수정</button>
                                 <button class="btn btn-dark" style="margin-left: 2%;">목록</button>
                             </form>
