@@ -42,7 +42,7 @@ app.post("/post/:page", function(req, res){
 
     // console.log(`request post Page ${req.params.page}\n\ttype:${type}\n\tpostNum:${post}\n\tpasswd:${passwd}`);
 
-    DB.executeQuery(`SELECT title, text, owner, passwd FROM board WHERE number=${post}`, (err, rows)=>{
+    DB.executeQuery(`SELECT passwd FROM board WHERE number=${post}`, (err, rows)=>{
         if(!err)
         {
             console.log(rows);
@@ -63,7 +63,6 @@ app.post("/post/:page", function(req, res){
             }
             else
             {
-        
                 res.redirect(`/html/fix_board.html/${post}`);
             }
         }
@@ -105,8 +104,18 @@ app.get("/html/fix_board.html/:postNum", function(req, res){
     var postNum = req.params.postNum;
     var passwd = req.params.passwd;
 
-    // DB.executeQuery(`SELECT `);
-    res.sendFile(__dirname+'/public/html/fix_board.html');
+    DB.executeQuery(`SELECT title, text, owner, passwd FROM board WHERE number=${postNum}`, (err, rows)=>{
+        if(!err)
+        {
+            console.log(rows);
+            
+            res.sendFile(__dirname+'/public/html/fix_board.html');
+        }
+        else
+        {
+            console.log(err);
+        }
+    });
 });
 
 app.post("/html/fix_board.html/:postNum", function(req, res){
@@ -131,14 +140,6 @@ app.post("/html/fix_board.html/:postNum", function(req, res){
             //makeBoardRes(1, res);
         }
     });
-});
-
-app.get('/html/fix_popup.html/:postNum', function(req,res){
-    fixPopUp(req.params.postNum, res);
-});
-
-app.post('/html/fix_popup.html/:postNum', function(req,res){
-    
 });
 
 app.use('/', router);
@@ -335,7 +336,7 @@ function readPost(page, postNum, response)
                                     <div class="mb-5 justify-content-end" style="">
                                         <input type="password" placeholder="password" style="margin-left: 40%;" name="passwd">
                                         <button class="btn btn-danger" style="margin-left: 2%;" onclick="sendPost(1); location.href='/board/${page}';">삭제</button>
-                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2);">수정</button>
+                                        <button class="btn btn-dark" style="margin-left: 2%;" onclick="sendPost(2); location.href='/html/fix_board/${postNum}';">수정</button>
                                         <button class="btn btn-dark" style="margin-left: 2%;" onclick="location.href='/board/${page}';">목록</button>
                                     </div>
                                 </article>
