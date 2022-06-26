@@ -2988,12 +2988,7 @@ jQuery.uniqueSort = jQuery.unique = Sizzle.uniqueSort;
 jQuery.text = Sizzle.getText;
 jQuery.isXMLDoc = Sizzle.isXML;
 jQuery.contains = Sizzle.contains;
-jQuery.escapeSelector = Sizzle.escape;
-
-
-
-
-var dir = function( elem, dir, until ) {
+jQuery.escapeSelector = Sizzle.escape;var dir = function( elem, dir, until ) {
 	var matched = [],
 		truncate = until !== undefined;
 
@@ -4049,21 +4044,11 @@ jQuery.Deferred.exceptionHook = function( error, stack ) {
 	if ( window.console && window.console.warn && error && rerrorNames.test( error.name ) ) {
 		window.console.warn( "jQuery.Deferred exception: " + error.message, error.stack, stack );
 	}
-};
-
-
-
-
-jQuery.readyException = function( error ) {
+};jQuery.readyException = function( error ) {
 	window.setTimeout( function() {
 		throw error;
 	} );
-};
-
-
-
-
-// The deferred used on DOM ready
+};// The deferred used on DOM ready
 var readyList = jQuery.Deferred();
 
 jQuery.fn.ready = function( fn ) {
@@ -4137,12 +4122,7 @@ if ( document.readyState === "complete" ||
 
 	// A fallback to window.onload, that will always work
 	window.addEventListener( "load", completed );
-}
-
-
-
-
-// Multifunctional method to get and set values of a collection
+}// Multifunctional method to get and set values of a collection
 // The value/s can optionally be executed if it's a function
 var access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 	var i = 0,
@@ -4228,12 +4208,7 @@ var acceptData = function( owner ) {
 	//  - Object
 	//    - Any
 	return owner.nodeType === 1 || owner.nodeType === 9 || !( +owner.nodeType );
-};
-
-
-
-
-function Data() {
+};function Data() {
 	this.expando = jQuery.expando + Data.uid++;
 }
 
@@ -7261,12 +7236,7 @@ jQuery.easing = {
 jQuery.fx = Tween.prototype.init;
 
 // Back compat <1.8 extension point
-jQuery.fx.step = {};
-
-
-
-
-var
+jQuery.fx.step = {};var
 	fxNow, inProgress,
 	rfxtypes = /^(?:toggle|show|hide)$/,
 	rrun = /queueHooks$/;
@@ -8108,12 +8078,7 @@ jQuery.each( jQuery.expr.match.bool.source.match( /\w+/g ), function( _i, name )
 		}
 		return ret;
 	};
-} );
-
-
-
-
-var rfocusable = /^(?:input|select|textarea|button)$/i,
+} );var rfocusable = /^(?:input|select|textarea|button)$/i,
 	rclickable = /^(?:a|area)$/i;
 
 jQuery.fn.extend( {
@@ -8244,12 +8209,7 @@ jQuery.each( [
 	"contentEditable"
 ], function() {
 	jQuery.propFix[ this.toLowerCase() ] = this;
-} );
-
-
-
-
-	// Strip and collapse whitespace according to HTML spec
+} );	// Strip and collapse whitespace according to HTML spec
 	// https://infra.spec.whatwg.org/#strip-and-collapse-ascii-whitespace
 	function stripAndCollapse( value ) {
 		var tokens = value.match( rnothtmlwhite ) || [];
@@ -8429,12 +8389,7 @@ jQuery.fn.extend( {
 
 		return false;
 	}
-} );
-
-
-
-
-var rreturn = /\r/g;
+} );var rreturn = /\r/g;
 
 jQuery.fn.extend( {
 	val: function( value ) {
@@ -8610,12 +8565,7 @@ jQuery.each( [ "radio", "checkbox" ], function() {
 			return elem.getAttribute( "value" ) === null ? "on" : elem.value;
 		};
 	}
-} );
-
-
-
-
-// Return jQuery for attributes-only inclusion
+} );// Return jQuery for attributes-only inclusion
 
 
 support.focusin = "onfocusin" in window;
@@ -9959,12 +9909,7 @@ jQuery.expr.pseudos.hidden = function( elem ) {
 };
 jQuery.expr.pseudos.visible = function( elem ) {
 	return !!( elem.offsetWidth || elem.offsetHeight || elem.getClientRects().length );
-};
-
-
-
-
-jQuery.ajaxSettings.xhr = function() {
+};jQuery.ajaxSettings.xhr = function() {
 	try {
 		return new window.XMLHttpRequest();
 	} catch ( e ) {}
@@ -10123,12 +10068,7 @@ jQuery.ajaxTransport( function( options ) {
 			}
 		};
 	}
-} );
-
-
-
-
-// Prevent auto-execution of scripts when no explicit dataType was provided (See gh-2432)
+} );// Prevent auto-execution of scripts when no explicit dataType was provided (See gh-2432)
 jQuery.ajaxPrefilter( function( s ) {
 	if ( s.crossDomain ) {
 		s.contents.script = false;
@@ -10191,12 +10131,7 @@ jQuery.ajaxTransport( "script", function( s ) {
 			}
 		};
 	}
-} );
-
-
-
-
-var oldCallbacks = [],
+} );var oldCallbacks = [],
 	rjsonp = /(=)\?(?=&|$)|\?\?/;
 
 // Default jsonp settings
@@ -10286,12 +10221,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 		// Delegate to script
 		return "script";
 	}
-} );
-
-
-
-
-// Support: Safari 8 only
+} );// Support: Safari 8 only
 // In Safari 8 documents created via document.implementation.createHTMLDocument
 // collapse sibling forms: the second one becomes a child of the first one.
 // Because of that, this security measure has to be disabled in Safari 8.
@@ -10415,21 +10345,11 @@ jQuery.fn.load = function( url, params, callback ) {
 	}
 
 	return this;
-};
-
-
-
-
-jQuery.expr.pseudos.animated = function( elem ) {
+};jQuery.expr.pseudos.animated = function( elem ) {
 	return jQuery.grep( jQuery.timers, function( fn ) {
 		return elem === fn.elem;
 	} ).length;
-};
-
-
-
-
-jQuery.offset = {
+};jQuery.offset = {
 	setOffset: function( elem, options, i ) {
 		var curPosition, curLeft, curCSSTop, curTop, curOffset, curCSSLeft, calculatePosition,
 			position = jQuery.css( elem, "position" ),
@@ -10703,12 +10623,7 @@ jQuery.each( [
 	jQuery.fn[ type ] = function( fn ) {
 		return this.on( type, fn );
 	};
-} );
-
-
-
-
-jQuery.fn.extend( {
+} );jQuery.fn.extend( {
 
 	bind: function( types, data, fn ) {
 		return this.on( types, null, data, fn );
@@ -10746,12 +10661,7 @@ jQuery.each(
 				this.trigger( name );
 		};
 	}
-);
-
-
-
-
-// Support: Android <=4.0 only
+);// Support: Android <=4.0 only
 // Make sure we trim BOM and NBSP
 var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
 
@@ -10842,12 +10752,7 @@ if ( typeof define === "function" && define.amd ) {
 	define( "jquery", [], function() {
 		return jQuery;
 	} );
-}
-
-
-
-
-var
+}var
 
 	// Map over jQuery in case of overwrite
 	_jQuery = window.jQuery,
@@ -10872,10 +10777,5 @@ jQuery.noConflict = function( deep ) {
 // and CommonJS for browser emulators (#13566)
 if ( typeof noGlobal === "undefined" ) {
 	window.jQuery = window.$ = jQuery;
-}
-
-
-
-
-return jQuery;
+}return jQuery;
 } );
