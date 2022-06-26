@@ -3,5 +3,5 @@
 heroku,
 nodejs, express
 bootstrap,
-react,
+jquery,
 mysql
